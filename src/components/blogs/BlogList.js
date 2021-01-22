@@ -15,6 +15,9 @@ class BlogList extends React.Component {
                     >
                         Edit
                     </Link>
+                    <button className="ui button negative">
+                        Delete
+                    </button>
                 </div>
             );
         };
@@ -25,9 +28,10 @@ class BlogList extends React.Component {
             return (
                 <div className="item" key={blog.id}>
                     {this.renderAdmin(blog)}
-                    <i className="large middle aligned icon camera" />
+                    <i className="large middle aligned icon edit" />
                     <div className="content">
-                        {blog.title}
+                        <a href={blog.url} className="header">{blog.title}</a>
+                        <div class="description">{blog.description}</div>
                     </div>
                 </div>
             );
@@ -38,6 +42,7 @@ class BlogList extends React.Component {
 
         return (
             <div>
+                <h3>Blogs</h3>
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>

@@ -1,3 +1,8 @@
+import {
+    CREATE_BLOG,
+    EDIT_BLOG
+} from '../actions/types';
+
 const INITIAL_STATE = {
     1: { 
         id: 1,
@@ -14,7 +19,12 @@ const INITIAL_STATE = {
 }
 
 const blogReducer = (state = INITIAL_STATE, action) => {
+
     switch (action.type) {
+        case CREATE_BLOG:
+            return { ...state, [action.payload.id]: action.payload }
+        case EDIT_BLOG:
+            return { ...state, [action.payload.id]: action.payload }
         default:
             return state;
     }

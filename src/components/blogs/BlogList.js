@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const BlogList = ({ isAdmin }) => {
+class BlogList extends React.Component {
 
-    const renderAdmin = blog => {
+    renderAdmin = blog => {
         
-        if (isAdmin) {
+        if (this.props.isAdmin) {
             return (
                 <div className="right floated content">
                     <Link 
@@ -19,16 +19,31 @@ const BlogList = ({ isAdmin }) => {
             );
         };
     };
-    
-    if (isAdmin) {
-        return (
-            <div>BlogListAdmin</div>
-        );
-    }
 
-    return (
-        <div>BlogList</div>
-    );
+    renderList = () => {
+        return this.props.blogs.map(blog => {
+            return (
+                <div className="item" key={blog.id}>
+                    {this.renderAdmin(blog)}
+                    <i className="large middle aligned icon camera" />
+                    <div className="content">
+                        {blog.title}
+                    </div>
+                </div>
+            );
+        });
+    }
+    
+    render() {
+
+        return (
+            <div>
+                <div className="ui celled list">
+                    {this.renderList()}
+                </div>
+            </div>
+        );
+    };
 };
 
 const mapStateToProps = ({ auth, blogs }) => {
@@ -37,7 +52,7 @@ const mapStateToProps = ({ auth, blogs }) => {
     return { 
         isSignedIn,
         isAdmin,
-        blogs
+        blogs: Object.values(blogs)
     };
 };
 

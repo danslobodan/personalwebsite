@@ -31,7 +31,7 @@ class BlogList extends React.Component {
                     <i className="large middle aligned icon edit" />
                     <div className="content">
                         <a href={blog.url} className="header">{blog.title}</a>
-                        <div class="description">{blog.description}</div>
+                        <div className="description">{blog.description}</div>
                     </div>
                 </div>
             );

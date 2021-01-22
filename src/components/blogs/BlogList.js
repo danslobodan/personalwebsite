@@ -46,6 +46,9 @@ class BlogList extends React.Component {
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>
+                <div style={{ textAlign: 'right' }}>
+                    <Link className="ui button primary" to="/blogs/create">Create Blog</Link>
+                </div>
             </div>
         );
     };

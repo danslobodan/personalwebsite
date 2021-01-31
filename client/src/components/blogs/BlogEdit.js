@@ -3,11 +3,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import BlogForm from './BlogForm';
+import { editBlog, getBlog } from '../../actions';
 
 class BlogEdit extends React.Component {
 
+    componentDidMount() {
+        this.props.getBlog(this.props.match.params.id);
+    }
+
     onSubmit = formValues => {
-        console.log(formValues);
+        this.props.editBlog(this.props.match.params.id, formValues);
     }
 
     render() {
@@ -33,5 +38,6 @@ const mapStateToProps = ({ blogs }, ownProps) => {
 }
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { editBlog, getBlog }
 )(BlogEdit);

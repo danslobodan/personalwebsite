@@ -1,26 +1,18 @@
+import _ from 'lodash';
 import {
     CREATE_BLOG,
-    EDIT_BLOG
+    EDIT_BLOG,
+    GET_BLOG,
+    GET_BLOGS
 } from '../actions/types';
 
-const INITIAL_STATE = {
-    1: { 
-        id: 1,
-        title: "How to create great developers: The Skill Matrix",
-        url: "https://danastroman.medium.com/how-to-create-great-developers-the-skill-matrix-a851b9b54153",
-        description: "With the technology skills flooding the learning landscape, it is becoming less obvious where to invest our learning time."
-    },
-    2: {
-        id: 2,
-        title: "The next one I'm going to write",
-        url: "https://danastroman.medium.com/",
-        description: "This blog is not yet written."
-    }
-}
-
-const blogReducer = (state = INITIAL_STATE, action) => {
+const blogReducer = (state = {}, action) => {
 
     switch (action.type) {
+        case GET_BLOGS:
+            return { ...state, ..._.mapKeys(action.payload, 'id')};
+        case GET_BLOG:
+            return { ...state, [action.payload.id]: action.payload }
         case CREATE_BLOG:
             return { ...state, [action.payload.id]: action.payload }
         case EDIT_BLOG:

@@ -20,9 +20,11 @@ class BlogList extends React.Component {
                     >
                         Edit
                     </Link>
-                    <button className="ui button negative">
+                    <Link 
+                        to={`/blogs/delete/${blog.id}`}
+                        className="ui button negative">
                         Delete
-                    </button>
+                    </Link>
                 </div>
             );
         };

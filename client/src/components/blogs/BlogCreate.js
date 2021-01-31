@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
 import BlogForm from './BlogForm';
+import { createBlog } from '../../actions';
 
 class BlogCreate extends React.Component {
 
     onSubmit = formValues => {
-        console.log(formValues);
+        this.props.createBlog(formValues);
     }
 
     render() {
@@ -20,4 +20,7 @@ class BlogCreate extends React.Component {
     }
 }
 
-export default connect()(BlogCreate);
+export default connect(
+    null,
+    { createBlog }
+)(BlogCreate);

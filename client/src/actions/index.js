@@ -36,17 +36,17 @@ export const getBlog = id => async dispatch => {
 export const createBlog = formValues => async dispatch => {
     const response = await blogs.post('/blogs', formValues);
     dispatch({ type: CREATE_BLOG, payload: response.data });
-    history.push('/');
+    history.push('/blogs');
 }
 
 export const editBlog = (id, formValues) => async dispatch => {
     const response = await blogs.patch(`/blogs/${id}`, formValues);
     dispatch({ type: EDIT_BLOG, payload: response.data });
-    history.push('/');
+    history.push('/blogs');
 }
 
 export const deleteBlog = id => async dispatch => {
     await blogs.delete(`/blogs/${id}`);
     dispatch({ type: DELETE_BLOG, payload: id });
-    history.push('/');
+    history.push('/blogs');
 }

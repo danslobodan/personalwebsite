@@ -4,7 +4,8 @@ import {
     CREATE_BLOG,
     EDIT_BLOG,
     GET_BLOGS,
-    GET_BLOG
+    GET_BLOG,
+    DELETE_BLOG
 } from './types';
 import blogs from '../apis/blogs';
 import history from '../history';
@@ -42,5 +43,11 @@ export const createBlog = formValues => async dispatch => {
 export const editBlog = (id, formValues) => async dispatch => {
     const response = await blogs.patch(`/blogs/${id}`, formValues);
     dispatch({ type: EDIT_BLOG, payload: response.data });
+    history.push('/');
+}
+
+export const deleteBlog = id => async dispatch => {
+    await blogs.delete(`/blogs/${id}`);
+    dispatch({ type: DELETE_BLOG, payload: id });
     history.push('/');
 }

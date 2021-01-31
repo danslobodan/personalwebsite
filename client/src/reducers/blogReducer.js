@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import {
     CREATE_BLOG,
+    DELETE_BLOG,
     EDIT_BLOG,
     GET_BLOG,
     GET_BLOGS
@@ -17,6 +18,8 @@ const blogReducer = (state = {}, action) => {
             return { ...state, [action.payload.id]: action.payload }
         case EDIT_BLOG:
             return { ...state, [action.payload.id]: action.payload }
+        case DELETE_BLOG:
+            return _.omit(state, action.payload);
         default:
             return state;
     }

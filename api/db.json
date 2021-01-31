@@ -1,10 +1,16 @@
 {
-    "blogs": [
-        { 
-            "id": 1,
-            "title": "How to create great developers: The Skill Matrix",
-            "url": "https://danastroman.medium.com/how-to-create-great-developers-the-skill-matrix-a851b9b54153",
-            "description": "With the technology skills flooding the learning landscape, it is becoming less obvious where to invest our learning time."
-        }
-    ]
+  "blogs": [
+    {
+      "id": 1,
+      "title": "How to create great developers: The Skill Matrix",
+      "url": "https://danastroman.medium.com/how-to-create-great-developers-the-skill-matrix-a851b9b54153",
+      "description": "With the technology skills flooding the learning landscape, it is becoming less obvious where to invest our learning time."
+    },
+    {
+      "title": "The Kanban board: you're using it wrong",
+      "description": "We all love the Kanban board. It clean and easy to use. But does it show what it needs to?",
+      "url": "https://medium.com/p/fbc1051641ff/edit",
+      "id": 2
+    }
+  ]
 }

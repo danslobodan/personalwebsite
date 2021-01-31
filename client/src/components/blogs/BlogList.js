@@ -1,8 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getBlogs } from '../../actions';
 
 class BlogList extends React.Component {
+
+    componentDidMount() {
+        this.props.getBlogs();
+    }
 
     renderAdmin = blog => {
         
@@ -37,6 +42,16 @@ class BlogList extends React.Component {
             );
         });
     }
+
+    renderCreate = () => {
+        if (this.props.isAdmin) {
+            return (
+                <div style={{ textAlign: 'right' }}>
+                    <Link className="ui button primary" to="/blogs/create">Create Blog</Link>
+                </div>
+            )
+        }
+    }
     
     render() {
 
@@ -46,9 +61,7 @@ class BlogList extends React.Component {
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>
-                <div style={{ textAlign: 'right' }}>
-                    <Link className="ui button primary" to="/blogs/create">Create Blog</Link>
-                </div>
+                {this.renderCreate()}
             </div>
         );
     };
@@ -65,5 +78,6 @@ const mapStateToProps = ({ auth, blogs }) => {
 };
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { getBlogs }
 )(BlogList);

@@ -29,7 +29,6 @@ export const getBlogs = () => async dispatch => {
 }
 
 export const getBlog = id => async dispatch => {
-    console.log(id);
     const response = await blogs.get(`/blogs/${id}`);
     dispatch({ type: GET_BLOG, payload: response.data });
 }

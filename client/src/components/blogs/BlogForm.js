@@ -27,6 +27,16 @@ class BlogForm extends React.Component {
         );
     };
 
+    rennderDatepicker = ({ input, label }) => {
+
+        return (
+            <div className="field">
+                <label>{label}</label>
+                <input {...input} type="date" />
+            </div>
+        )
+    }
+
     onSubmit = (formValues) => {
         this.props.onSubmit(formValues);
     }
@@ -37,6 +47,7 @@ class BlogForm extends React.Component {
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <Field name="description" component={this.renderInput} label="Enter Description" />
                 <Field name="url" component={this.renderInput} label="Enter URL" />
+                <Field name="date" component={this.rennderDatepicker} label="Enter published date" />
                 <button className="ui button primary">Submit</button>
             </form>
         );

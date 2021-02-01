@@ -31,7 +31,13 @@ class BlogList extends React.Component {
     };
 
     renderList = () => {
+        
         return this.props.blogs.map(blog => {
+
+            const publishedDate = blog.date 
+                ? `Published on: ${blog.date}`
+                : 'Unpublished';
+
             return (
                 <div className="item" key={blog.id}>
                     {this.renderAdmin(blog)}
@@ -39,6 +45,7 @@ class BlogList extends React.Component {
                     <div className="content">
                         <a href={blog.url} className="header">{blog.title}</a>
                         <div className="description">{blog.description}</div>
+                        <div className="extra">{publishedDate}</div>
                     </div>
                 </div>
             );

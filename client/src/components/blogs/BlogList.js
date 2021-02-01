@@ -66,7 +66,6 @@ class BlogList extends React.Component {
 
         return (
             <div>
-                <h3>Blogs</h3>
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>

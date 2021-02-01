@@ -3,9 +3,8 @@ import React from 'react';
 const Home = () => {
     return (
         <div className="ui vertical segment">
-            <div className="ui medium header">The true architect</div>
-            <p>The true architect is an ideal I have created to strive to. It's not meant to be achieved.</p>
-            <p>It encompases five tenets:</p>
+            <div>The true architect is an ideal I have created to strive to. It's not meant to be achieved.</div>
+            <div>It encompases five tenets:</div>
             <ul className="ui list">
                 <li>
                     <div className="ui small header">Master programmer</div>

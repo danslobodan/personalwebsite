@@ -5,7 +5,9 @@ import GoogleAuth from './GoogleAuth';
 const Header = () => {
     return (
         <div className="ui vertical segment">
-            <div className="ui inverted block huge header">The True Architect</div>
+            <div className="ui inverted block huge header">{'{ '}
+                <span style={{fontFamily: 'Brush Script MT,cursive'}}>TA</span>
+                {' } '}The True Architect</div>
             <div className="ui secondary menu">
                 <Link to="/" className="item">
                     Home

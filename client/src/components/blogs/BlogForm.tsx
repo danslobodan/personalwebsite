@@ -3,14 +3,14 @@ import { Field, InjectedFormProps, reduxForm, WrappedFieldMetaProps, WrappedFiel
 import { Blog } from '../../models/Blog';
 
 interface BlogFormProps {
-    handleSubmit: () => void
+    onSubmit: (formValues: Blog) => void
 }
 
 interface CustomFieldProps {
     label: string;
 }
 
-class BlogForm extends Component<InjectedFormProps<Blog> & BlogFormProps> {
+class BlogForm extends Component<InjectedFormProps<Blog, BlogFormProps> & BlogFormProps> {
 
     renderError = (meta: WrappedFieldMetaProps) => {
         const { touched, error } = meta;
@@ -46,9 +46,13 @@ class BlogForm extends Component<InjectedFormProps<Blog> & BlogFormProps> {
         )
     }
 
+    onSubmit = (formValues: Blog): void => {
+        this.props.onSubmit(formValues)
+    }
+
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit} className="ui form error">
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <Field name="description" component={this.renderInput} label="Enter Description" />
                 <Field name="url" component={this.renderInput} label="Enter URL" />

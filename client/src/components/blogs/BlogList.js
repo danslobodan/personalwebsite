@@ -1,8 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getBlogs } from '../../actions';
 
 class BlogList extends React.Component {
+
+    componentDidMount() {
+        this.props.getBlogs();
+    }
 
     renderAdmin = blog => {
         
@@ -15,23 +20,46 @@ class BlogList extends React.Component {
                     >
                         Edit
                     </Link>
+                    <Link 
+                        to={`/blogs/delete/${blog.id}`}
+                        className="ui button negative">
+                        Delete
+                    </Link>
                 </div>
             );
         };
     };
 
     renderList = () => {
+        
         return this.props.blogs.map(blog => {
+
+            const publishedDate = blog.date 
+                ? `Published on: ${blog.date}`
+                : 'Unpublished';
+
             return (
                 <div className="item" key={blog.id}>
                     {this.renderAdmin(blog)}
-                    <i className="large middle aligned icon camera" />
+                    <i className="large middle aligned icon edit" />
                     <div className="content">
-                        {blog.title}
+                        <a href={blog.url} className="header">{blog.title}</a>
+                        <div className="description">{blog.description}</div>
+                        <div className="extra">{publishedDate}</div>
                     </div>
                 </div>
             );
         });
+    }
+
+    renderCreate = () => {
+        if (this.props.isAdmin) {
+            return (
+                <div style={{ textAlign: 'right' }}>
+                    <Link className="ui button primary" to="/blogs/create">Create Blog</Link>
+                </div>
+            )
+        }
     }
     
     render() {
@@ -41,6 +69,7 @@ class BlogList extends React.Component {
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>
+                {this.renderCreate()}
             </div>
         );
     };
@@ -57,5 +86,6 @@ const mapStateToProps = ({ auth, blogs }) => {
 };
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { getBlogs }
 )(BlogList);

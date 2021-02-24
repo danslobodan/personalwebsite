@@ -27,7 +27,7 @@ class BlogForm extends React.Component {
         );
     };
 
-    rennderDatepicker = ({ input, label }) => {
+    renderDatepicker = ({ input, label }) => {
 
         return (
             <div className="field">
@@ -47,7 +47,7 @@ class BlogForm extends React.Component {
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <Field name="description" component={this.renderInput} label="Enter Description" />
                 <Field name="url" component={this.renderInput} label="Enter URL" />
-                <Field name="date" component={this.rennderDatepicker} label="Enter published date" />
+                <Field name="date" component={this.renderDatepicker} label="Enter published date" />
                 <button className="ui button primary">Submit</button>
             </form>
         );
@@ -55,7 +55,7 @@ class BlogForm extends React.Component {
 }
 
 const validate = formValues => {
-    
+
     const errors = {};
 
     if (!formValues.title) {

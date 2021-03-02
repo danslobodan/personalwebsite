@@ -1,71 +1,101 @@
 import { Component } from 'react';
-import { Field, InjectedFormProps, reduxForm, WrappedFieldMetaProps, WrappedFieldProps } from 'redux-form';
+import {
+    Field,
+    InjectedFormProps,
+    reduxForm,
+    WrappedFieldMetaProps,
+    WrappedFieldProps,
+} from 'redux-form';
 import { Blog } from '../../models/Blog';
 
 interface BlogFormProps {
-    onSubmit: (formValues: Blog) => void
+    onSubmit: (formValues: Blog) => void;
 }
 
 interface CustomFieldProps {
     label: string;
 }
 
-class BlogForm extends Component<InjectedFormProps<Blog, BlogFormProps> & BlogFormProps> {
-
+class BlogForm extends Component<
+    InjectedFormProps<Blog, BlogFormProps> & BlogFormProps
+> {
     renderError = (meta: WrappedFieldMetaProps) => {
         const { touched, error } = meta;
         if (touched && error) {
             return (
-                <div className="ui error message">
-                    <div className="header">{error}</div>
+                <div className='ui error message'>
+                    <div className='header'>{error}</div>
                 </div>
             );
-        };
+        }
     };
 
-    renderInput = ({ input, label, meta }: WrappedFieldProps & CustomFieldProps) => {
-
-        const className = `field ${meta.error && meta.touched ? 'error' : ''}`
+    renderInput = ({
+        input,
+        label,
+        meta,
+    }: WrappedFieldProps & CustomFieldProps) => {
+        const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
 
         return (
             <div className={className}>
                 <label>{label}</label>
-                <input {...input} autoComplete="off" />
+                <input {...input} autoComplete='off' />
                 {this.renderError(meta)}
             </div>
         );
     };
 
-    renderDatepicker = ({ input, label }: WrappedFieldProps & CustomFieldProps) => {
-
+    renderDatepicker = ({
+        input,
+        label,
+    }: WrappedFieldProps & CustomFieldProps) => {
         return (
-            <div className="field">
+            <div className='field'>
                 <label>{label}</label>
-                <input {...input} type="date" />
+                <input {...input} type='date' />
             </div>
-        )
-    }
+        );
+    };
 
     onSubmit = (formValues: Blog): void => {
-        this.props.onSubmit(formValues)
-    }
+        this.props.onSubmit(formValues);
+    };
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                <Field name="title" component={this.renderInput} label="Enter Title" />
-                <Field name="description" component={this.renderInput} label="Enter Description" />
-                <Field name="url" component={this.renderInput} label="Enter URL" />
-                <Field name="date" component={this.renderDatepicker} label="Enter published date" />
-                <button className="ui button primary">Submit</button>
+            <form
+                onSubmit={this.props.handleSubmit(this.onSubmit)}
+                className='ui form error'
+            >
+                <Field
+                    name='title'
+                    component={this.renderInput}
+                    label='Enter Title'
+                />
+                <Field
+                    name='description'
+                    component={this.renderInput}
+                    label='Enter Description'
+                />
+                <Field
+                    name='url'
+                    component={this.renderInput}
+                    label='Enter URL'
+                />
+                <Field
+                    name='date'
+                    component={this.renderDatepicker}
+                    label='Enter published date'
+                />
+                <button className='ui button primary'>Submit</button>
             </form>
         );
     }
 }
 
-const validate = (formValues : Blog) => {
-
-    const errors: { title? : string; description? : string; url? : string; } = {};
+const validate = (formValues: Blog) => {
+    const errors: { title?: string; description?: string; url?: string } = {};
 
     if (!formValues.title) {
         errors.title = 'You must enter a title.';
@@ -78,9 +108,9 @@ const validate = (formValues : Blog) => {
     }
 
     return errors;
-}
+};
 
 export default reduxForm<Blog, BlogFormProps>({
     form: 'blogForm',
-    validate
+    validate,
 })(BlogForm);

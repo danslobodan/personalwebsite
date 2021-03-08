@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 interface ModalProps {
     header: string;
-    content: JSX.Element;
+    content: string;
     actions: JSX.Element;
     onDismiss: () => void;
 }

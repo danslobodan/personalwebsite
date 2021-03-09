@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
+import { NotFoundError } from '../../errors/notFoundError';
 import { validateRequest } from '../../middlewares/validateRequest';
 import { Blog } from '../../models/blog';
 
@@ -19,9 +20,23 @@ router.put(
     ],
     validateRequest,
     async (req: Request, res: Response) => {
-        const blogRecord = Blog.build(req.body);
-        const blog = await blogRecord.save();
-        res.status(200).send(blog);
+        const blog = await Blog.findById(req.params.id);
+
+        if (!blog) {
+            throw new NotFoundError();
+        }
+
+        const { title, description, link, date } = req.body;
+
+        blog.set({
+            title,
+            description,
+            link,
+            date,
+        });
+
+        await blog.save();
+        res.send(blog);
     }
 );
 

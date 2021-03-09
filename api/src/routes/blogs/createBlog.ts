@@ -15,12 +15,19 @@ router.post(
             .withMessage('Link is required')
             .isURL()
             .withMessage('Link must be a valid url'),
-        body('date').isDate(),
+        body('date').optional({ nullable: true }).isDate(),
     ],
     validateRequest,
     async (req: Request, res: Response) => {
-        const blogRecord = Blog.build(req.body);
-        const blog = await blogRecord.save();
+        const { title, description, link, date } = req.body;
+
+        const blog = Blog.build({
+            title,
+            description,
+            link,
+            date,
+        });
+        await blog.save();
         res.status(201).send(blog);
     }
 );

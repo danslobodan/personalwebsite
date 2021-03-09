@@ -6,10 +6,10 @@ import {
     WrappedFieldMetaProps,
     WrappedFieldProps,
 } from 'redux-form';
-import { Blog } from '../../models/Blog';
+import { BlogFields } from '../../models/Blog';
 
 interface BlogFormProps {
-    onSubmit: (formValues: Blog) => void;
+    onSubmit: (formValues: BlogFields) => void;
 }
 
 interface CustomFieldProps {
@@ -17,7 +17,7 @@ interface CustomFieldProps {
 }
 
 class BlogForm extends Component<
-    InjectedFormProps<Blog, BlogFormProps> & BlogFormProps
+    InjectedFormProps<BlogFields, BlogFormProps> & BlogFormProps
 > {
     renderError = (meta: WrappedFieldMetaProps) => {
         const { touched, error } = meta;
@@ -58,7 +58,7 @@ class BlogForm extends Component<
         );
     };
 
-    onSubmit = (formValues: Blog): void => {
+    onSubmit = (formValues: BlogFields): void => {
         this.props.onSubmit(formValues);
     };
 
@@ -94,8 +94,8 @@ class BlogForm extends Component<
     }
 }
 
-const validate = (formValues: Blog) => {
-    const errors: { title?: string; description?: string; url?: string } = {};
+const validate = (formValues: BlogFields) => {
+    const errors: { title?: string; description?: string; link?: string } = {};
 
     if (!formValues.title) {
         errors.title = 'You must enter a title.';
@@ -103,14 +103,14 @@ const validate = (formValues: Blog) => {
     if (!formValues.description) {
         errors.description = 'You must enter a description.';
     }
-    if (!formValues.url) {
-        errors.url = 'You must enter a URL.';
+    if (!formValues.link) {
+        errors.link = 'You must enter a URL.';
     }
 
     return errors;
 };
 
-export default reduxForm<Blog, BlogFormProps>({
+export default reduxForm<BlogFields, BlogFormProps>({
     form: 'blogForm',
     validate,
 })(BlogForm);

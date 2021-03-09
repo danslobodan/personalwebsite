@@ -1,9 +1,5 @@
-export interface Blog {
+export interface Blog extends BlogFields {
     id: string;
-    title: string;
-    description: string;
-    url: string;
-    date: Date;
 }
 
 export interface BlogFields {

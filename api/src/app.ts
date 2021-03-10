@@ -3,12 +3,15 @@ import 'express-async-errors';
 import cors from 'cors';
 import passport from 'passport';
 import session from 'express-session';
+import env from 'dotenv';
 
 import { NotFoundError } from './errors/notFoundError';
 import { errorHandler } from './middlewares/errorHandler';
 import { createBlogRouter } from './routes/blogs/createBlog';
 import { getBlogsRouter } from './routes/blogs/getBlogs';
 import { updateBlogRouter } from './routes/blogs/updateBlog';
+
+env.config();
 
 const app = express();
 app.use(express.json());

@@ -10,6 +10,8 @@ import { errorHandler } from './middlewares/errorHandler';
 import { createBlogRouter } from './routes/blogs/createBlog';
 import { getBlogsRouter } from './routes/blogs/getBlogs';
 import { updateBlogRouter } from './routes/blogs/updateBlog';
+import { getBlogRouter } from './routes/blogs/getBlog';
+import { deleteBlogRouter } from './routes/blogs/deleteBlog';
 
 env.config();
 
@@ -33,8 +35,10 @@ app.get('/api', async (req: Request, res: Response) => {
 });
 
 app.use(getBlogsRouter);
+app.use(getBlogRouter);
 app.use(createBlogRouter);
 app.use(updateBlogRouter);
+app.use(deleteBlogRouter);
 
 app.all('*', async () => {
     throw new NotFoundError();

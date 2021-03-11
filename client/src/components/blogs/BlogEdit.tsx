@@ -40,18 +40,20 @@ class BlogEdit extends React.Component<BlogEditProps> {
         }
 
         return (
-            <div>
-                <h3>Edit blog information</h3>
-                <BlogForm
-                    onSubmit={this.onSubmit}
-                    initialValues={_.pick(
-                        this.props.blog,
-                        'title',
-                        'description',
-                        'url',
-                        'date'
-                    )}
-                />
+            <div className='row'>
+                <div className='col-md-8 order-md-1'>
+                    <h4 className='mb-3'>Edit Blog Information</h4>
+                    <BlogForm
+                        onSubmit={this.onSubmit}
+                        initialValues={_.pick(
+                            this.props.blog,
+                            'title',
+                            'description',
+                            'link',
+                            'date'
+                        )}
+                    />
+                </div>
             </div>
         );
     }

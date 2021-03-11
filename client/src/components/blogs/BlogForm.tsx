@@ -14,6 +14,7 @@ interface BlogFormProps {
 
 interface CustomFieldProps {
     label: string;
+    type: string;
 }
 
 class BlogForm extends Component<
@@ -21,10 +22,11 @@ class BlogForm extends Component<
 > {
     renderError = (meta: WrappedFieldMetaProps) => {
         const { touched, error } = meta;
+        console.log(touched, error);
         if (touched && error) {
             return (
-                <div className='ui error message'>
-                    <div className='header'>{error}</div>
+                <div className='invalid-feedback' style={{ width: '100%' }}>
+                    {error}
                 </div>
             );
         }
@@ -32,28 +34,28 @@ class BlogForm extends Component<
 
     renderInput = ({
         input,
+        type,
         label,
         meta,
     }: WrappedFieldProps & CustomFieldProps) => {
-        const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+        const className = `input-group ${
+            meta.error && meta.touched ? 'error' : ''
+        }`;
 
         return (
-            <div className={className}>
-                <label>{label}</label>
-                <input {...input} autoComplete='off' />
-                {this.renderError(meta)}
-            </div>
-        );
-    };
-
-    renderDatepicker = ({
-        input,
-        label,
-    }: WrappedFieldProps & CustomFieldProps) => {
-        return (
-            <div className='field'>
-                <label>{label}</label>
-                <input {...input} type='date' />
+            <div className='mb-3'>
+                <div className={className}>
+                    <label>
+                        {label}
+                        <input
+                            {...input}
+                            type={type}
+                            className='form-control'
+                            autoComplete='off'
+                        />
+                        {this.renderError(meta)}
+                    </label>
+                </div>
             </div>
         );
     };
@@ -66,7 +68,7 @@ class BlogForm extends Component<
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
-                className='ui form error'
+                className='needs-validation'
             >
                 <Field
                     name='title'
@@ -85,10 +87,11 @@ class BlogForm extends Component<
                 />
                 <Field
                     name='date'
-                    component={this.renderDatepicker}
+                    component={this.renderInput}
                     label='Enter published date'
+                    type='date'
                 />
-                <button className='ui button primary'>Submit</button>
+                <button className='btn btn-primary'>Submit</button>
             </form>
         );
     }

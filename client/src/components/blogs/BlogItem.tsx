@@ -1,7 +1,6 @@
 import { Blog } from '../../models/Blog';
 import dateFormat from 'dateformat';
 import React from 'react';
-import BlogButtons from './BlogButtons';
 
 interface Props {
     blog: Blog;

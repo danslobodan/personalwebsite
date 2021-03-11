@@ -60,7 +60,7 @@ const mapStateToProps = (state: RootState) => {
     const { auth, blogs } = state;
     const { isAdmin } = auth;
     return {
-        isAdmin: isAdmin,
+        isAdmin: true,
         blogs: Object.values(blogs),
     };
 };

@@ -7,7 +7,7 @@ interface SignInButtonProps {
 
 const SignInButton: React.FC<SignInButtonProps> = ({ text, onClick }) => {
     return (
-        <button className='ui red google button' onClick={onClick}>
+        <button type='button' className='btn btn-danger' onClick={onClick}>
             <i className='google icon' />
             {text}
         </button>

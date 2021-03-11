@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { signIn, signOut } from '../state';
-import CLIENT_ID from '../secrets/GoogleOAuthKey';
+import { signIn, signOut } from '../../state';
 import SignInButton from './SignInButton';
-import { RootState } from '../state';
+import { RootState } from '../../state';
 
 interface OwnProps {}
 
@@ -25,7 +24,7 @@ class GoogleAuth extends React.Component<GoogleAuthProps> {
         // window.gapi.load('client:auth2', () => {
         //     window.gapi.client
         //         .init({
-        //             clientId: CLIENT_ID,
+        //             clientId: process.env.CLIENT_ID,
         //             scope: 'email',
         //         })
         //         .then(() => {

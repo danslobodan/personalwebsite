@@ -5,6 +5,6 @@ export interface Blog extends BlogFields {
 export interface BlogFields {
     title: string;
     description: string;
-    url: string;
+    link: string;
     date: Date;
 }

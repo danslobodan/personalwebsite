@@ -14,12 +14,6 @@ interface StateProps {
     isAdmin: boolean;
 }
 
-const initialState = {
-    blogs: [],
-    isSignedIn: false,
-    isAdmin: false,
-};
-
 type BlogListProps = DispatchProps & StateProps;
 
 class BlogList extends React.Component<BlogListProps> {
@@ -59,7 +53,7 @@ class BlogList extends React.Component<BlogListProps> {
                     {this.renderAdmin(blog)}
                     <i className='large middle aligned icon edit' />
                     <div className='content'>
-                        <a href={blog.url} className='header'>
+                        <a href={blog.link} className='header'>
                             {blog.title}
                         </a>
                         <div className='description'>{blog.description}</div>

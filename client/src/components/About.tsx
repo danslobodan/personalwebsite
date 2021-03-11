@@ -7,9 +7,10 @@ const About: React.FC = () => {
                 <div className='ui row'>
                     <div className='column four wide'>
                         <img
-                            className='ui small circular image'
+                            className='rounded-circle'
                             src='CV2.jpg'
-                            alt='CV picture'
+                            width='140'
+                            height='140'
                         />
                         <div className='ui list'>
                             <div className='item'>

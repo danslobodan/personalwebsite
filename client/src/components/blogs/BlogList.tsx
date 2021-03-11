@@ -14,12 +14,6 @@ interface StateProps {
     isAdmin: boolean;
 }
 
-const initialState = {
-    blogs: [],
-    isSignedIn: false,
-    isAdmin: false,
-};
-
 type BlogListProps = DispatchProps & StateProps;
 
 class BlogList extends React.Component<BlogListProps> {

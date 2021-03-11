@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { signIn, signOut } from '../state';
+import { signIn, signOut } from '../../state';
 import SignInButton from './SignInButton';
-import { RootState } from '../state';
+import { RootState } from '../../state';
 
 interface OwnProps {}
 

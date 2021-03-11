@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
+import BlogItem from './BlogItem';
+import BlogButtons from './BlogButtons';
 
 interface DispatchProps {
     getBlogs(): void;
@@ -10,7 +12,6 @@ interface DispatchProps {
 
 interface StateProps {
     blogs: Blog[];
-    isSignedIn: boolean;
     isAdmin: boolean;
 }
 
@@ -21,46 +22,15 @@ class BlogList extends React.Component<BlogListProps> {
         this.props.getBlogs();
     }
 
-    renderAdmin = (blog: Blog) => {
+    renderAdmin = (id: string) => {
         if (this.props.isAdmin) {
-            return (
-                <div className='right floated content'>
-                    <Link
-                        to={`/blogs/edit/${blog.id}`}
-                        className='ui button primary'
-                    >
-                        Edit
-                    </Link>
-                    <Link
-                        to={`/blogs/delete/${blog.id}`}
-                        className='ui button negative'
-                    >
-                        Delete
-                    </Link>
-                </div>
-            );
+            return <BlogButtons id={id} />;
         }
     };
 
     renderList = () => {
         return this.props.blogs.map((blog) => {
-            const publishedDate = blog.date
-                ? `Published on: ${blog.date}`
-                : 'Unpublished';
-
-            return (
-                <div className='item' key={blog.id}>
-                    {this.renderAdmin(blog)}
-                    <i className='large middle aligned icon edit' />
-                    <div className='content'>
-                        <a href={blog.link} className='header'>
-                            {blog.title}
-                        </a>
-                        <div className='description'>{blog.description}</div>
-                        <div className='extra'>{publishedDate}</div>
-                    </div>
-                </div>
-            );
+            return <BlogItem blog={blog}>{this.renderAdmin(blog.id)}</BlogItem>;
         });
     };
 
@@ -68,7 +38,7 @@ class BlogList extends React.Component<BlogListProps> {
         if (this.props.isAdmin) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link className='ui button primary' to='/blogs/create'>
+                    <Link className='btn btn-primary' to='/blogs/create'>
                         Create Blog
                     </Link>
                 </div>
@@ -78,8 +48,8 @@ class BlogList extends React.Component<BlogListProps> {
 
     render() {
         return (
-            <div>
-                <div className='ui celled list'>{this.renderList()}</div>
+            <div className='container'>
+                <div className='row mb-2'>{this.renderList()}</div>
                 {this.renderCreate()}
             </div>
         );
@@ -88,9 +58,8 @@ class BlogList extends React.Component<BlogListProps> {
 
 const mapStateToProps = (state: RootState) => {
     const { auth, blogs } = state;
-    const { isSignedIn, isAdmin } = auth;
+    const { isAdmin } = auth;
     return {
-        isSignedIn: isSignedIn,
         isAdmin: isAdmin,
         blogs: Object.values(blogs),
     };

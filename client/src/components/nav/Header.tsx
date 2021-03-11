@@ -7,8 +7,8 @@ import Toggler from './Toggler';
 
 const Header: React.FC = () => {
     return (
-        <header className='ts header'>
-            <nav className='navbar navbar-expand-md navbar-dark fixed-top bg-dark bg-primary'>
+        <header className='ta-header'>
+            <nav className='navbar navbar-expand-md navbar-dark fixed-top bg-dark ta-bg-primary'>
                 <Brand />
                 <Toggler />
                 <div className='collapse navbar-collapse' id='navbarCollapse'>

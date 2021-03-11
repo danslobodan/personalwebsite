@@ -1,5 +1,3 @@
-import './Tenet.css';
-
 interface Props {
     title: string;
 }

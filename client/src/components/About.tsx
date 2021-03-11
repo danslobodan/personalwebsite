@@ -5,7 +5,11 @@ const About: React.FC = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col-md-5'>
-                    <img src='CV2.jpg' className='rounded' width='200' />
+                    <img
+                        src='CV2.jpg'
+                        width='200'
+                        style={{ borderRadius: '50px' }}
+                    />
                     <div className='ui list'>
                         <div className='item'>
                             <i className='users icon' />

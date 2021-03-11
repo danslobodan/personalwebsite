@@ -18,9 +18,11 @@ class BlogCreate extends React.Component<BlogCreateProps> {
 
     render() {
         return (
-            <div>
-                <h3>Create new blog</h3>
-                <BlogForm onSubmit={this.onSubmit} />
+            <div className='row'>
+                <div className='col-md-8 order-md-1'>
+                    <h4 className='mb-3'>Create new blog</h4>
+                    <BlogForm onSubmit={this.onSubmit} />
+                </div>
             </div>
         );
     }

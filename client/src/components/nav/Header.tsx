@@ -1,3 +1,4 @@
+import './Header.css';
 import React from 'react';
 import Brand from './Brand';
 import NavMenuItem from './NavMenuItem';
@@ -6,8 +7,8 @@ import Toggler from './Toggler';
 
 const Header: React.FC = () => {
     return (
-        <header>
-            <nav className='navbar navbar-expand-md navbar-dark fixed-top bg-dark'>
+        <header className='ts header'>
+            <nav className='navbar navbar-expand-md navbar-dark fixed-top bg-dark bg-primary'>
                 <Brand />
                 <Toggler />
                 <div className='collapse navbar-collapse' id='navbarCollapse'>

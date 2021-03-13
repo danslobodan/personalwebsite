@@ -2,25 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 interface Props {
-    id: string;
     title: string;
-    content: string;
+    content: JSX.Element | string;
+    controls: JSX.Element;
 }
 
-const Modal: React.FC<Props> = ({ id, title, content, children }) => {
+const Modal: React.FC<Props> = ({ title, content, controls }) => {
     return ReactDOM.createPortal(
         <div
             className='modal fade'
-            id={id}
+            id='modalDialog'
             tabIndex={-1}
             role='dialog'
-            aria-labelledby='exampleModalLabel'
+            aria-labelledby='modalDialogLabel'
             aria-hidden='true'
         >
             <div className='modal-dialog' role='document'>
                 <div className='modal-content'>
                     <div className='modal-header'>
-                        <h5 className='modal-title' id='exampleModalLabel'>
+                        <h5 className='modal-title' id='modalDialogLabel'>
                             {title}
                         </h5>
                         <button
@@ -33,7 +33,7 @@ const Modal: React.FC<Props> = ({ id, title, content, children }) => {
                         </button>
                     </div>
                     <div className='modal-body'>{content}</div>
-                    <div className='modal-footer'>{children}</div>
+                    <div className='modal-footer'>{controls}</div>
                 </div>
             </div>
         </div>,

@@ -4,7 +4,7 @@ interface Props {
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const ModalButton: React.FC<Props> = ({ text, classType, onClick }) => {
+export const ModalButton: React.FC<Props> = ({ text, classType, onClick }) => {
     return (
         <button
             onClick={onClick}
@@ -16,5 +16,3 @@ const ModalButton: React.FC<Props> = ({ text, classType, onClick }) => {
         </button>
     );
 };
-
-export default ModalButton;

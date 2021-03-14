@@ -4,8 +4,7 @@ import { Blog } from '../../models/Blog';
 
 import { deleteBlog } from '../../state';
 import { RootState } from '../../state';
-import Modal from '../form/modal/Modal';
-import ModalButton from '../form/modal/ModalButton';
+import { Modal, ModalButton } from '../form/modal';
 
 interface OwnProps {
     blog: Blog;

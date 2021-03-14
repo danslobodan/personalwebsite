@@ -4,7 +4,11 @@ interface Props {
     onClick(): void;
 }
 
-const ShowModalButton: React.FC<Props> = ({ text, buttonType, onClick }) => {
+export const ShowModalButton: React.FC<Props> = ({
+    text,
+    buttonType,
+    onClick,
+}) => {
     return (
         <button
             type='button'
@@ -17,5 +21,3 @@ const ShowModalButton: React.FC<Props> = ({ text, buttonType, onClick }) => {
         </button>
     );
 };
-
-export default ShowModalButton;

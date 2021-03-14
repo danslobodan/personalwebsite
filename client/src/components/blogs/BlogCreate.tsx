@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import BlogForm from './BlogForm';
 import { createBlog } from '../../state';
 import { BlogFields } from '../../models/Blog';
-import Modal from '../form/modal/Modal';
+import { Modal } from '../form/modal';
 
 interface DispatchProps {
     createBlog(formValues: BlogFields): void;

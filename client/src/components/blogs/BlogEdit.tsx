@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import BlogForm from './BlogForm';
 import { editBlog } from '../../state';
 import { Blog, BlogFields } from '../../models/Blog';
-import Modal from '../form/modal/Modal';
+import { Modal } from '../form/modal';
 
 interface OwnProps {
     blog: Blog;

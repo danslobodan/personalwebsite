@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
+import { ShowModalButton } from '../form/modal';
 import BlogItem from './BlogItem';
 import BlogDelete from './BlogDelete';
-import ShowModalButton from '../form/modal/ShowModalButton';
 import BlogEdit from './BlogEdit';
 import BlogCreate from './BlogCreate';
 

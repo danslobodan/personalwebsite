@@ -1,8 +1,7 @@
 import { Component } from 'react';
 import { BlogFields } from '../../models/Blog';
 import { Form, Field } from 'react-final-form';
-import TextInput from '../form/TextInput';
-import DateInput from '../form/DateInput';
+import { TextInput, DateInput } from '../form/inputs';
 
 interface BlogFormProps {
     id: string;

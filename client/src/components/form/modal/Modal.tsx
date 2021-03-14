@@ -7,7 +7,7 @@ interface Props {
     controls: JSX.Element;
 }
 
-const Modal: React.FC<Props> = ({ title, content, controls }) => {
+export const Modal: React.FC<Props> = ({ title, content, controls }) => {
     return ReactDOM.createPortal(
         <div
             className='modal fade'
@@ -40,5 +40,3 @@ const Modal: React.FC<Props> = ({ title, content, controls }) => {
         document.body
     );
 };
-
-export default Modal;

@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
 import BlogItem from './BlogItem';
-import Modal from '../form/modal/Modal';
-import ModalButton from '../form/modal/ModalButton';
+import BlogDelete from './BlogDelete';
+import ShowModalButton from '../form/modal/ShowModalButton';
 
 interface DispatchProps {
     getBlogs(): void;
@@ -17,15 +16,17 @@ interface StateProps {
 }
 
 interface State {
-    activeBlog: string;
+    modal: JSX.Element;
 }
+
+const initialState = {
+    modal: <div></div>,
+};
 
 type BlogListProps = DispatchProps & StateProps;
 
 class BlogList extends React.Component<BlogListProps, State, {}> {
-    state = {
-        activeBlog: '',
-    };
+    state = initialState;
 
     componentDidMount() {
         this.props.getBlogs();
@@ -35,24 +36,29 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
         if (this.props.isAdmin) {
             return (
                 <div className='d-flex flex-row-reverse'>
-                    <button
-                        type='button'
-                        className='btn btn-danger'
-                        data-toggle='modal'
-                        data-target='#modalDialog'
-                        onClick={() => this.setState({ activeBlog: id })}
-                    >
-                        Delete
-                    </button>
-                    <button
-                        type='button'
-                        className='btn btn-primary'
-                        data-toggle='modal'
-                        data-target='#modalDialog'
-                        onClick={() => this.setState({ activeBlog: id })}
-                    >
-                        Edit
-                    </button>
+                    <ShowModalButton
+                        text='Delete'
+                        buttonType='danger'
+                        onClick={() =>
+                            this.setState({
+                                modal: (
+                                    <BlogDelete
+                                        id={id}
+                                        title={this.props.blogs[id]?.title}
+                                    />
+                                ),
+                            })
+                        }
+                    />
+                    <ShowModalButton
+                        text='Edit'
+                        buttonType='primary'
+                        onClick={() =>
+                            this.setState({
+                                modal: <div>Edit Modal</div>,
+                            })
+                        }
+                    />
                 </div>
             );
         }
@@ -68,30 +74,18 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
         if (this.props.isAdmin) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link className='btn btn-primary' to='/blogs/create'>
-                        Create Blog
-                    </Link>
+                    <ShowModalButton
+                        text='Create Blog'
+                        buttonType='primary'
+                        onClick={() =>
+                            this.setState({
+                                modal: <div>Create Modal</div>,
+                            })
+                        }
+                    />
                 </div>
             );
         }
-    };
-
-    renderContent = (id: string) => {
-        const title = this.props.blogs[id]?.title;
-        return `Are you sure you want to delete ${title}?`;
-    };
-
-    renderControls = () => {
-        return (
-            <>
-                <ModalButton text='Cancel' classDecorator='btn-primary' />
-                <ModalButton
-                    text='Delete'
-                    classDecorator='btn-danger'
-                    onClick={() => console.log('Delete!')}
-                />
-            </>
-        );
     };
 
     render() {
@@ -99,11 +93,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
             <div className='container'>
                 <div className='row mb-2'>{this.renderList()}</div>
                 {this.renderCreate()}
-                <Modal
-                    title='Delete modal'
-                    content={this.renderContent(this.state.activeBlog)}
-                    controls={this.renderControls()}
-                />
+                {this.state.modal}
             </div>
         );
     }

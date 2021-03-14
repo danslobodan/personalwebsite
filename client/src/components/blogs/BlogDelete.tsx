@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 
 import { deleteBlog } from '../../state';
 import { RootState } from '../../state';
+import Modal from '../form/modal/Modal';
 import ModalButton from '../form/modal/ModalButton';
 
 interface OwnProps {
     id: string;
+    title: string;
 }
 
 interface DispatchProps {
@@ -20,17 +22,32 @@ class BlogDelete extends React.Component<BlogDeleteProps> {
         this.props.deleteBlog(this.props.id);
     }
 
-    render() {
+    renderContent = () => {
+        const title = this.props.title;
+        const content = `Are you sure you want to delete ${title}?`;
+        return <div>{content}</div>;
+    };
+
+    renderControls = () => {
         return (
-            <div>
-                <div>Are you sure you want to delete this blog?</div>
+            <>
                 <ModalButton text='Cancel' classDecorator='btn-primary' />
                 <ModalButton
                     text='Delete'
                     classDecorator='btn-danger'
-                    onClick={this.onClick}
+                    onClick={() => console.log('Delete!')}
                 />
-            </div>
+            </>
+        );
+    };
+
+    render() {
+        return (
+            <Modal
+                title='Delete Blog'
+                content={this.renderContent()}
+                controls={this.renderControls()}
+            />
         );
     }
 }

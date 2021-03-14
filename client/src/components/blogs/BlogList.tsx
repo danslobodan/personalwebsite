@@ -65,7 +65,11 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
 
     renderList = () => {
         return Object.values(this.props.blogs).map((blog) => {
-            return <BlogItem blog={blog}>{this.renderAdmin(blog.id)}</BlogItem>;
+            return (
+                <BlogItem key={blog.id} blog={blog}>
+                    {this.renderAdmin(blog.id)}
+                </BlogItem>
+            );
         });
     };
 

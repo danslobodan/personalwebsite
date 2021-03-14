@@ -10,7 +10,7 @@ import Modal from '../form/modal/Modal';
 import ModalButton from '../form/modal/ModalButton';
 
 interface OwnProps {
-    id: string;
+    blog: Blog;
 }
 
 interface DispatchProps {
@@ -18,19 +18,15 @@ interface DispatchProps {
     editBlog(id: string, formValues: BlogFields): void;
 }
 
-interface StateProps {
-    blog: Blog;
-}
-
-type BlogEditProps = StateProps & DispatchProps & OwnProps;
+type BlogEditProps = DispatchProps & OwnProps;
 
 class BlogEdit extends React.Component<BlogEditProps> {
     componentDidMount() {
-        this.props.getBlog(this.props.id);
+        this.props.getBlog(this.props.blog.id);
     }
 
     onSubmit = (formValues: BlogFields) => {
-        this.props.editBlog(this.props.id, formValues);
+        this.props.editBlog(this.props.blog.id, formValues);
     };
 
     renderContent = () => {
@@ -38,6 +34,7 @@ class BlogEdit extends React.Component<BlogEditProps> {
             return <div>Loading...</div>;
         }
 
+        console.log(this.props.blog);
         return (
             <BlogForm
                 onSubmit={this.onSubmit}
@@ -67,14 +64,7 @@ class BlogEdit extends React.Component<BlogEditProps> {
     }
 }
 
-const mapStateToProps = (state: RootState, ownProps: OwnProps) => {
-    return { blog: state.blogs[ownProps.id] };
-};
-
-export default connect<StateProps, DispatchProps, OwnProps, RootState>(
-    mapStateToProps,
-    {
-        editBlog,
-        getBlog,
-    }
-)(BlogEdit);
+export default connect<{}, DispatchProps, OwnProps, RootState>(null, {
+    editBlog,
+    getBlog,
+})(BlogEdit);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Blog } from '../../models/Blog';
 
 import { deleteBlog } from '../../state';
 import { RootState } from '../../state';
@@ -7,8 +8,7 @@ import Modal from '../form/modal/Modal';
 import ModalButton from '../form/modal/ModalButton';
 
 interface OwnProps {
-    id: string;
-    title: string;
+    blog: Blog;
 }
 
 interface DispatchProps {
@@ -19,11 +19,11 @@ type BlogDeleteProps = OwnProps & DispatchProps;
 
 class BlogDelete extends React.Component<BlogDeleteProps> {
     onClick() {
-        this.props.deleteBlog(this.props.id);
+        this.props.deleteBlog(this.props.blog.id);
     }
 
     renderContent = () => {
-        const title = this.props.title;
+        const title = this.props.blog.title;
         const content = `Are you sure you want to delete ${title}?`;
         return <div>{content}</div>;
     };

@@ -44,10 +44,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
                         onClick={() =>
                             this.setState({
                                 modal: (
-                                    <BlogDelete
-                                        id={id}
-                                        title={this.props.blogs[id]?.title}
-                                    />
+                                    <BlogDelete blog={this.props.blogs[id]} />
                                 ),
                             })
                         }
@@ -57,7 +54,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
                         buttonType='primary'
                         onClick={() =>
                             this.setState({
-                                modal: <BlogEdit id={id} />,
+                                modal: <BlogEdit blog={this.props.blogs[id]} />,
                             })
                         }
                     />

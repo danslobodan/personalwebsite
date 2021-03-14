@@ -1,15 +1,16 @@
 interface Props {
     text: string;
-    buttonType: string;
+    type?: 'button' | 'submit' | 'reset';
+    classType: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const ModalButton: React.FC<Props> = ({ text, buttonType, onClick }) => {
+const ModalButton: React.FC<Props> = ({ text, type, classType, onClick }) => {
     return (
         <button
             onClick={onClick}
-            type='button'
-            className={`btn btn-${buttonType}`}
+            type={type}
+            className={`btn btn-${classType}`}
             data-dismiss='modal'
         >
             {text}

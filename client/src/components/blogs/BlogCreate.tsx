@@ -23,7 +23,7 @@ class BlogCreate extends React.Component<BlogCreateProps> {
     };
 
     renderControls = () => {
-        return <ModalButton text='Submit' buttonType='primary' />;
+        return <ModalButton text='Submit' type='submit' classType='primary' />;
     };
 
     render() {

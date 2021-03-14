@@ -1,30 +1,22 @@
-import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
 
 import BlogForm from './BlogForm';
-import { editBlog, getBlog } from '../../state';
-import { RootState } from '../../state';
+import { editBlog } from '../../state';
 import { Blog, BlogFields } from '../../models/Blog';
 import Modal from '../form/modal/Modal';
-import ModalButton from '../form/modal/ModalButton';
 
 interface OwnProps {
     blog: Blog;
 }
 
 interface DispatchProps {
-    getBlog(id: string): void;
     editBlog(id: string, formValues: BlogFields): void;
 }
 
 type BlogEditProps = DispatchProps & OwnProps;
 
 class BlogEdit extends React.Component<BlogEditProps> {
-    componentDidMount() {
-        this.props.getBlog(this.props.blog.id);
-    }
-
     onSubmit = (formValues: BlogFields) => {
         this.props.editBlog(this.props.blog.id, formValues);
     };
@@ -32,6 +24,7 @@ class BlogEdit extends React.Component<BlogEditProps> {
     renderContent = () => {
         return (
             <BlogForm
+                id='edit'
                 onSubmit={this.onSubmit}
                 initialValues={this.props.blog}
             />
@@ -39,7 +32,11 @@ class BlogEdit extends React.Component<BlogEditProps> {
     };
 
     renderControls = () => {
-        return <ModalButton text='Submit' type='submit' classType='primary' />;
+        return (
+            <button className='btn btn-primary' type='submit'>
+                Submit
+            </button>
+        );
     };
 
     render() {
@@ -53,7 +50,6 @@ class BlogEdit extends React.Component<BlogEditProps> {
     }
 }
 
-export default connect<{}, DispatchProps, OwnProps, RootState>(null, {
+export default connect(null, {
     editBlog,
-    getBlog,
 })(BlogEdit);

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import BlogForm from './BlogForm';
 import { createBlog } from '../../state';
 import { BlogFields } from '../../models/Blog';
-import ModalButton from '../form/modal/ModalButton';
 import Modal from '../form/modal/Modal';
 
 interface DispatchProps {
@@ -19,11 +18,15 @@ class BlogCreate extends React.Component<BlogCreateProps> {
     };
 
     renderContent = () => {
-        return <BlogForm onSubmit={this.onSubmit} />;
+        return <BlogForm id='create' onSubmit={this.onSubmit} />;
     };
 
     renderControls = () => {
-        return <ModalButton text='Submit' type='submit' classType='primary' />;
+        return (
+            <button form='form' className='btn btn-primary' type='submit'>
+                Submit
+            </button>
+        );
     };
 
     render() {

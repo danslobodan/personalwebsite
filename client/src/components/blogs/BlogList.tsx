@@ -5,6 +5,8 @@ import { Blog } from '../../models/Blog';
 import BlogItem from './BlogItem';
 import BlogDelete from './BlogDelete';
 import ShowModalButton from '../form/modal/ShowModalButton';
+import BlogEdit from './BlogEdit';
+import BlogCreate from './BlogCreate';
 
 interface DispatchProps {
     getBlogs(): void;
@@ -55,7 +57,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
                         buttonType='primary'
                         onClick={() =>
                             this.setState({
-                                modal: <div>Edit Modal</div>,
+                                modal: <BlogEdit id={id} />,
                             })
                         }
                     />
@@ -79,7 +81,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
                         buttonType='primary'
                         onClick={() =>
                             this.setState({
-                                modal: <div>Create Modal</div>,
+                                modal: <BlogCreate />,
                             })
                         }
                     />

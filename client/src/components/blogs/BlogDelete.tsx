@@ -31,11 +31,11 @@ class BlogDelete extends React.Component<BlogDeleteProps> {
     renderControls = () => {
         return (
             <>
-                <ModalButton text='Cancel' classDecorator='btn-primary' />
+                <ModalButton text='Cancel' buttonType='primary' />
                 <ModalButton
                     text='Delete'
-                    classDecorator='btn-danger'
-                    onClick={() => console.log('Delete!')}
+                    buttonType='danger'
+                    onClick={this.onClick}
                 />
             </>
         );

@@ -1,18 +1,17 @@
 import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
-import { RouteComponentProps } from 'react-router-dom';
 
 import BlogForm from './BlogForm';
 import { editBlog, getBlog } from '../../state';
 import { RootState } from '../../state';
 import { Blog, BlogFields } from '../../models/Blog';
+import Modal from '../form/modal/Modal';
+import ModalButton from '../form/modal/ModalButton';
 
-interface MatchParams {
+interface OwnProps {
     id: string;
 }
-
-interface OwnProps extends RouteComponentProps<MatchParams> {}
 
 interface DispatchProps {
     getBlog(id: string): void;
@@ -27,40 +26,49 @@ type BlogEditProps = StateProps & DispatchProps & OwnProps;
 
 class BlogEdit extends React.Component<BlogEditProps> {
     componentDidMount() {
-        this.props.getBlog(this.props.match.params.id);
+        this.props.getBlog(this.props.id);
     }
 
     onSubmit = (formValues: BlogFields) => {
-        this.props.editBlog(this.props.match.params.id, formValues);
+        this.props.editBlog(this.props.id, formValues);
     };
 
-    render() {
+    renderContent = () => {
         if (!this.props.blog) {
             return <div>Loading...</div>;
         }
 
         return (
-            <div className='row'>
-                <div className='col-md-8 order-md-1'>
-                    <h4 className='mb-3'>Edit Blog Information</h4>
-                    <BlogForm
-                        onSubmit={this.onSubmit}
-                        initialValues={_.pick(
-                            this.props.blog,
-                            'title',
-                            'description',
-                            'link',
-                            'date'
-                        )}
-                    />
-                </div>
-            </div>
+            <BlogForm
+                onSubmit={this.onSubmit}
+                initialValues={_.pick(
+                    this.props.blog,
+                    'title',
+                    'description',
+                    'link',
+                    'date'
+                )}
+            />
+        );
+    };
+
+    renderControls = () => {
+        return <ModalButton text='Submit' buttonType='primary' />;
+    };
+
+    render() {
+        return (
+            <Modal
+                title='Edit Blog'
+                content={this.renderContent()}
+                controls={this.renderControls()}
+            />
         );
     }
 }
 
 const mapStateToProps = (state: RootState, ownProps: OwnProps) => {
-    return { blog: state.blogs[ownProps.match.params.id] };
+    return { blog: state.blogs[ownProps.id] };
 };
 
 export default connect<StateProps, DispatchProps, OwnProps, RootState>(

@@ -1,15 +1,15 @@
 interface Props {
     text: string;
-    classDecorator: string;
+    buttonType: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const ModalButton: React.FC<Props> = ({ text, classDecorator, onClick }) => {
+const ModalButton: React.FC<Props> = ({ text, buttonType, onClick }) => {
     return (
         <button
             onClick={onClick}
             type='button'
-            className={`btn ${classDecorator}`}
+            className={`btn btn-${buttonType}`}
             data-dismiss='modal'
         >
             {text}

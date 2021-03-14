@@ -91,7 +91,6 @@ class BlogForm extends Component<
                     label='Enter published date'
                     type='date'
                 />
-                <button className='btn btn-primary'>Submit</button>
             </form>
         );
     }

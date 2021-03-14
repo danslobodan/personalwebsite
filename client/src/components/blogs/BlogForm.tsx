@@ -22,7 +22,6 @@ class BlogForm extends Component<
 > {
     renderError = (meta: WrappedFieldMetaProps) => {
         const { touched, error } = meta;
-        console.log(touched, error);
         if (touched && error) {
             return (
                 <div className='invalid-feedback' style={{ width: '100%' }}>

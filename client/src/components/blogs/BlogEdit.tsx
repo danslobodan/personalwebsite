@@ -30,21 +30,10 @@ class BlogEdit extends React.Component<BlogEditProps> {
     };
 
     renderContent = () => {
-        if (!this.props.blog) {
-            return <div>Loading...</div>;
-        }
-
-        console.log(this.props.blog);
         return (
             <BlogForm
                 onSubmit={this.onSubmit}
-                initialValues={_.pick(
-                    this.props.blog,
-                    'title',
-                    'description',
-                    'link',
-                    'date'
-                )}
+                initialValues={this.props.blog}
             />
         );
     };

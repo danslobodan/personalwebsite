@@ -18,10 +18,7 @@ const Header: React.FC = () => {
                         <NavMenuItem label='About' to='/about' />
                     </ul>
                     <div className='mt-2 mt-md-0'>
-                        <SignInButton
-                            text='Sign In'
-                            onClick={(e) => console.log('sign in')}
-                        />
+                        <SignInButton />
                     </div>
                 </div>
             </nav>

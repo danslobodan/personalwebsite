@@ -1,24 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signIn } from '../../state';
+import { signOut } from '../../state';
 
 interface DispatchProps {
-    signIn(): void;
+    signOut(): void;
 }
 
-class SignInButton extends React.Component<DispatchProps> {
+class SignOutButton extends React.Component<DispatchProps> {
     render() {
         return (
             <button
                 type='button'
                 className='btn btn-danger'
-                onClick={this.props.signIn}
+                onClick={this.props.signOut}
             >
                 <i className='google icon' />
-                Sign In
+                Sign Out
             </button>
         );
     }
 }
 
-export default connect(null, { signIn })(SignInButton);
+export default connect(null, { signOut })(SignOutButton);

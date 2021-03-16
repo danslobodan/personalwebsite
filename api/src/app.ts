@@ -14,6 +14,7 @@ import { getBlogRouter } from './routes/blogs/getBlog';
 import { deleteBlogRouter } from './routes/blogs/deleteBlog';
 import { signinRouter } from './routes/auth/signin';
 import { signoutRouter } from './routes/auth/signout';
+import { routeLogger } from './middlewares/routeLogger';
 
 declare global {
     namespace Express {
@@ -44,6 +45,8 @@ app.use(passport.session());
 app.get('/api', async (req: Request, res: Response) => {
     return res.status(200).send({ message: 'Health Check OK' });
 });
+
+app.use(routeLogger);
 
 app.use(signinRouter);
 app.use(signoutRouter);

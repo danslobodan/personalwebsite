@@ -4,6 +4,14 @@ import { User } from '../models/user';
 import env from 'dotenv';
 env.config();
 
+declare global {
+    namespace Express {
+        interface User {
+            id: string;
+        }
+    }
+}
+
 passport.use(
     new OAuth2Strategy(
         {

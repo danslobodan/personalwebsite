@@ -9,14 +9,14 @@ interface DispatchProps {
 class SignInButton extends React.Component<DispatchProps> {
     render() {
         return (
-            <button
+            <a
+                href='http://localhost:5000/api/auth/google'
                 type='button'
                 className='btn btn-danger'
-                onClick={this.props.signIn}
             >
                 <i className='google icon' />
                 Sign In
-            </button>
+            </a>
         );
     }
 }

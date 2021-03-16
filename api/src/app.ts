@@ -10,14 +10,6 @@ import { errorHandler } from './middlewares/errorHandler';
 import { routeLogger } from './middlewares/routeLogger';
 import { routes } from './routes';
 
-declare global {
-    namespace Express {
-        interface User {
-            id: string;
-        }
-    }
-}
-
 env.config();
 
 const app = express();

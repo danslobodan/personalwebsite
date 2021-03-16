@@ -11,10 +11,9 @@ const Home: React.FC = () => {
                 </p>
             </div>
             <Tenet title='Master Programmer'>
-                The true architect always practices creating and modifying
-                models. He seeks to understand the business, the users and his
-                team, to unite the three in the model they all understand and
-                agree upon.
+                He has can singlehandedly create a prototype of the product he
+                designed, including writing code, setting up infrastructure and
+                deployment pipeline, and writing documentation.
             </Tenet>
             <Tenet title='Inventive Designer'>
                 The true architect always practices creating and modifying

@@ -5,6 +5,6 @@ import { signOutRouter } from './signout';
 
 const router = express.Router();
 
-router.use('/api/auth', [signInRouter, signOutRouter]);
+router.use('/auth', [signInRouter, signOutRouter]);
 
 export { router as authRouter };

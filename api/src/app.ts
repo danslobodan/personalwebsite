@@ -7,14 +7,8 @@ import env from 'dotenv';
 
 import { NotFoundError } from './errors/notFoundError';
 import { errorHandler } from './middlewares/errorHandler';
-import { createBlogRouter } from './routes/blogs/createBlog';
-import { getBlogsRouter } from './routes/blogs/getBlogs';
-import { updateBlogRouter } from './routes/blogs/updateBlog';
-import { getBlogRouter } from './routes/blogs/getBlog';
-import { deleteBlogRouter } from './routes/blogs/deleteBlog';
-import { signinRouter } from './routes/auth/signin';
-import { signoutRouter } from './routes/auth/signout';
 import { routeLogger } from './middlewares/routeLogger';
+import { routes } from './routes';
 
 declare global {
     namespace Express {
@@ -48,14 +42,7 @@ app.get('/api', async (req: Request, res: Response) => {
 
 app.use(routeLogger);
 
-app.use(signinRouter);
-app.use(signoutRouter);
-
-app.use(getBlogsRouter);
-app.use(getBlogRouter);
-app.use(createBlogRouter);
-app.use(updateBlogRouter);
-app.use(deleteBlogRouter);
+app.use(routes);
 
 app.all('*', async () => {
     throw new NotFoundError();

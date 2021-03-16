@@ -4,18 +4,18 @@ import passport from 'passport';
 const router = express.Router();
 
 router.get(
-    '/api/auth/google',
+    '/google',
     passport.authenticate('google', {
         scope: ['email', 'profile'],
     })
 );
 
 router.get(
-    '/api/auth/google/callback',
+    '/google/callback',
     passport.authenticate('google', {
         successRedirect: 'http://localhost:3000/',
         failureRedirect: 'http://localhost:3000/auth/error',
     })
 );
 
-export { router as signinRouter };
+export { router as signInRouter };

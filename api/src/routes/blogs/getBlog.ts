@@ -4,7 +4,7 @@ import { Blog } from '../../models/blog';
 
 const router = express.Router();
 
-router.get('/api/blogs/:id', async (req: Request, res: Response) => {
+router.get('/:id', async (req: Request, res: Response) => {
     const blog = await Blog.findById(req.params.id);
 
     if (!blog) {

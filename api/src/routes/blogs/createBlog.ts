@@ -6,7 +6,7 @@ import { Blog } from '../../models/blog';
 const router = express.Router();
 
 router.post(
-    '/api/blogs',
+    '/',
     [
         body('title').notEmpty().withMessage('Title is required'),
         body('description').notEmpty().withMessage('Description is required'),

@@ -12,6 +12,11 @@ const INITIAL_STATE = {
 
 export default (state: AuthState = INITIAL_STATE, action: AuthAction) => {
     switch (action.type) {
+        case AuthActionType.SIGN_IN:
+            return {
+                ...state,
+                currentUser: action.payload,
+            };
         case AuthActionType.GET_CURRENT_USER:
             return {
                 ...state,

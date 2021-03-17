@@ -8,7 +8,7 @@ import { updateBlogRouter } from './updateBlog';
 
 const router = express.Router();
 
-router.use('/api/blogs', [
+router.use('/blogs', [
     createBlogRouter,
     deleteBlogRouter,
     getBlogRouter,

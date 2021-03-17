@@ -5,9 +5,34 @@ import { connect } from 'react-redux';
 import Brand from './Brand';
 import NavMenuItem from './NavMenuItem';
 import SignInButton from './SignInButton';
+import SignOutButton from './SignOutButton';
 import Toggler from './Toggler';
+import { User } from '../../models/User';
+import { RootState, getCurrentUser } from '../../state';
 
-class Header extends React.Component {
+interface StateProps {
+    currentUser: User | null;
+}
+
+interface DispatchProps {
+    getCurrentUser(): void;
+}
+
+type Props = StateProps & DispatchProps;
+
+class Header extends React.Component<Props> {
+    componentDidMount() {
+        this.props.getCurrentUser();
+    }
+
+    renderAuth = () => {
+        if (this.props.currentUser) {
+            return <SignOutButton />;
+        }
+
+        return <SignInButton />;
+    };
+
     render() {
         return (
             <header className='ta-header'>
@@ -33,4 +58,10 @@ class Header extends React.Component {
     }
 }
 
-export default connect(null, {})(Header);
+const mapStateToProps = (state: RootState) => {
+    return {
+        currentUser: state.auth.currentUser,
+    };
+};
+
+export default connect(mapStateToProps, { getCurrentUser })(Header);

@@ -1,20 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getBlogs, RootState } from '../../state';
+import { getCurrentUser, getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
 import { ShowModalButton } from '../form/modal';
 import BlogItem from './BlogItem';
 import BlogDelete from './BlogDelete';
 import BlogEdit from './BlogEdit';
 import BlogCreate from './BlogCreate';
+import { User } from '../../models/User';
 
 interface DispatchProps {
+    getCurrentUser(): void;
     getBlogs(): void;
 }
 
 interface StateProps {
     blogs: { [id: string]: Blog };
-    isAdmin: boolean;
+    currentUser: User | null;
 }
 
 interface State {
@@ -35,7 +37,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
     }
 
     renderAdmin = (id: string) => {
-        if (this.props.isAdmin) {
+        if (this.props.currentUser) {
             return (
                 <div className='d-flex flex-row-reverse'>
                     <ShowModalButton
@@ -74,7 +76,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
     };
 
     renderCreate = () => {
-        if (this.props.isAdmin) {
+        if (this.props.currentUser) {
             return (
                 <div style={{ textAlign: 'right' }}>
                     <ShowModalButton
@@ -104,16 +106,16 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
 
 const mapStateToProps = (state: RootState) => {
     const { auth, blogs } = state;
-    const { isAdmin } = auth;
     return {
-        isAdmin: true,
         blogs,
+        currentUser: auth.currentUser,
     };
 };
 
 export default connect<StateProps, DispatchProps, {}, RootState>(
     mapStateToProps,
     {
+        getCurrentUser,
         getBlogs,
     }
 )(BlogList);

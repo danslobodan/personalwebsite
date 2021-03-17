@@ -30,7 +30,7 @@ export const createBlog = (formValues: BlogFields) => async (
 export const editBlog = (id: string, formValues: BlogFields) => async (
     dispatch: Dispatch<BlogAction>
 ) => {
-    const response = await api.patch(`/blogs/${id}`, formValues);
+    const response = await api.put(`/blogs/${id}`, formValues);
     dispatch({ type: BlogActionType.EDIT_BLOG, payload: response.data });
     history.push('/blogs');
 };

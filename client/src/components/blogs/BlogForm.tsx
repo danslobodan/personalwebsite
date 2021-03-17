@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { BlogFields } from '../../models/Blog';
 import { Form, Field } from 'react-final-form';
 import { TextInput, DateInput } from '../form/inputs';
+import { TextArea } from '../form/inputs/TextArea';
 
 interface BlogFormProps {
     id: string;
@@ -39,6 +40,7 @@ class BlogForm extends Component<BlogFormProps> {
             <Form
                 onSubmit={this.onSubmit}
                 validate={this.validate}
+                initialValues={this.props.initialValues}
                 render={({ handleSubmit }) => (
                     <form id='form' onSubmit={handleSubmit}>
                         <Field
@@ -49,7 +51,7 @@ class BlogForm extends Component<BlogFormProps> {
                         <Field
                             name='description'
                             label='Description'
-                            component={TextInput}
+                            component={TextArea}
                         />
                         <Field name='link' label='Link' component={TextInput} />
                         <Field

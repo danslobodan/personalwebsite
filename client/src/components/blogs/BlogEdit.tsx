@@ -33,7 +33,7 @@ class BlogEdit extends React.Component<BlogEditProps> {
 
     renderControls = () => {
         return (
-            <button className='btn btn-primary' type='submit'>
+            <button form='form' className='btn btn-primary' type='submit'>
                 Submit
             </button>
         );

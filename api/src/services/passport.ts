@@ -20,7 +20,7 @@ passport.use(
             callbackURL: 'http://localhost:5000/api/auth/google/callback',
         },
         async (token, tokenSecret, profile, done) => {
-            console.log('google response', profile);
+            console.log('google response', profile.id, profile.displayName);
             try {
                 if (!profile || !profile.id) {
                     return done(null, false, {

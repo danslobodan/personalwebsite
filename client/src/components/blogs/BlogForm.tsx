@@ -3,6 +3,7 @@ import { BlogFields } from '../../models/Blog';
 import { Form, Field } from 'react-final-form';
 import { TextInput, DateInput } from '../form/inputs';
 import { TextArea } from '../form/inputs/TextArea';
+import dateFormat from 'dateformat';
 
 interface BlogFormProps {
     id: string;
@@ -35,12 +36,27 @@ class BlogForm extends Component<BlogFormProps> {
         return errors;
     };
 
+    pickFields(fields: BlogFields | undefined) {
+        if (!fields) {
+            return {};
+        }
+
+        const { title, description, link, date } = fields;
+
+        return {
+            title,
+            description,
+            link,
+            date: dateFormat(date, 'yyyy-mm-dd'),
+        };
+    }
+
     render() {
         return (
             <Form
                 onSubmit={this.onSubmit}
                 validate={this.validate}
-                initialValues={this.props.initialValues}
+                initialValues={this.pickFields(this.props.initialValues)}
                 render={({ handleSubmit }) => (
                     <form id='form' onSubmit={handleSubmit}>
                         <Field

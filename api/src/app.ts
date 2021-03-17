@@ -22,6 +22,9 @@ app.use(
         resave: false,
         saveUninitialized: true,
         secret: process.env.TOKEN_SECRET!,
+        cookie: {
+            secure: false,
+        },
     })
 );
 
@@ -33,7 +36,6 @@ app.get('/api', async (req: Request, res: Response) => {
 });
 
 app.use(routeLogger);
-
 app.use(routes);
 
 app.all('*', async () => {

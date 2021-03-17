@@ -8,7 +8,11 @@ const getDurationInMilliseconds = (start: [number, number]) => {
     return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS;
 };
 
-const formatOutput = (
+const formatRequestOutput = (req: Request) => {
+    console.log(`${req.method} ${req.url} sessionID ${req.sessionID}`);
+};
+
+const formatResponseOutput = (
     method: string,
     url: string,
     statusCode: number,
@@ -27,16 +31,15 @@ export const routeLogger = (
     const route = req.url;
     const method = req.method;
     const start = process.hrtime();
-
-    console.log('route', route);
+    formatRequestOutput(req);
 
     res.on('finish', () => {
         const miliseconds = getDurationInMilliseconds(start);
-        formatOutput(method, route, res.statusCode, miliseconds);
+        formatResponseOutput(method, route, res.statusCode, miliseconds);
     });
     res.on('close', () => {
         const miliseconds = getDurationInMilliseconds(start);
-        formatOutput(method, route, res.statusCode, miliseconds);
+        formatResponseOutput(method, route, res.statusCode, miliseconds);
     });
     next();
 };

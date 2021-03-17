@@ -45,10 +45,12 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
+    console.log('serialize', user);
     done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
+    console.log('deserialize', id);
     try {
         const user = (await User.findById(id)) as Express.User;
         if (!user) {

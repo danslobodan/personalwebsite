@@ -11,7 +11,7 @@ const Home: React.FC = () => {
                 </p>
             </div>
             <Tenet title='Master Programmer'>
-                He has can singlehandedly create a prototype of the product he
+                He can singlehandedly create a prototype of the product he
                 designed, including writing code, setting up infrastructure and
                 deployment pipeline, and writing documentation.
             </Tenet>

@@ -1,116 +1,85 @@
 import { Component } from 'react';
-import {
-    Field,
-    InjectedFormProps,
-    reduxForm,
-    WrappedFieldMetaProps,
-    WrappedFieldProps,
-} from 'redux-form';
 import { BlogFields } from '../../models/Blog';
+import { Form, Field } from 'react-final-form';
+import { TextInput, DateInput } from '../form/inputs';
+import { TextArea } from '../form/inputs/TextArea';
+import dateFormat from 'dateformat';
 
 interface BlogFormProps {
+    id: string;
+    initialValues?: BlogFields;
     onSubmit: (formValues: BlogFields) => void;
 }
 
-interface CustomFieldProps {
-    label: string;
-}
-
-class BlogForm extends Component<
-    InjectedFormProps<BlogFields, BlogFormProps> & BlogFormProps
-> {
-    renderError = (meta: WrappedFieldMetaProps) => {
-        const { touched, error } = meta;
-        if (touched && error) {
-            return (
-                <div className='ui error message'>
-                    <div className='header'>{error}</div>
-                </div>
-            );
-        }
-    };
-
-    renderInput = ({
-        input,
-        label,
-        meta,
-    }: WrappedFieldProps & CustomFieldProps) => {
-        const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
-
-        return (
-            <div className={className}>
-                <label>{label}</label>
-                <input {...input} autoComplete='off' />
-                {this.renderError(meta)}
-            </div>
-        );
-    };
-
-    renderDatepicker = ({
-        input,
-        label,
-    }: WrappedFieldProps & CustomFieldProps) => {
-        return (
-            <div className='field'>
-                <label>{label}</label>
-                <input {...input} type='date' />
-            </div>
-        );
-    };
-
+class BlogForm extends Component<BlogFormProps> {
     onSubmit = (formValues: BlogFields): void => {
         this.props.onSubmit(formValues);
     };
 
+    validate = (formValues: BlogFields) => {
+        const errors: {
+            title?: string;
+            description?: string;
+            link?: string;
+        } = {};
+
+        if (!formValues.title) {
+            errors.title = 'You must enter a title.';
+        }
+        if (!formValues.description) {
+            errors.description = 'You must enter a description.';
+        }
+        if (!formValues.link) {
+            errors.link = 'You must enter a valid URL.';
+        }
+
+        return errors;
+    };
+
+    pickFields(fields: BlogFields | undefined) {
+        if (!fields) {
+            return {};
+        }
+
+        const { title, description, link, date } = fields;
+
+        return {
+            title,
+            description,
+            link,
+            date: dateFormat(date, 'yyyy-mm-dd'),
+        };
+    }
+
     render() {
         return (
-            <form
-                onSubmit={this.props.handleSubmit(this.onSubmit)}
-                className='ui form error'
-            >
-                <Field
-                    name='title'
-                    component={this.renderInput}
-                    label='Enter Title'
-                />
-                <Field
-                    name='description'
-                    component={this.renderInput}
-                    label='Enter Description'
-                />
-                <Field
-                    name='url'
-                    component={this.renderInput}
-                    label='Enter URL'
-                />
-                <Field
-                    name='date'
-                    component={this.renderDatepicker}
-                    label='Enter published date'
-                />
-                <button className='ui button primary'>Submit</button>
-            </form>
+            <Form
+                onSubmit={this.onSubmit}
+                validate={this.validate}
+                initialValues={this.pickFields(this.props.initialValues)}
+                render={({ handleSubmit }) => (
+                    <form id='form' onSubmit={handleSubmit}>
+                        <Field
+                            name='title'
+                            label='Title'
+                            component={TextInput}
+                        />
+                        <Field
+                            name='description'
+                            label='Description'
+                            component={TextArea}
+                        />
+                        <Field name='link' label='Link' component={TextInput} />
+                        <Field
+                            name='date'
+                            label='Published date'
+                            component={DateInput}
+                        />
+                    </form>
+                )}
+            />
         );
     }
 }
 
-const validate = (formValues: BlogFields) => {
-    const errors: { title?: string; description?: string; link?: string } = {};
-
-    if (!formValues.title) {
-        errors.title = 'You must enter a title.';
-    }
-    if (!formValues.description) {
-        errors.description = 'You must enter a description.';
-    }
-    if (!formValues.link) {
-        errors.link = 'You must enter a URL.';
-    }
-
-    return errors;
-};
-
-export default reduxForm<BlogFields, BlogFormProps>({
-    form: 'blogForm',
-    validate,
-})(BlogForm);
+export default BlogForm;

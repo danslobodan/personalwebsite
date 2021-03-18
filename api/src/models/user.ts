@@ -4,7 +4,7 @@ interface UserAttrs {
     googleId: string;
 }
 
-interface UserDoc extends mongoose.Document {
+export interface UserDoc extends mongoose.Document {
     googleId: string;
 }
 

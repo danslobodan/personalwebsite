@@ -3,7 +3,7 @@ import { Blog } from '../../models/blog';
 
 const router = express.Router();
 
-router.get('/api/blogs', async (req: Request, res: Response) => {
+router.get('/', async (req: Request, res: Response) => {
     const blogs = await Blog.find({});
     res.send(blogs);
 });

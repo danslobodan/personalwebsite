@@ -1,76 +1,93 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { getBlogs, RootState } from '../../state';
+import { getCurrentUser, getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
+import { ShowModalButton } from '../form/modal';
+import BlogItem from './BlogItem';
+import BlogDelete from './BlogDelete';
+import BlogEdit from './BlogEdit';
+import BlogCreate from './BlogCreate';
+import { User } from '../../models/User';
 
 interface DispatchProps {
+    getCurrentUser(): void;
     getBlogs(): void;
 }
 
 interface StateProps {
-    blogs: Blog[];
-    isSignedIn: boolean;
-    isAdmin: boolean;
+    blogs: { [id: string]: Blog };
+    currentUser: User | null;
 }
+
+interface State {
+    modal: JSX.Element;
+}
+
+const initialState = {
+    modal: <div></div>,
+};
 
 type BlogListProps = DispatchProps & StateProps;
 
-class BlogList extends React.Component<BlogListProps> {
+class BlogList extends React.Component<BlogListProps, State, {}> {
+    state = initialState;
+
     componentDidMount() {
         this.props.getBlogs();
     }
 
-    renderAdmin = (blog: Blog) => {
-        if (this.props.isAdmin) {
+    renderAdmin = (id: string) => {
+        if (this.props.currentUser) {
             return (
-                <div className='right floated content'>
-                    <Link
-                        to={`/blogs/edit/${blog.id}`}
-                        className='ui button primary'
-                    >
-                        Edit
-                    </Link>
-                    <Link
-                        to={`/blogs/delete/${blog.id}`}
-                        className='ui button negative'
-                    >
-                        Delete
-                    </Link>
+                <div className='d-flex flex-row-reverse'>
+                    <ShowModalButton
+                        text='Delete'
+                        buttonType='danger'
+                        onClick={() =>
+                            this.setState({
+                                modal: (
+                                    <BlogDelete blog={this.props.blogs[id]} />
+                                ),
+                            })
+                        }
+                    />
+                    <ShowModalButton
+                        text='Edit'
+                        buttonType='primary'
+                        onClick={() =>
+                            this.setState({
+                                modal: <BlogEdit blog={this.props.blogs[id]} />,
+                            })
+                        }
+                    />
                 </div>
             );
         }
     };
 
     renderList = () => {
-        return this.props.blogs.map((blog) => {
-            const publishedDate = blog.date
-                ? `Published on: ${blog.date}`
-                : 'Unpublished';
-
+        return Object.values(this.props.blogs).map((blog) => {
             return (
-                <div className='item' key={blog.id}>
-                    {this.renderAdmin(blog)}
-                    <i className='large middle aligned icon edit' />
-                    <div className='content'>
-                        <a href={blog.link} className='header'>
-                            {blog.title}
-                        </a>
-                        <div className='description'>{blog.description}</div>
-                        <div className='extra'>{publishedDate}</div>
-                    </div>
-                </div>
+                <BlogItem key={blog.id} blog={blog}>
+                    {this.renderAdmin(blog.id)}
+                </BlogItem>
             );
         });
     };
 
     renderCreate = () => {
-        if (this.props.isAdmin) {
+        if (this.props.currentUser) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link className='ui button primary' to='/blogs/create'>
-                        Create Blog
-                    </Link>
+                    <ShowModalButton
+                        text='Create Blog'
+                        buttonType='primary'
+                        onClick={() =>
+                            this.setState({
+                                modal: <BlogCreate />,
+                            })
+                        }
+                    />
                 </div>
             );
         }
@@ -78,9 +95,10 @@ class BlogList extends React.Component<BlogListProps> {
 
     render() {
         return (
-            <div>
-                <div className='ui celled list'>{this.renderList()}</div>
+            <div className='container'>
+                <div className='row mb-2'>{this.renderList()}</div>
                 {this.renderCreate()}
+                {this.state.modal}
             </div>
         );
     }
@@ -88,17 +106,16 @@ class BlogList extends React.Component<BlogListProps> {
 
 const mapStateToProps = (state: RootState) => {
     const { auth, blogs } = state;
-    const { isSignedIn, isAdmin } = auth;
     return {
-        isSignedIn: isSignedIn,
-        isAdmin: isAdmin,
-        blogs: Object.values(blogs),
+        blogs,
+        currentUser: auth.currentUser,
     };
 };
 
 export default connect<StateProps, DispatchProps, {}, RootState>(
     mapStateToProps,
     {
+        getCurrentUser,
         getBlogs,
     }
 )(BlogList);

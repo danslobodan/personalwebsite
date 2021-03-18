@@ -1,56 +1,67 @@
+import './Header.css';
 import React from 'react';
-import { NavMenuItem } from './NavMenuItem';
+import { connect } from 'react-redux';
 
-const Header: React.FC = () => {
-    const renderBrand = () => {
-        return (
-            <div className='navbar-brand'>
-                {'{ '}
-                <span style={{ fontFamily: 'Brush Script MT,cursive' }}>
-                    TA
-                </span>
-                {' } '}The True Architect
-            </div>
-        );
+import Brand from './Brand';
+import NavMenuItem from './NavMenuItem';
+import SignInButton from './SignInButton';
+import SignOutButton from './SignOutButton';
+import Toggler from './Toggler';
+import { User } from '../../models/User';
+import { RootState, getCurrentUser } from '../../state';
+
+interface StateProps {
+    currentUser: User | null;
+}
+
+interface DispatchProps {
+    getCurrentUser(): void;
+}
+
+type Props = StateProps & DispatchProps;
+
+class Header extends React.Component<Props> {
+    componentDidMount() {
+        this.props.getCurrentUser();
+    }
+
+    renderAuth = () => {
+        if (this.props.currentUser) {
+            return <SignOutButton />;
+        }
+
+        return <SignInButton />;
     };
 
-    const renderToggler = () => {
+    render() {
         return (
-            <button
-                className='navbar-toggler collapsed'
-                type='button'
-                data-toggle='collapse'
-                data-target='#navbarCollapse'
-                aria-controls='navbarCollapse'
-                aria-expanded='false'
-                aria-label='Toggle navigation'
-            >
-                <span className='navbar-toggler-icon'></span>
-            </button>
+            <header className='ta-header'>
+                <nav className='navbar navbar-expand-md navbar-dark fixed-top bg-dark ta-bg-primary'>
+                    <Brand />
+                    <Toggler />
+                    <div
+                        className='collapse navbar-collapse'
+                        id='navbarCollapse'
+                    >
+                        <ul className='navbar-nav mr-auto'>
+                            <NavMenuItem label='Home' to='/' />
+                            <NavMenuItem label='Blogs' to='/blogs' />
+                            <NavMenuItem label='About' to='/about' />
+                        </ul>
+                        <div className='mt-2 mt-md-0'>
+                            <SignInButton />
+                        </div>
+                    </div>
+                </nav>
+            </header>
         );
-    };
+    }
+}
 
-    const renderButtons = () => {
-        return (
-            <div className='navbar-collapse'>
-                <ul className='navbar-nav mr-auto'>
-                    <NavMenuItem label='Home' to='/' />
-                    <NavMenuItem label='Blogs' to='/blogs' />
-                    <NavMenuItem label='About' to='/about' />
-                </ul>
-            </div>
-        );
+const mapStateToProps = (state: RootState) => {
+    return {
+        currentUser: state.auth.currentUser,
     };
-
-    return (
-        <header className='header'>
-            <nav className='navbar navbar-expand-md navbar-dark fixed-top bg-dark'>
-                {renderBrand()}
-                {renderToggler()}
-                {renderButtons()}
-            </nav>
-        </header>
-    );
 };
 
-export default Header;
+export default connect(mapStateToProps, { getCurrentUser })(Header);

@@ -5,14 +5,16 @@ interface Props {
     to: string;
 }
 
-export const NavMenuItem: React.FC<Props> = ({ label, to }) => {
+const NavMenuItem: React.FC<Props> = ({ label, to }) => {
     const active = window.location.pathname === to ? 'active' : '';
-    const className = `nav-item ${active}`;
-    console.log(label, active);
 
     return (
-        <li className={className}>
-            <Link to={to}>{label}</Link>
+        <li className={`nav-item ${active}`}>
+            <Link className='nav-link' to={to}>
+                {label}
+            </Link>
         </li>
     );
 };
+
+export default NavMenuItem;

@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <Router history={history}>
             <Route path='/' component={Header} />
             <main role='main'>
-                <div className='container marketing'>
+                <div className='container'>
                     <Route path='/' exact component={Home} />
                     <Route path='/blogs' exact component={BlogList} />
                     <Route path='/blogs/create' exact component={BlogCreate} />

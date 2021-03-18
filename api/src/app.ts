@@ -1,15 +1,14 @@
 import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
-import passport from 'passport';
+import { passport } from './services/passport';
 import session from 'express-session';
 import env from 'dotenv';
 
 import { NotFoundError } from './errors/notFoundError';
 import { errorHandler } from './middlewares/errorHandler';
-import { createBlogRouter } from './routes/blogs/createBlog';
-import { getBlogsRouter } from './routes/blogs/getBlogs';
-import { updateBlogRouter } from './routes/blogs/updateBlog';
+import { routeLogger } from './middlewares/routeLogger';
+import { routes } from './routes';
 
 env.config();
 
@@ -17,11 +16,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// session needs to be used BEFORE passport session
 app.use(
     session({
         resave: false,
         saveUninitialized: true,
         secret: process.env.TOKEN_SECRET!,
+        cookie: {
+            secure: false,
+        },
     })
 );
 
@@ -32,9 +35,8 @@ app.get('/api', async (req: Request, res: Response) => {
     return res.status(200).send({ message: 'Health Check OK' });
 });
 
-app.use(getBlogsRouter);
-app.use(createBlogRouter);
-app.use(updateBlogRouter);
+app.use(routeLogger);
+app.use(routes);
 
 app.all('*', async () => {
     throw new NotFoundError();

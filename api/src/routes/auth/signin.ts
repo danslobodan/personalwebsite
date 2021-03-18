@@ -3,18 +3,19 @@ import passport from 'passport';
 
 const router = express.Router();
 
-router.get('/auth/google', async () => {
-    passport.authenticate('google', {
-        scope: ['profile', 'email'],
-    });
-});
-
 router.get(
-    '/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: '/error' }),
-    function (req, res) {
-        res.redirect('/');
-    }
+    '/google',
+    passport.authenticate('google', {
+        scope: ['email', 'profile'],
+    })
 );
 
-export { router as signinRouter };
+router.get(
+    '/google/callback',
+    passport.authenticate('google', {
+        successRedirect: 'http://localhost:3000/',
+        failureRedirect: 'http://localhost:3000/auth/error',
+    })
+);
+
+export { router as signInRouter };

@@ -1,18 +1,52 @@
-interface TProps {
+interface Props {
     title: string;
+    imageLeft: boolean;
 }
 
-export const Tenet: React.FC<TProps> = ({ title, children }) => {
-    return (
-        <div className='col-lg-4'>
+export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
+    const renderFlip = (imageLeft: boolean) => {
+        if (imageLeft) {
+            return renderImage();
+        }
+
+        return renderTenet();
+    };
+
+    const renderImage = () => {
+        const className = imageLeft ? 'float-left' : 'float-right';
+
+        return (
             <img
-                className='rounded-circle'
+                className={`rounded ${className}`}
                 src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-                width='140'
-                height='140'
+                width='300'
+                height='300'
             />
-            <h2>{title}</h2>
-            <p>{children}</p>
-        </div>
+        );
+    };
+
+    const renderTenet = () => {
+        const className = !imageLeft ? 'text-left' : 'text-right';
+
+        return (
+            <div className={`md ${className}`}>
+                <br />
+                <h2 className='featurette-heading'>{title}</h2>
+                <br />
+                <hr />
+                <br />
+                <p className='lead'>{children}</p>
+            </div>
+        );
+    };
+
+    return (
+        <>
+            <hr className='featurette-divider' />
+            <div className='row featurette'>
+                <div className='col-md-6'>{renderFlip(imageLeft)}</div>
+                <div className='col-md-6'>{renderFlip(!imageLeft)}</div>
+            </div>
+        </>
     );
 };

@@ -1,16 +1,13 @@
+import { User } from '../../models/User';
 import { AuthActionType } from '../action-types';
 import { AuthAction } from '../actions';
 
 interface AuthState {
-    isSignedIn: boolean;
-    isAdmin: boolean;
-    userId: string | null;
+    currentUser: User | null;
 }
 
 const INITIAL_STATE = {
-    isSignedIn: false,
-    isAdmin: false,
-    userId: null,
+    currentUser: null,
 };
 
 export default (state: AuthState = INITIAL_STATE, action: AuthAction) => {
@@ -18,16 +15,17 @@ export default (state: AuthState = INITIAL_STATE, action: AuthAction) => {
         case AuthActionType.SIGN_IN:
             return {
                 ...state,
-                isSignedIn: true,
-                isAdmin: true,
-                userId: action.payload,
+                currentUser: action.payload,
+            };
+        case AuthActionType.GET_CURRENT_USER:
+            return {
+                ...state,
+                currentUser: action.payload,
             };
         case AuthActionType.SIGN_OUT:
             return {
                 ...state,
-                isSignedIn: false,
-                isAdmin: false,
-                userId: null,
+                currentUser: null,
             };
         default:
             return state;

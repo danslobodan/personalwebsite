@@ -1,5 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-import { CustomError } from '../errors/customError';
+import { CustomError, ErrorMessage } from '../errors/customError';
+
+const formatErrorMessage = (code: number, errors: ErrorMessage[]) => {
+    console.log('ERROR Status Code', code, ' ', errors);
+};
 
 export const errorHandler = (
     err: Error,
@@ -8,11 +12,12 @@ export const errorHandler = (
     next: NextFunction
 ) => {
     if (err instanceof CustomError) {
+        formatErrorMessage(err.statusCode, err.serializeErrors());
         return res
             .status(err.statusCode)
             .send({ errors: err.serializeErrors() });
     }
 
-    console.log(err);
+    formatErrorMessage(500, [{ message: 'Unknown server error.' }]);
     res.status(500).send({ errors: [{ message: 'Unknown server error.' }] });
 };

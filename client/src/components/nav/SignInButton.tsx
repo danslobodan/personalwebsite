@@ -10,14 +10,12 @@ interface Props {
 class SignInButton extends React.Component<Props> {
     render() {
         return (
-            <button
-                type='button'
+            <a
+                href='http://localhost:5000/api/auth/google'
                 className='btn btn-danger'
-                onClick={this.props.signIn}
             >
-                <i className='google icon' />
                 Sign In
-            </button>
+            </a>
         );
     }
 }

@@ -9,7 +9,7 @@ const getDurationInMilliseconds = (start: [number, number]) => {
 };
 
 const formatRequestOutput = (req: Request) => {
-    console.log(`${req.method} ${req.url} sessionID ${req.sessionID}`);
+    console.log(`${req.method} ${req.url} request sessionID ${req.sessionID}`);
 };
 
 const formatResponseOutput = (
@@ -33,10 +33,6 @@ export const routeLogger = (
     const start = process.hrtime();
     formatRequestOutput(req);
 
-    res.on('finish', () => {
-        const miliseconds = getDurationInMilliseconds(start);
-        formatResponseOutput(method, route, res.statusCode, miliseconds);
-    });
     res.on('close', () => {
         const miliseconds = getDurationInMilliseconds(start);
         formatResponseOutput(method, route, res.statusCode, miliseconds);

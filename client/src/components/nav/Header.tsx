@@ -48,9 +48,7 @@ class Header extends React.Component<Props> {
                             <NavMenuItem label='Blogs' to='/blogs' />
                             <NavMenuItem label='About' to='/about' />
                         </ul>
-                        <div className='mt-2 mt-md-0'>
-                            <SignInButton />
-                        </div>
+                        <div className='mt-2 mt-md-0'>{this.renderAuth()}</div>
                     </div>
                 </nav>
             </header>

@@ -9,6 +9,7 @@ const About: React.FC = () => {
                         src='CV2.jpg'
                         width='200'
                         style={{ borderRadius: '50px' }}
+                        alt='CV'
                     />
                     <div className='ui list'>
                         <div className='item'>

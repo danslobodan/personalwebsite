@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
 import { passport } from './services/passport';
-import session from 'express-session';
+import session, { SessionOptions } from 'express-session';
 import env from 'dotenv';
 
 import { NotFoundError } from './errors/notFoundError';
@@ -17,16 +17,21 @@ app.use(express.json());
 app.use(cors());
 
 // session needs to be used BEFORE passport session
-app.use(
-    session({
-        resave: false,
-        saveUninitialized: true,
-        secret: process.env.TOKEN_SECRET!,
-        cookie: {
-            secure: false,
-        },
-    })
-);
+const isProduciton = app.get('env') === 'production';
+if (isProduciton) {
+    app.set('trust proxy', 1);
+}
+
+const sessionOptions: SessionOptions = {
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.TOKEN_SECRET!,
+    cookie: {
+        secure: isProduciton,
+    },
+};
+
+app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());

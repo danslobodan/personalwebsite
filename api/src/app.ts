@@ -14,7 +14,13 @@ env.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+        origin: process.env.CLIENT_ADDRESS,
+        optionsSuccessStatus: 200,
+        credentials: true,
+    })
+);
 
 // session needs to be used BEFORE passport session
 const isProduciton = app.get('env') === 'production';
@@ -23,12 +29,13 @@ if (isProduciton) {
 }
 
 const sessionOptions: SessionOptions = {
+    cookie: {
+        secure: isProduciton,
+        maxAge: 24 * 60 * 60 * 1000,
+    },
     resave: false,
     saveUninitialized: true,
     secret: process.env.TOKEN_SECRET!,
-    cookie: {
-        secure: isProduciton,
-    },
 };
 
 app.use(session(sessionOptions));

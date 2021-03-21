@@ -1,10 +1,12 @@
 import './ContactInfo.css';
 import Contact, { ContactProps } from './Contact';
 
+const contactText = 'Contact';
+
 const ContactInfo: React.FC = () => {
     return (
         <div>
-            <h4 className='contact-info-title'>Contact</h4>
+            <h4 className='contact-info-title'>{contactText}</h4>
             <ul className='contact-info-list'>
                 {contacts.map((contact) => {
                     const { icon, link, text } = contact;

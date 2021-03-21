@@ -5,6 +5,8 @@ export interface JobProps {
     special?: string;
 }
 
+const specialContributionText = 'Special contribution: ';
+
 const ExperienceItem: React.FC<JobProps> = ({
     position,
     company,
@@ -23,7 +25,7 @@ const ExperienceItem: React.FC<JobProps> = ({
                 })}
                 {special && (
                     <li>
-                        <b>Special contribution: </b>
+                        <b>{specialContributionText}</b>
                         {special}
                     </li>
                 )}

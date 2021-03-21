@@ -1,6 +1,9 @@
 import React from 'react';
 import ContactInfo from './ContactInfo';
 
+const titleText = 'Technical Team Lead';
+const nameText = 'Slobodan Dan';
+
 const Heading: React.FC = () => {
     return (
         <div className='row'>
@@ -14,10 +17,8 @@ const Heading: React.FC = () => {
             </div>
             <div className='col-lg-8'>
                 <div className='jumbotron about-heading'>
-                    <h3 className='about-heading-title'>
-                        Full Stack Developer
-                    </h3>
-                    <h1 className='about-heading-name'>Slobodan Dan</h1>
+                    <h3 className='about-heading-title'>{titleText}</h3>
+                    <h1 className='about-heading-name'>{nameText}</h1>
                 </div>
                 <ContactInfo />
             </div>

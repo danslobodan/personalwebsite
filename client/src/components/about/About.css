@@ -12,3 +12,11 @@
 .about-heading-name {
     font-size: 70px;
 }
+
+.about {
+    font-size: 20px;
+}
+
+.about-image {
+    border-radius: 50px;
+}

@@ -1,35 +1,41 @@
-import Contact from './Contact';
+import './ContactInfo.css';
+import Contact, { ContactProps } from './Contact';
 
 const ContactInfo: React.FC = () => {
     return (
-        <>
-            <h4 style={{ textTransform: 'uppercase', letterSpacing: '2px' }}>
-                Contact
-            </h4>
-            <ul style={{ listStyleType: 'none', fontSize: '20px' }}>
-                <Contact
-                    icon='mail'
-                    link={'mailto:danastroman@gmail.com'}
-                    text='danastroman@gmail.com'
-                />
-                <Contact
-                    icon='linkedin'
-                    link={'https://www.linkedin.com/in/slobodan-dan-05b2631b9/'}
-                    text='Slobodan Dan'
-                />
-                <Contact
-                    icon='github'
-                    link={'https://github.com/danslobodan'}
-                    text='danslobodan'
-                />
-                <Contact
-                    icon='address'
-                    link={'https://goo.gl/maps/anCeibGud6WGTTRr6'}
-                    text='Novi Sad, Serbia'
-                />
+        <div>
+            <h4 className='contact-info-title'>Contact</h4>
+            <ul className='contact-info-list'>
+                {contacts.map((contact) => {
+                    const { icon, link, text } = contact;
+                    return <Contact icon={icon} link={link} text={text} />;
+                })}
             </ul>
-        </>
+        </div>
     );
 };
+
+const contacts: ContactProps[] = [
+    {
+        icon: 'mail',
+        link: 'mailto:danastroman@gmail.com',
+        text: 'danastroman@gmail.com',
+    },
+    {
+        icon: 'linkedin',
+        link: 'https://www.linkedin.com/in/slobodan-dan-05b2631b9/',
+        text: 'Slobodan Dan',
+    },
+    {
+        icon: 'github',
+        link: 'https://github.com/danslobodan',
+        text: 'danslobodan',
+    },
+    {
+        icon: 'address',
+        link: 'https://goo.gl/maps/anCeibGud6WGTTRr6',
+        text: 'Novi Sad, Serbia',
+    },
+];
 
 export default ContactInfo;

@@ -1,10 +1,10 @@
-interface Props {
+export interface ContactProps {
     icon: string;
     link: string;
     text: string;
 }
 
-const Contact: React.FC<Props> = ({ icon, link, text }) => {
+const Contact: React.FC<ContactProps> = ({ icon, link, text }) => {
     return (
         <li>
             <i className={icon} />

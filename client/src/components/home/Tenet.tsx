@@ -41,12 +41,12 @@ export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
     };
 
     return (
-        <>
+        <div>
             <hr className='featurette-divider' />
             <div className='row featurette'>
                 <div className='col-md-6'>{renderFlip(imageLeft)}</div>
                 <div className='col-md-6'>{renderFlip(!imageLeft)}</div>
             </div>
-        </>
+        </div>
     );
 };

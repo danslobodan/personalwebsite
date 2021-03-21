@@ -3,7 +3,9 @@ import Contact from './Contact';
 const ContactInfo: React.FC = () => {
     return (
         <>
-            <h3>Contact</h3>
+            <h4 style={{ textTransform: 'uppercase', letterSpacing: '2px' }}>
+                Contact
+            </h4>
             <ul style={{ listStyleType: 'none', fontSize: '20px' }}>
                 <Contact
                     icon='mail'

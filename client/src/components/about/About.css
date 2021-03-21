@@ -1,0 +1,14 @@
+.about-heading {
+    color: white;
+    background-color: #311432;
+}
+
+.about-heading-title {
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 4px;
+}
+
+.about-heading-name {
+    font-size: 70px;
+}

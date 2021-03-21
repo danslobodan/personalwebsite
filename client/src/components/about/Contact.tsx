@@ -7,7 +7,7 @@ const Contact: React.FC<ContactProps> = ({ link, text, children }) => {
     return (
         <li>
             {children}
-            <a target='_blank' href={link}>
+            <a target='_blank' rel='noopener noreferrer' href={link}>
                 {text}
             </a>
         </li>

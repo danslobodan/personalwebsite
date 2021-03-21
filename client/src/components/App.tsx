@@ -6,7 +6,7 @@ import Home from './home/Home';
 import BlogList from './blogs/BlogList';
 import BlogCreate from './blogs/BlogCreate';
 import BlogEdit from './blogs/BlogEdit';
-import About from './About';
+import About from './about/About';
 import history from '../history';
 import BlogDelete from './blogs/BlogDelete';
 

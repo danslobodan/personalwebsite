@@ -1,16 +1,15 @@
-export interface ContactProps {
-    icon: string;
+interface ContactProps {
     link: string;
     text: string;
 }
 
-const Contact: React.FC<ContactProps> = ({ icon, link, text }) => {
+const Contact: React.FC<ContactProps> = ({ link, text, children }) => {
     return (
         <li>
-            <i className={icon} />
-            <div>
-                <a href={link}>{text}</a>
-            </div>
+            {children}
+            <a target='_blank' href={link}>
+                {text}
+            </a>
         </li>
     );
 };

@@ -5,3 +5,7 @@ a {
 a:hover {
     color: #311432;
 }
+
+svg {
+    margin-right: 7px;
+}

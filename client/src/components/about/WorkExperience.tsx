@@ -6,11 +6,12 @@ const WorkExperience: React.FC = () => {
     return (
         <CvSection title='Work Experience'>
             {jobs.map((job) => {
-                const { company, position, duties, special } = job;
+                const { company, duration, position, duties, special } = job;
                 return (
                     <Job
                         key={company}
                         company={company}
+                        duration={duration}
                         position={position}
                         duties={duties}
                         special={special}
@@ -24,6 +25,7 @@ const WorkExperience: React.FC = () => {
 const jobs: JobProps[] = [
     {
         company: 'efiport GmbH',
+        duration: '2020 - Present',
         position: 'Tech Lead',
         duties: [
             'Development of business management software platform, Team Leading',
@@ -32,6 +34,7 @@ const jobs: JobProps[] = [
     },
     {
         company: 'Levi9 Global Sourcing',
+        duration: '2017 - 2020',
         position: 'Tech Lead / Department Manager',
         duties: [
             'Development of an enterprise banking solution by Five Degrees',
@@ -43,6 +46,7 @@ const jobs: JobProps[] = [
     },
     {
         company: 'Eipix Entertainment',
+        duration: '2012 - 2017',
         position: 'Game Developer',
         duties: [
             'Development of a game engine',

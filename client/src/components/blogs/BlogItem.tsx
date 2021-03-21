@@ -16,7 +16,7 @@ const BlogItem: React.FC<Props> = ({ blog, children }) => {
                         Medium
                     </strong>
                     <h3 className='mb-0'>
-                        <a className='text-dark' href={link}>
+                        <a target='_blank' className='text-dark' href={link}>
                             {title}
                         </a>
                     </h3>

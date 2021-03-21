@@ -2,6 +2,7 @@ import './Job.css';
 
 export interface JobProps {
     company: string;
+    duration: string;
     position: string;
     duties: string[];
     special?: string;
@@ -9,11 +10,19 @@ export interface JobProps {
 
 const specialContributionText = 'Special contribution: ';
 
-const Job: React.FC<JobProps> = ({ position, company, duties, special }) => {
+const Job: React.FC<JobProps> = ({
+    company,
+    duration,
+    position,
+    duties,
+    special,
+}) => {
     return (
         <div className='job'>
             <h4>{position}</h4>
-            <h5>{company}</h5>
+            <h5>
+                {company}, <span className='light-text'>{duration}</span>
+            </h5>
             <ul>
                 {duties.map((duty) => {
                     return <li key={duty}>{duty}</li>;

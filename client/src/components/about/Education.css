@@ -1,0 +1,15 @@
+.education {
+    padding-top: 10px;
+}
+
+.education h5 {
+    text-transform: uppercase;
+}
+
+.degree {
+    padding-left: 30px;
+}
+
+.light-text {
+    color: gray;
+}

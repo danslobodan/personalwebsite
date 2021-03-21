@@ -1,3 +1,5 @@
+import './Education.css';
+
 export interface EducationProps {
     institution: string;
     location: string;
@@ -12,12 +14,12 @@ const Education: React.FC<EducationProps> = ({
     duration,
 }) => {
     return (
-        <div>
-            <h4>
-                {institution}, {location}
-            </h4>
-            <div>
-                {degree}, {duration}
+        <div className='education'>
+            <h5>
+                {institution}, <span>{location}</span>
+            </h5>
+            <div className='degree'>
+                {degree}, <span className='light-text'>{duration}</span>
             </div>
         </div>
     );

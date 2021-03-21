@@ -1,3 +1,5 @@
+import './Job.css';
+
 export interface JobProps {
     company: string;
     position: string;
@@ -7,24 +9,17 @@ export interface JobProps {
 
 const specialContributionText = 'Special contribution: ';
 
-const ExperienceItem: React.FC<JobProps> = ({
-    position,
-    company,
-    duties,
-    special,
-}) => {
+const Job: React.FC<JobProps> = ({ position, company, duties, special }) => {
     return (
-        <div>
-            <h3>{position}</h3>
-            <h4>
-                <b>{company}</b>
-            </h4>
+        <div className='job'>
+            <h4>{position}</h4>
+            <h5>{company}</h5>
             <ul>
                 {duties.map((duty) => {
-                    return <li>{duty}</li>;
+                    return <li key={duty}>{duty}</li>;
                 })}
                 {special && (
-                    <li>
+                    <li key={special}>
                         <b>{specialContributionText}</b>
                         {special}
                     </li>
@@ -34,4 +29,4 @@ const ExperienceItem: React.FC<JobProps> = ({
     );
 };
 
-export default ExperienceItem;
+export default Job;

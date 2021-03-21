@@ -20,7 +20,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ title, skills }) => {
         <CvSection title={title}>
             <ul>
                 {skills.map((skill) => {
-                    return <li>{skill}</li>;
+                    return <li key={skill}>{skill}</li>;
                 })}
             </ul>
         </CvSection>

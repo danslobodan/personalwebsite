@@ -9,6 +9,7 @@ const EducationHistory: React.FC = () => {
                 const { institution, location, degree, duration } = edu;
                 return (
                     <Education
+                        key={degree}
                         institution={institution}
                         location={location}
                         degree={degree}

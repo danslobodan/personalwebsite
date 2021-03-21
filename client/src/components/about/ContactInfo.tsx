@@ -10,7 +10,14 @@ const ContactInfo: React.FC = () => {
             <ul className='contact-info-list'>
                 {contacts.map((contact) => {
                     const { icon, link, text } = contact;
-                    return <Contact icon={icon} link={link} text={text} />;
+                    return (
+                        <Contact
+                            key={icon}
+                            icon={icon}
+                            link={link}
+                            text={text}
+                        />
+                    );
                 })}
             </ul>
         </div>

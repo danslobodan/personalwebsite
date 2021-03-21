@@ -9,6 +9,7 @@ const WorkExperience: React.FC = () => {
                 const { company, position, duties, special } = job;
                 return (
                     <Job
+                        key={company}
                         company={company}
                         position={position}
                         duties={duties}

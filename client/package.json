@@ -17,6 +17,7 @@
     "@types/react-router-dom": "^5.1.7",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "chokidar": "^3.5.1",
     "cookie-session": "^1.4.0",
     "dateformat": "^4.5.1",
     "jquery": "^3.6.0",

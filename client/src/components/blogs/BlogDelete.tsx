@@ -17,9 +17,9 @@ interface DispatchProps {
 type BlogDeleteProps = OwnProps & DispatchProps;
 
 class BlogDelete extends React.Component<BlogDeleteProps> {
-    onClick() {
+    onClick = () => {
         this.props.deleteBlog(this.props.blog.id);
-    }
+    };
 
     renderContent = () => {
         const title = this.props.blog.title;

@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
 import { passport } from './services/passport';
-import session from 'express-session';
+import session, { SessionOptions } from 'express-session';
 import env from 'dotenv';
 
 import { NotFoundError } from './errors/notFoundError';
@@ -14,19 +14,31 @@ env.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
-
-// session needs to be used BEFORE passport session
 app.use(
-    session({
-        resave: false,
-        saveUninitialized: true,
-        secret: process.env.TOKEN_SECRET!,
-        cookie: {
-            secure: false,
-        },
+    cors({
+        origin: process.env.CLIENT_ADDRESS,
+        optionsSuccessStatus: 200,
+        credentials: true,
     })
 );
+
+// session needs to be used BEFORE passport session
+const isProduciton = app.get('env') === 'production';
+if (isProduciton) {
+    app.set('trust proxy', 1);
+}
+
+const sessionOptions: SessionOptions = {
+    cookie: {
+        secure: isProduciton,
+        maxAge: 24 * 60 * 60 * 1000,
+    },
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.TOKEN_SECRET!,
+};
+
+app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());

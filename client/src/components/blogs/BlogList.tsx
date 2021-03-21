@@ -95,7 +95,7 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
 
     render() {
         return (
-            <div className='container'>
+            <div>
                 <div className='row mb-2'>{this.renderList()}</div>
                 {this.renderCreate()}
                 {this.state.modal}

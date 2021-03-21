@@ -1,3 +1,8 @@
+export interface ErrorMessage {
+    message: string;
+    field?: string;
+}
+
 export abstract class CustomError extends Error {
     abstract statusCode: number;
 
@@ -7,5 +12,5 @@ export abstract class CustomError extends Error {
         Object.setPrototypeOf(this, CustomError);
     }
 
-    abstract serializeErrors(): { message: string; field?: string }[]
+    abstract serializeErrors(): ErrorMessage[];
 }

@@ -13,7 +13,7 @@ router.delete('/:id', async (req: Request, res: Response) => {
 
     blog.delete();
 
-    res.status(200);
+    res.send({ id: req.params.id });
 });
 
 export { router as deleteBlogRouter };

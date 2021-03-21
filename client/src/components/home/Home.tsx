@@ -3,7 +3,7 @@ import { Tenet } from './Tenet';
 
 const Home: React.FC = () => {
     return (
-        <div className='container'>
+        <div>
             <div className='row featurette'>
                 <p className='lead'>
                     The true architect is an ideal I have created to strive to.

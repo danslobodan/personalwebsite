@@ -1,6 +1,9 @@
 import React from 'react';
+import { Google } from 'react-bootstrap-icons';
 import { connect } from 'react-redux';
 import { signOut } from '../../state';
+
+const signOutText = 'Sign Out';
 
 interface DispatchProps {
     signOut(): void;
@@ -14,8 +17,8 @@ class SignOutButton extends React.Component<DispatchProps> {
                 className='btn btn-danger'
                 onClick={this.props.signOut}
             >
-                <i className='google icon' />
-                Sign Out
+                <Google />
+                {signOutText}
             </button>
         );
     }

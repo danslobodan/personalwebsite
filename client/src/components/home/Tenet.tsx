@@ -21,6 +21,7 @@ export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
                 src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
                 width='300'
                 height='300'
+                alt='Tenet'
             />
         );
     };
@@ -41,12 +42,12 @@ export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
     };
 
     return (
-        <>
+        <div>
             <hr className='featurette-divider' />
             <div className='row featurette'>
                 <div className='col-md-6'>{renderFlip(imageLeft)}</div>
                 <div className='col-md-6'>{renderFlip(!imageLeft)}</div>
             </div>
-        </>
+        </div>
     );
 };

@@ -21,6 +21,7 @@ export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
                 src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
                 width='300'
                 height='300'
+                alt='Tenet'
             />
         );
     };

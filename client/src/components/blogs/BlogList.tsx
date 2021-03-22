@@ -4,9 +4,7 @@ import { getCurrentUser, getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
 import { ShowModalButton } from '../form/modal';
 import BlogItem from './BlogItem';
-import BlogDelete from './BlogDelete';
 import BlogEdit from './BlogEdit';
-import BlogCreate from './BlogCreate';
 import { User } from '../../models/User';
 
 interface DispatchProps {
@@ -41,17 +39,6 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
             return (
                 <div className='d-flex flex-row-reverse'>
                     <ShowModalButton
-                        text='Delete'
-                        buttonType='danger'
-                        onClick={() =>
-                            this.setState({
-                                modal: (
-                                    <BlogDelete blog={this.props.blogs[id]} />
-                                ),
-                            })
-                        }
-                    />
-                    <ShowModalButton
                         text='Edit'
                         buttonType='primary'
                         onClick={() =>
@@ -75,29 +62,10 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
         });
     };
 
-    renderCreate = () => {
-        if (this.props.currentUser) {
-            return (
-                <div style={{ textAlign: 'right' }}>
-                    <ShowModalButton
-                        text='Create Blog'
-                        buttonType='primary'
-                        onClick={() =>
-                            this.setState({
-                                modal: <BlogCreate />,
-                            })
-                        }
-                    />
-                </div>
-            );
-        }
-    };
-
     render() {
         return (
             <div>
                 <div className='row mb-2'>{this.renderList()}</div>
-                {this.renderCreate()}
                 {this.state.modal}
             </div>
         );

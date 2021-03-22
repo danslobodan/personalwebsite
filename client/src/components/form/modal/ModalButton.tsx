@@ -9,7 +9,7 @@ export const ModalButton: React.FC<Props> = ({ text, classType, onClick }) => {
         <button
             onClick={onClick}
             type='button'
-            className={`btn btn-${classType}`}
+            className={`btn btn-${classType}-ts`}
             data-dismiss='modal'
         >
             {text}

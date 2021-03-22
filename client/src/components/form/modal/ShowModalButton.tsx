@@ -12,7 +12,7 @@ export const ShowModalButton: React.FC<Props> = ({
     return (
         <button
             type='button'
-            className={`btn btn-${buttonType}`}
+            className={`btn btn-${buttonType}-ts`}
             data-toggle='modal'
             data-target='#modalDialog'
             onClick={onClick}

@@ -21,7 +21,7 @@ const Job: React.FC<JobProps> = ({
         <div className='job'>
             <h4>{position}</h4>
             <h5>
-                {company}, <span className='light-text'>{duration}</span>
+                {company}, <span className='text-muted'>{duration}</span>
             </h5>
             <ul>
                 {duties.map((duty) => {

@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getCurrentUser, getBlogs, RootState } from '../../state';
 import { Blog } from '../../models/Blog';
-import { ShowModalButton } from '../form/modal';
 import BlogItem from './BlogItem';
-import BlogEdit from './BlogEdit';
 import { User } from '../../models/User';
 
 interface DispatchProps {
@@ -34,31 +32,9 @@ class BlogList extends React.Component<BlogListProps, State, {}> {
         this.props.getBlogs();
     }
 
-    renderAdmin = (id: string) => {
-        if (this.props.currentUser) {
-            return (
-                <div className='d-flex flex-row-reverse'>
-                    <ShowModalButton
-                        text='Edit'
-                        buttonType='primary'
-                        onClick={() =>
-                            this.setState({
-                                modal: <BlogEdit blog={this.props.blogs[id]} />,
-                            })
-                        }
-                    />
-                </div>
-            );
-        }
-    };
-
     renderList = () => {
         return Object.values(this.props.blogs).map((blog) => {
-            return (
-                <BlogItem key={blog.id} blog={blog}>
-                    {this.renderAdmin(blog.id)}
-                </BlogItem>
-            );
+            return <BlogItem key={blog.id} blog={blog} />;
         });
     };
 

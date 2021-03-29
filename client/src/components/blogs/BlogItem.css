@@ -1,0 +1,11 @@
+.blog-image-ta {
+    max-width: 300px;
+    width: auto;
+    height: auto;
+}
+
+.blog-snippet-ta {
+    overflow: hidden;
+    text-overflow: clip;
+    max-height: 120px;
+}

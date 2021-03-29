@@ -19,7 +19,7 @@ const Education: React.FC<EducationProps> = ({
                 {institution}, <span>{location}</span>
             </h5>
             <div className='degree'>
-                {degree}, <span className='light-text'>{duration}</span>
+                {degree}, <span className='text-muted'>{duration}</span>
             </div>
         </div>
     );

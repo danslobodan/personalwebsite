@@ -9,4 +9,4 @@ inputs:
 
 runs:
     using: docker
-    image: '${{ inputs.path }}/Dockerfile'
+    image: './api/Dockerfile'

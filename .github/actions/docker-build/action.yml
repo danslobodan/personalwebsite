@@ -9,4 +9,4 @@ inputs:
 
 runs:
     using: docker
-    image: './api/Dockerfile'
+    image: '../../../api/Dockerfile'

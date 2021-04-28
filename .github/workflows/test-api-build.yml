@@ -1,0 +1,13 @@
+on: [pull_request]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Build API
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Docker Build
+              uses: ./.github/actions/docker-build
+              with:
+                  path: './api'

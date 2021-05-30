@@ -93,7 +93,11 @@ const Home: React.FC = () => {
                             Conway's Law
                         </ExternalLink>{' '}
                         <i>organization design requires technical expertize.</i>{' '}
-                        To quote Allan Kelly, as the authors did in the book,{' '}
+                        To quote{' '}
+                        <ExternalLink href='https://www.allankellyassociates.co.uk/'>
+                            Allan Kelly
+                        </ExternalLink>
+                        , as the authors did in the book,{' '}
                         <i>
                             someone who claims to be an Architect needs both
                             technical and social skills,

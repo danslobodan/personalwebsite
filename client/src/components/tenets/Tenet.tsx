@@ -1,29 +1,13 @@
 interface Props {
     title: string;
-    imageLeft: boolean;
     imageSrc: string;
 }
 
-export const Tenet: React.FC<Props> = ({
-    title,
-    imageLeft,
-    children,
-    imageSrc,
-}) => {
-    const renderFlip = (imageLeft: boolean) => {
-        if (imageLeft) {
-            return renderImage();
-        }
-
-        return renderTenet();
-    };
-
+export const Tenet: React.FC<Props> = ({ title, children, imageSrc }) => {
     const renderImage = () => {
-        const className = imageLeft ? 'float-left' : 'float-right';
-
         return (
             <img
-                className={`rounded ${className}`}
+                className={`rounded float-left`}
                 src={imageSrc}
                 alt={imageSrc}
             />
@@ -31,10 +15,8 @@ export const Tenet: React.FC<Props> = ({
     };
 
     const renderTenet = () => {
-        const className = !imageLeft ? 'text-left' : 'text-right';
-
         return (
-            <div className={`md ${className}`}>
+            <div className={`md text-right`}>
                 <br />
                 <h2 className='featurette-heading'>{title}</h2>
                 <br />
@@ -49,8 +31,8 @@ export const Tenet: React.FC<Props> = ({
         <div>
             <hr className='featurette-divider' />
             <div className='row featurette'>
-                <div className='col-md-6'>{renderFlip(imageLeft)}</div>
-                <div className='col-md-6'>{renderFlip(!imageLeft)}</div>
+                <div className='col-md-6'>{renderImage()}</div>
+                <div className='col-md-6'>{renderTenet()}</div>
             </div>
         </div>
     );

@@ -42,7 +42,7 @@ const Home: React.FC = () => {
                 <div className='col-md-6'>
                     <h2>The true architect</h2>
                     <p>
-                        Far from thinking my self as a true architect, much less
+                        Far from thinking myself as a true architect, much less
                         THE true architect it is rather a name for my journey -{' '}
                         my path.
                     </p>

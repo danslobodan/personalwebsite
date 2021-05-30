@@ -45,6 +45,7 @@ class Header extends React.Component<Props> {
                     >
                         <ul className='navbar-nav mr-auto'>
                             <NavMenuItem label='Home' to='/' />
+                            <NavMenuItem label='Tenets' to='/tenets' />
                             <NavMenuItem label='Blogs' to='/blogs' />
                             <NavMenuItem label='About' to='/about' />
                         </ul>

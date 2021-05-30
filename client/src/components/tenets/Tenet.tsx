@@ -1,9 +1,15 @@
 interface Props {
     title: string;
     imageLeft: boolean;
+    imageSrc: string;
 }
 
-export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
+export const Tenet: React.FC<Props> = ({
+    title,
+    imageLeft,
+    children,
+    imageSrc,
+}) => {
     const renderFlip = (imageLeft: boolean) => {
         if (imageLeft) {
             return renderImage();
@@ -18,10 +24,8 @@ export const Tenet: React.FC<Props> = ({ title, imageLeft, children }) => {
         return (
             <img
                 className={`rounded ${className}`}
-                src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
-                width='300'
-                height='300'
-                alt='Tenet'
+                src={imageSrc}
+                alt={imageSrc}
             />
         );
     };

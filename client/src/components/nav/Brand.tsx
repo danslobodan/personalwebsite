@@ -1,9 +1,11 @@
 const Brand: React.FC = () => {
     return (
         <div className='navbar-brand'>
-            {'{ '}
-            <span style={{ fontFamily: 'Brush Script MT,cursive' }}>TA</span>
-            {' } '}The True Architect
+            <img
+                src='ta_logo_white_h.png'
+                height='60px'
+                alt='true architect logo'
+            />
         </div>
     );
 };

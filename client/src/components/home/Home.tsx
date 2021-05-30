@@ -47,10 +47,11 @@ const Home: React.FC = () => {
                         my path.
                     </p>
                     <p>
-                        The name comes from the fact that titles in the IT
-                        industry no longer represent seniority or knowledge that
-                        the person holds, but are rather vanity titles to be
-                        displayed to recruiters or customers.
+                        The inspiration for the name comes from the fact that
+                        titles in the IT industry no longer represent seniority
+                        or knowledge that the person holds, but are rather
+                        vanity titles to be displayed to recruiters or
+                        customers.
                     </p>
                     <p>
                         <ExternalLink href='http://cleancoder.com/products'>

@@ -57,7 +57,7 @@ const Home: React.FC = () => {
                         <ExternalLink href='http://cleancoder.com/products'>
                             Uncle Bob's
                         </ExternalLink>{' '}
-                        definition of the goal of the software architect is
+                        definition of the goal of the software architect is{' '}
                         <i>
                             minimization of manpower in all phases of
                             development, deployment, and maintenance.

@@ -2,18 +2,37 @@ import React from 'react';
 import { Tenet } from './Tenet';
 
 const Tenets: React.FC = () => {
+    const videoSrc = `https://www.youtube.com/embed/4-079YIasck`;
+
     return (
         <div>
+            <h2>The Path Of The True Architect</h2>
+            <hr />
             <div className='row featurette'>
                 <p className='lead'>
                     <p>
-                        Like many of the job titles in the software industry the
-                        title <i>software architect</i> has devolved to the
-                        point of meaninglessness. I'd like to restore it's
-                        meaning by defining it as an ideal.
+                        As Master Shi Heng Yi teaches us,{' '}
+                        <i>
+                            all of our lives are too unique to copy the path of
+                            someone else.
+                        </i>{' '}
+                        The True Architect is a path I have chosen for myself.
+                        To help me stay on the path, I have defined five tenets.
                     </p>
-                    <p>The true architect ideal comprises of five tenets.</p>
+                    <hr />
                 </p>
+                <div className='embed-responsive embed-responsive-16by9'>
+                    <iframe
+                        className='embed-responsive-item'
+                        width='560'
+                        height='315'
+                        src={videoSrc}
+                        title='Five Hindrances'
+                        frameBorder='0'
+                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                        allowFullScreen
+                    ></iframe>
+                </div>
             </div>
             <Tenet
                 imageLeft

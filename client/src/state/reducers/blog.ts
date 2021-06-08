@@ -16,14 +16,6 @@ const blogReducer = (
     switch (action.type) {
         case BlogActionType.GET_BLOGS:
             return { ...state, ..._.mapKeys(action.payload, 'id') };
-        case BlogActionType.GET_BLOG:
-            return { ...state, [action.payload.id]: action.payload };
-        case BlogActionType.CREATE_BLOG:
-            return { ...state, [action.payload.id]: action.payload };
-        case BlogActionType.EDIT_BLOG:
-            return { ...state, [action.payload.id]: action.payload };
-        case BlogActionType.DELETE_BLOG:
-            return _.omit(state, action.payload);
         default:
             return state;
     }

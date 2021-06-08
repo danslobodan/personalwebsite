@@ -1,43 +1,124 @@
 import React from 'react';
-import { Tenet } from './Tenet';
+import { Link } from 'react-router-dom';
+import { ExternalLink } from '../common/ExternalLink';
 
 const Home: React.FC = () => {
     return (
         <div>
-            <div className='row featurette'>
-                <p className='lead'>
-                    The true architect is an ideal I have created to strive to.
-                    It's not meant to be achieved. It comprises five tenets.
-                </p>
+            <div className='row'>
+                <img
+                    className='d-lg-none'
+                    src='ta-jumbo-v.png'
+                    alt='true architect logo'
+                ></img>
+                <img
+                    className='d-none d-lg-block'
+                    src='ta-jumbo-h.png'
+                    alt='true architect logo'
+                ></img>
             </div>
-            <Tenet imageLeft title='Master Programmer'>
-                He can singlehandedly create a prototype of the product he
-                designed, including writing code, setting up infrastructure and
-                deployment pipeline, and writing documentation.
-            </Tenet>
-            <Tenet imageLeft={false} title='Inventive Designer'>
-                The true architect always practices creating and modifying
-                models. He seeks to understand the business, the users and his
-                team, to unite the three in the model they all understand and
-                agree upon.
-            </Tenet>
-            <Tenet imageLeft title='Supportive Manager'>
-                The true architect understands that communication, cooperation
-                and trust are at the foundation of success, and that the team is
-                the keystone. He works to empower the team, and help them find
-                purpose and reach autonomy and mastery.
-            </Tenet>
-            <Tenet imageLeft={false} title='Patient Teacher'>
-                The true architect continuously teaches his team everything he
-                knows, repeating the same lessons when he needs to, and points
-                to the correct sources of knowledge. He keeps improving his
-                teaching techniques, motivates his pupils to learn and never
-                stops learning himself.
-            </Tenet>
-            <Tenet imageLeft title='Adept Psychologist'>
-                The true architect remembers that people create software. He
-                learns about people as much as he learns about technology.
-            </Tenet>
+            <div className='jumbotron'>
+                <h1 className='display-4 text-center'>Dan Slobodan</h1>
+                <p className='lead'>
+                    Tech lead, developer, manager, teacher, writer, with 8 years
+                    in the IT industry, 4 in game and 4 in web development,
+                    experience with large code-bases, enterprise scale
+                    applications, team-leading, SCRUM and Agile practices and
+                    software architecture.
+                </p>
+                <Link className='btn btn-primary' to='/about'>
+                    More...
+                </Link>
+            </div>
+            <div className='row'>
+                <div className='col-md-6'>
+                    <img
+                        className=''
+                        src='CV-Laptop.jpg'
+                        width='450'
+                        alt='true architect logo'
+                    ></img>
+                </div>
+                <div className='col-md-6'>
+                    <h2>The true architect</h2>
+                    <p>
+                        Far from thinking myself as a true architect, much less
+                        THE true architect it is rather a name for my journey -{' '}
+                        my path.
+                    </p>
+                    <p>
+                        The inspiration for the name comes from the fact that
+                        titles in the IT industry no longer represent seniority
+                        or knowledge that the person holds, but are rather
+                        vanity titles to be displayed to recruiters or
+                        customers.
+                    </p>
+                    <p>
+                        <ExternalLink href='http://cleancoder.com/products'>
+                            Uncle Bob's
+                        </ExternalLink>{' '}
+                        definition of the goal of the software architect is{' '}
+                        <i>
+                            minimization of manpower in all phases of
+                            development, deployment, and maintenance.
+                        </i>
+                        <blockquote>
+                            &mdash; Uncle Bob Martin (@unclebobmartin){' '}
+                            <ExternalLink href='https://twitter.com/unclebobmartin/status/1310261381233430528?ref_src=twsrc%5Etfw'>
+                                September 27, 2020
+                            </ExternalLink>
+                        </blockquote>{' '}
+                        <script
+                            async
+                            src='https://platform.twitter.com/widgets.js'
+                        ></script>
+                    </p>
+                    <p>
+                        Similarly, he argues that the goal of software design is
+                        to{' '}
+                        <i>
+                            minimize the effort required in order to meet the
+                            needs of the customer.
+                        </i>{' '}
+                        In other words, if the software is easy to change, the
+                        design is good, and vice versa.
+                    </p>
+                    <p>
+                        The authors of{' '}
+                        <ExternalLink href='https://teamtopologies.com/'>
+                            Team Topologies
+                        </ExternalLink>{' '}
+                        further argue that due to{' '}
+                        <ExternalLink href='https://www.thoughtworks.com/insights/articles/demystifying-conways-law'>
+                            Conway's Law
+                        </ExternalLink>{' '}
+                        <i>organization design requires technical expertize.</i>{' '}
+                        To quote{' '}
+                        <ExternalLink href='https://www.allankellyassociates.co.uk/'>
+                            Allan Kelly
+                        </ExternalLink>
+                        , as the authors did in the book,{' '}
+                        <i>
+                            someone who claims to be an Architect needs both
+                            technical and social skills,
+                        </i>{' '}
+                        and{' '}
+                        <i>
+                            they need to have a say in organizational structures
+                            and personnel issues, i.e. they need to be a manager
+                            too.
+                        </i>
+                    </p>
+                    <p>
+                        These and similar ideas from some of the amazing{' '}
+                        <Link to='/books'>books</Link> I read led me to define
+                        the five tenets descibed in the path.
+                    </p>
+                    <Link className='btn btn-primary' to='/tenets'>
+                        The Path
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 };

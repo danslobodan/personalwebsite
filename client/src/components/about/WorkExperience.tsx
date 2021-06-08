@@ -28,7 +28,7 @@ const jobs: JobProps[] = [
         duration: '2020 - Present',
         position: 'Tech Lead',
         duties: [
-            'Development of business management software platform, Team Leading',
+            'Development of business management software platform',
             'Team-leading',
         ],
     },

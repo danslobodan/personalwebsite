@@ -10,7 +10,7 @@ const Heading: React.FC = () => {
             <div className='col-lg-4'>
                 <img
                     className='about-image'
-                    src='CV2.jpg'
+                    src='CV-Profile.jpg'
                     width='350'
                     alt='CV'
                 />

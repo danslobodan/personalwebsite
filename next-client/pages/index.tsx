@@ -35,7 +35,7 @@ export default function Home() {
                         width: "100%",
                     }}
                 >
-                    <div style={{ marginLeft: "5%", marginTop: "30px" }}>
+                    <div style={{ marginLeft: "5%" }}>
                         <img
                             style={{
                                 maxWidth: "950px",

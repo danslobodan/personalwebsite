@@ -10,11 +10,7 @@ import { User } from "react-feather";
 
 const About: React.FC = () => {
     return (
-        <div
-            style={{
-                marginTop: "25px",
-            }}
-        >
+        <div>
             <div style={{ display: "flex" }}>
                 <div
                     style={{

@@ -1,0 +1,13 @@
+.navitem {
+    color: #ffffff;
+    margin: 1em;
+}
+
+.navitem:hover {
+    color: #adadad;
+}
+
+.active {
+    color: #adadad;
+    text-decoration: underline;
+}

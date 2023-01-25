@@ -1,16 +1,19 @@
-import styles from "./Header.module.css";
+import styles from "./NavMenu.module.css";
 import React from "react";
 
-import Brand from "./Brand";
 import NavMenuItem from "./NavMenuItem";
 
 interface Props {}
 
-const Header: React.FC<Props> = () => {
+const NavMenu: React.FC<Props> = () => {
     return (
         <header className={styles.header}>
             <div className={styles.brand}>
-                <Brand />
+                <img
+                    src="ta_logo_white_h.png"
+                    height="150px"
+                    alt="true architect logo"
+                />
             </div>
             <nav className={styles.navbar}>
                 <NavMenuItem label="Home" href="/" />
@@ -22,4 +25,4 @@ const Header: React.FC<Props> = () => {
     );
 };
 
-export default Header;
+export default NavMenu;

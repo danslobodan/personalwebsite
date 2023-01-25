@@ -1,5 +1,5 @@
 import styles from "./Layout.module.css";
-import Header from "./nav/Header";
+import NavMenu from "./nav/NavMenu";
 
 interface Props {
     children?: React.ReactNode;
@@ -8,7 +8,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
     return (
         <>
-            <Header />
+            <NavMenu />
             <div className={styles.layout}>{children}</div>
         </>
     );

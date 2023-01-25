@@ -32,7 +32,7 @@ const ContactInfo: React.FC = () => {
                 </Contact>
                 <Contact
                     key="address"
-                    link="https://goo.gl/maps/uphxpBZLWoRG2yzX9"
+                    link="https://goo.gl/maps/4Tq5Z1a4fNssYUNK8"
                     text="Kragujevac, Serbia"
                 >
                     <MapPin />

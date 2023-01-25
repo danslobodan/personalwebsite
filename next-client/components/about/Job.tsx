@@ -17,7 +17,9 @@ const Job: React.FC<JobProps> = ({
 }) => {
     return (
         <div style={{ paddingTop: "10px" }}>
-            <h4>{position}</h4>
+            <h4 style={{ textTransform: "uppercase", letterSpacing: "2px" }}>
+                {position}
+            </h4>
             <h5>
                 {company}, <span className="text-muted">{duration}</span>
             </h5>

@@ -58,6 +58,7 @@ export default function Home() {
                                 minWidth: "250px",
                                 width: "100%",
                                 height: "auto",
+                                borderRadius: "10px",
                             }}
                             src="CV-Laptop.jpg"
                             alt="Potrait with laptop"

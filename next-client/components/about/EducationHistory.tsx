@@ -26,13 +26,13 @@ const education: EducationProps[] = [
         institution: "Singidunum University",
         location: "Novi Sad",
         degree: "Bachelor of Software Engineering",
-        duration: "2018-Present",
+        duration: "2018-Present (2nd year)",
     },
     {
         institution: "University Of Novi Sad",
         location: "Novi Sad",
         degree: "Bachelor of Physics",
-        duration: "2007-2012",
+        duration: "2007-Present (4th year, 4 exams left)",
     },
     {
         institution: "School Of Technical Sciences",

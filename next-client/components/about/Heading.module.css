@@ -1,0 +1,11 @@
+.aboutHeadingTitle {
+    font-weight: lighter;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.aboutHeadingName {
+    font-weight: lighter;
+    font-size: 70px;
+}

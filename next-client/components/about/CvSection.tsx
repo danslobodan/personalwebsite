@@ -6,7 +6,9 @@ interface Props {
 const CvSection: React.FC<Props> = ({ title, children }) => {
     return (
         <div>
-            <h3>{title}</h3>
+            <h3 style={{ textTransform: "uppercase", letterSpacing: "2px" }}>
+                {title}
+            </h3>
             <div>{children}</div>
             <hr />
         </div>

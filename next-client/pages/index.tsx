@@ -84,15 +84,22 @@ export default function Home() {
                         width: "100%",
                     }}
                 >
-                    <p style={{ marginBottom: "2em" }}>
+                    <p
+                        style={{
+                            marginBottom: "2em",
+                            textAlign: "center",
+                            paddingLeft: "15%",
+                            paddingRight: "15%",
+                        }}
+                    >
                         The titles in the IT industry no longer represent
                         seniority or knowledge that the person holds. They
                         became vanity titles to be displayed to recruiters and
                         customers.
                     </p>
-                    <p>
+                    <p style={{ textAlign: "center" }}>
                         I do not seek vanity titles. I seek mastery. The true
-                        architect is not a title - it&apos;s a path
+                        architect is not a title - it&apos;s a path.
                     </p>
                 </div>
                 <div
@@ -112,7 +119,13 @@ export default function Home() {
                         alt="Potrait with laptop"
                     />
                 </div>
-                <div style={{ width: "100%" }}>
+                <div
+                    style={{
+                        width: "100%",
+                        paddingLeft: "15%",
+                        paddingRight: "15%",
+                    }}
+                >
                     <p style={{ marginTop: "2em", marginBottom: "2em" }}>
                         <ExternalLink href="http://cleancoder.com/products">
                             Uncle Bob&apos;s
@@ -157,16 +170,16 @@ export default function Home() {
                         <ExternalLink href="https://www.allankellyassociates.co.uk/">
                             Allan Kelly
                         </ExternalLink>
-                        , as the authors did in the book,{" "}
+                        , as the authors did in the book:{" "}
                         <i>
-                            someone who claims to be an Architect needs both
-                            technical and social skills,
+                            &quot;...someone who claims to be an Architect needs
+                            both technical and social skills,
                         </i>{" "}
                         and{" "}
                         <i>
                             they need to have a say in organizational structures
                             and personnel issues, i.e. they need to be a manager
-                            too.
+                            too.&quot;
                         </i>
                     </p>
                     <p style={{ marginBottom: "2em" }}>

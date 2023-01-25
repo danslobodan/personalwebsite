@@ -17,12 +17,13 @@ const Tenets: React.FC = () => {
                         The Path Of The True Architect
                     </h2>
                     <p>
-                        {" "}
                         As Master Shi Heng Yi teaches us,{" "}
-                        <i>
-                            all of our lives are too unique to copy the path of
-                            someone else.
-                        </i>{" "}
+                        <u>
+                            <i>
+                                all of our lives are too unique to copy the path
+                                of someone else.
+                            </i>
+                        </u>{" "}
                         The True Architect is a path I have chosen for myself.
                         To help me stay on the path, I have defined five tenets.
                     </p>

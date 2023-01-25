@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: light;
+    color-scheme: dark;
   }
 }
 
@@ -11,12 +11,12 @@
 }
 
 a {
-  color: #710193;
+  color: #8800ff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #311432;
+  color: #5e00b0;
 }
 
 svg {

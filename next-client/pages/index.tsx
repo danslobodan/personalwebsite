@@ -51,10 +51,10 @@ export default function Home() {
                         width: "100%",
                     }}
                 >
-                    <div>
+                    <div style={{ marginLeft: "5%" }}>
                         <img
                             style={{
-                                maxWidth: "550px",
+                                maxWidth: "950px",
                                 minWidth: "250px",
                                 width: "100%",
                                 height: "auto",
@@ -63,7 +63,12 @@ export default function Home() {
                             alt="Potrait with laptop"
                         />
                     </div>
-                    <div style={{ marginLeft: "2em" }}>
+                    <div
+                        style={{
+                            marginLeft: "5%",
+                            marginRight: "5%",
+                        }}
+                    >
                         <p
                             style={{
                                 marginBottom: "1em",

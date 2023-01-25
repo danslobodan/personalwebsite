@@ -12,10 +12,7 @@ const About: React.FC = () => {
     return (
         <div
             style={{
-                fontSize: "20px",
                 marginTop: "25px",
-                marginLeft: "10%",
-                marginRight: "10%",
             }}
         >
             <div style={{ display: "flex" }}>

@@ -24,12 +24,7 @@ export default function Home() {
             <main
                 style={{
                     display: "flex",
-                    alignItems: "center",
                     flexDirection: "column",
-                    marginBottom: "2em",
-                    marginLeft: "15%",
-                    marginRight: "15%",
-                    fontSize: 25,
                     textAlign: "justify",
                 }}
             >

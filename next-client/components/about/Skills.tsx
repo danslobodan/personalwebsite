@@ -35,15 +35,21 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skills }) => {
 };
 
 const techSkills: string[] = [
+    "C#",
+    "Javascript",
+    "Typescript",
+    "Python",
     "React",
+    "React Native",
     "NodeJs",
     "Express",
-    "MongoDb",
-    "AWS",
-    "Git",
+    "Unity",
     ".NET Framework",
+    "MongoDb",
     "SQL Server",
     "Azure",
+    "AWS",
+    "Git",
     "TFVC",
 ];
 

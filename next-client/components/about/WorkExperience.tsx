@@ -30,7 +30,7 @@ const WorkExperience: React.FC = () => {
 const jobs: JobProps[] = [
     {
         company: "Freelance",
-        duration: "2021 november - Present",
+        duration: "2023 - Present",
         position: "Developer",
         duties: [
             "Development of a React-Native mobile application",
@@ -39,17 +39,17 @@ const jobs: JobProps[] = [
     },
     {
         company: "Grimworks Games",
-        duration: "2020 september - 2021 november",
+        duration: "2022 October - 2022 November",
         position: "Co-founder and Developer",
         duties: [
             "Development of a Unity game",
-            "Development of Articy Draft 3 intergration",
+            "Articy Draft 3 intergration",
             "Solution architecture",
         ],
     },
     {
         company: "efiport GmbH",
-        duration: "2020 february - 2020 august",
+        duration: "2021 February - 2021 August",
         position: "Tech Lead",
         duties: [
             "Development of business management software platform",

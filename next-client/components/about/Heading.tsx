@@ -9,6 +9,7 @@ const Heading: React.FC = () => {
                 padding: "50px",
                 borderRadius: "50px",
                 backgroundColor: "#311432",
+                color: "white",
                 width: "100%",
             }}
         >

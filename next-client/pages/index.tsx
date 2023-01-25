@@ -35,23 +35,12 @@ export default function Home() {
             >
                 <div
                     style={{
-                        fontSize: 40,
-                        marginTop: "1rem",
-                        marginBottom: "1rem",
-                        width: "100%",
-                        textAlign: "center",
-                    }}
-                >
-                    Dan Slobodan
-                </div>
-                <div
-                    style={{
                         display: "flex",
                         alignItems: "center",
                         width: "100%",
                     }}
                 >
-                    <div style={{ marginLeft: "5%" }}>
+                    <div style={{ marginLeft: "5%", marginTop: "30px" }}>
                         <img
                             style={{
                                 maxWidth: "950px",
@@ -70,6 +59,15 @@ export default function Home() {
                             paddingRight: "5%",
                         }}
                     >
+                        <div
+                            style={{
+                                marginBottom: "30px",
+                                fontSize: 40,
+                                width: "100%",
+                            }}
+                        >
+                            Dan Slobodan
+                        </div>
                         <p
                             style={{
                                 marginBottom: "1em",
@@ -94,10 +92,13 @@ export default function Home() {
                     <p style={{ marginBottom: "2em" }}>
                         The titles in the IT industry no longer represent
                         seniority or knowledge that the person holds. They
-                        became vanity titles to be displayed to recruiters or
+                        became vanity titles to be displayed to recruiters and
                         customers.
                     </p>
-                    <p>I do not seek vanity titles. I seek mastery.</p>
+                    <p>
+                        I do not seek vanity titles. I seek mastery. The true
+                        architect is not a title - it&apos;s a path
+                    </p>
                 </div>
                 <div
                     style={{
@@ -119,7 +120,7 @@ export default function Home() {
                 <div style={{ width: "100%" }}>
                     <p style={{ marginTop: "2em", marginBottom: "2em" }}>
                         <ExternalLink href="http://cleancoder.com/products">
-                            Uncle Bob`&apos;`s
+                            Uncle Bob&apos;s
                         </ExternalLink>{" "}
                         definition of the goal of the software architect is{" "}
                         <i>
@@ -154,7 +155,7 @@ export default function Home() {
                         </ExternalLink>{" "}
                         further argue that due to{" "}
                         <ExternalLink href="https://www.thoughtworks.com/insights/articles/demystifying-conways-law">
-                            Conway`&apos;`s Law
+                            Conway&apos;s Law
                         </ExternalLink>{" "}
                         <i>organization design requires technical expertize.</i>{" "}
                         To quote{" "}

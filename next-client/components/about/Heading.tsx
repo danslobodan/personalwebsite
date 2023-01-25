@@ -4,6 +4,7 @@ const Heading: React.FC = () => {
     return (
         <div
             style={{
+                marginLeft: "30px",
                 marginBottom: "30px",
                 padding: "50px",
                 borderRadius: "50px",

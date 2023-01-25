@@ -6,8 +6,6 @@ export interface JobProps {
     special?: string;
 }
 
-const specialContributionText = "Special contribution: ";
-
 const Job: React.FC<JobProps> = ({
     company,
     duration,
@@ -36,8 +34,10 @@ const Job: React.FC<JobProps> = ({
                 })}
                 {special && (
                     <li key={special}>
-                        <b>{specialContributionText}</b>
-                        {special}
+                        <u style={{ letterSpacing: "1px" }}>
+                            Special contribution
+                        </u>
+                        : {special}
                     </li>
                 )}
             </ul>

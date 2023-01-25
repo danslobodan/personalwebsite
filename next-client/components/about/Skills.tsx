@@ -1,29 +1,36 @@
 import React from "react";
 import CvSection from "./CvSection";
 
+import { Codepen, PlusCircle } from "react-feather";
+
 const Skills: React.FC = () => {
     return (
-        <div>
-            <SkillSection title="Technical Skills" skills={techSkills} />
-            <SkillSection title="Other Skills" skills={otherSkills} />
-        </div>
+        <>
+            <CvSection icon={<Codepen />} title="Technical Skills">
+                <SkillSection skills={techSkills} />
+            </CvSection>
+            <CvSection icon={<PlusCircle />} title="Other Skills">
+                <SkillSection skills={otherSkills} />
+            </CvSection>
+        </>
     );
 };
 
 interface SkillSectionProps {
-    title: string;
     skills: string[];
 }
 
-const SkillSection: React.FC<SkillSectionProps> = ({ title, skills }) => {
+const SkillSection: React.FC<SkillSectionProps> = ({ skills }) => {
     return (
-        <CvSection title={title}>
-            <ul>
-                {skills.map((skill) => {
-                    return <li key={skill}>{skill}</li>;
-                })}
-            </ul>
-        </CvSection>
+        <ul style={{ marginLeft: "50px" }}>
+            {skills.map((skill) => {
+                return (
+                    <li key={skill} style={{ marginBottom: "5px" }}>
+                        {skill}
+                    </li>
+                );
+            })}
+        </ul>
     );
 };
 
@@ -42,9 +49,10 @@ const techSkills: string[] = [
 
 const otherSkills: string[] = [
     "English Language - Proficient Speaker",
-    "Understanding of team psychology",
-    "Good understanding of software architecture and enterprise solutions",
-    "Very strong soft skills",
+    "Leadership",
+    "Team psychology",
+    "Software architecture",
+    "Strong soft skills",
 ];
 
 export default Skills;

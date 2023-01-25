@@ -1,7 +1,15 @@
-import styles from "./ProfilePicture.module.css";
-
 const ProfilePicture: React.FC = () => {
-    return <img className={styles.aboutImage} src="CV-Profile.jpg" alt="CV" />;
+    return (
+        <img
+            style={{
+                borderRadius: "50px",
+                width: "350px",
+                marginBottom: "20px",
+            }}
+            src="CV-Profile.jpg"
+            alt="CV"
+        />
+    );
 };
 
 export default ProfilePicture;

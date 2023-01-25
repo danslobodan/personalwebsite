@@ -1,5 +1,3 @@
-import styles from "./Education.module.css";
-
 export interface EducationProps {
     institution: string;
     location: string;
@@ -14,11 +12,17 @@ const Education: React.FC<EducationProps> = ({
     duration,
 }) => {
     return (
-        <div className={styles.education}>
-            <h5>
+        <div style={{ paddingTop: "10px" }}>
+            <h5
+                style={{
+                    textTransform: "uppercase",
+                    letterSpacing: "3px",
+                    marginBottom: "5px",
+                }}
+            >
                 {institution}, <span>{location}</span>
             </h5>
-            <div className={styles.degree}>
+            <div style={{ paddingLeft: "30px" }}>
                 {degree}, <span className="text-muted">{duration}</span>
             </div>
         </div>

@@ -66,8 +66,8 @@ export default function Home() {
                     </div>
                     <div
                         style={{
-                            marginLeft: "5%",
-                            marginRight: "5%",
+                            paddingLeft: "5%",
+                            paddingRight: "5%",
                         }}
                     >
                         <p
@@ -81,7 +81,7 @@ export default function Home() {
                             applications, team-leading, SCRUM and Agile
                             practices and software architecture.
                         </p>
-                        <Link href="/about">More...</Link>
+                        <Link href="/about">Details...</Link>
                     </div>
                 </div>
                 <div

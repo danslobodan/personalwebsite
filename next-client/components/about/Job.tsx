@@ -16,14 +16,21 @@ const Job: React.FC<JobProps> = ({
     special,
 }) => {
     return (
-        <div style={{ paddingTop: "10px" }}>
-            <h4 style={{ textTransform: "uppercase", letterSpacing: "2px" }}>
+        <div style={{ paddingTop: "10px", marginBottom: "10px" }}>
+            <h4
+                style={{
+                    fontWeight: "lighter",
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
+                    marginBottom: "5px",
+                }}
+            >
                 {position}
             </h4>
-            <h5>
+            <h5 style={{ marginBottom: "10px" }}>
                 {company}, <span className="text-muted">{duration}</span>
             </h5>
-            <ul>
+            <ul style={{ marginLeft: "50px" }}>
                 {duties.map((duty) => {
                     return <li key={duty}>{duty}</li>;
                 })}

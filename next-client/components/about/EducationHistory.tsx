@@ -2,21 +2,25 @@ import React from "react";
 import CvSection from "./CvSection";
 import Education, { EducationProps } from "./Education";
 
+import { BookOpen } from "react-feather";
+
 const EducationHistory: React.FC = () => {
     return (
-        <CvSection title="Education History">
-            {education.map((edu) => {
-                const { institution, location, degree, duration } = edu;
-                return (
-                    <Education
-                        key={degree}
-                        institution={institution}
-                        location={location}
-                        degree={degree}
-                        duration={duration}
-                    />
-                );
-            })}
+        <CvSection icon={<BookOpen />} title="Education History">
+            <div style={{ marginLeft: "50px" }}>
+                {education.map((edu) => {
+                    const { institution, location, degree, duration } = edu;
+                    return (
+                        <Education
+                            key={degree}
+                            institution={institution}
+                            location={location}
+                            degree={degree}
+                            duration={duration}
+                        />
+                    );
+                })}
+            </div>
         </CvSection>
     );
 };

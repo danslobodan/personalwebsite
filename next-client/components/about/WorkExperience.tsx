@@ -2,22 +2,27 @@ import React from "react";
 import CvSection from "./CvSection";
 import Job, { JobProps } from "./Job";
 
+import { Briefcase } from "react-feather";
+
 const WorkExperience: React.FC = () => {
     return (
-        <CvSection title="Work Experience">
-            {jobs.map((job) => {
-                const { company, duration, position, duties, special } = job;
-                return (
-                    <Job
-                        key={company}
-                        company={company}
-                        duration={duration}
-                        position={position}
-                        duties={duties}
-                        special={special}
-                    />
-                );
-            })}
+        <CvSection icon={<Briefcase />} title="Work Experience">
+            <div style={{ marginLeft: "50px" }}>
+                {jobs.map((job) => {
+                    const { company, duration, position, duties, special } =
+                        job;
+                    return (
+                        <Job
+                            key={company}
+                            company={company}
+                            duration={duration}
+                            position={position}
+                            duties={duties}
+                            special={special}
+                        />
+                    );
+                })}
+            </div>
         </CvSection>
     );
 };

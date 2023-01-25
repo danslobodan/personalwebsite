@@ -1,14 +1,11 @@
-import styles from "./ContactInfo.module.css";
 import Contact from "./Contact";
-import { Mail, MapPin, GitHub, Linkedin } from "react-feather";
-
-const contactText = "Contact";
+import { Mail, MapPin, GitHub, Linkedin, User } from "react-feather";
+import CvSection from "./CvSection";
 
 const ContactInfo: React.FC = () => {
     return (
-        <div>
-            <h4 className={styles.contactInfoTitle}>{contactText}</h4>
-            <ul className={styles.contactInfoList}>
+        <CvSection icon={<User />} title="Contact">
+            <ul style={{ listStyle: "none" }}>
                 <Contact
                     key="email"
                     link="mailto:danastroman@gmail.com"
@@ -38,7 +35,7 @@ const ContactInfo: React.FC = () => {
                     <MapPin />
                 </Contact>
             </ul>
-        </div>
+        </CvSection>
     );
 };
 

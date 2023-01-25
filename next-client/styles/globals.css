@@ -8,11 +8,17 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 a {
   color: #8800ff;
   text-decoration: none;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 a:hover {

@@ -21,127 +21,136 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>
+            <main
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    marginBottom: "2em",
+                    marginLeft: "2em",
+                    marginRight: "2em",
+                    fontSize: 25,
+                }}
+            >
+                <div style={{ fontSize: 40, margin: "1rem" }}>Dan Slobodan</div>
                 <div
                     style={{
                         display: "flex",
                         alignItems: "center",
-                        flexDirection: "column",
-                        justifyContent: "space-around",
                     }}
                 >
-                    <div style={{ fontSize: 120 }}>Dan Slobodan</div>
-                    <img
-                        className="d-lg-none"
-                        src="ta-jumbo-v.png"
-                        alt="true architect logo"
-                    />
-                    <p style={{ fontSize: 40 }}>
-                        Tech lead, developer, manager, teacher, writer, with
-                        over a decade of experience in the IT industry,
-                        including large code-bases, enterprise scale
-                        applications, team-leading, SCRUM and Agile practices
-                        and software architecture.
+                    <div>
+                        <img
+                            style={{
+                                maxWidth: "450px",
+                                minWidth: "250px",
+                                width: "100%",
+                                height: "auto",
+                            }}
+                            src="CV-Laptop.jpg"
+                            alt="Potrait with laptop"
+                        />
+                    </div>
+                    <div style={{ marginLeft: "2em" }}>
+                        <p style={{ marginBottom: "1em" }}>
+                            Tech lead, developer, manager, teacher, writer, with
+                            over a decade of experience in the IT industry,
+                            including large code-bases, enterprise scale
+                            applications, team-leading, SCRUM and Agile
+                            practices and software architecture.
+                        </p>
+                        <Link href="/about">More...</Link>
+                    </div>
+                </div>
+                <div style={{ marginTop: "2em", marginBottom: "2em" }}>
+                    <p style={{ marginBottom: "2em" }}>
+                        The titles in the IT industry no longer represent
+                        seniority or knowledge that the person holds. They
+                        became vanity titles to be displayed to recruiters or
+                        customers.
                     </p>
-                    <Link href="/about">More...</Link>
-                    <img
-                        className=""
-                        src="CV-Laptop.jpg"
-                        width={450}
-                        alt="true architect logo"
-                    />
+                    <p>I do not seek vanity titles. I seek mastery.</p>
                 </div>
                 <div
                     style={{
                         display: "flex",
-                        alignItems: "center",
+                        flexDirection: "row",
                         justifyContent: "space-around",
                     }}
-                ></div>
-                <div className="row">
-                    <div className="col-md-6"></div>
-                    <div className="col-md-6">
-                        <h2>The true architect</h2>
-                        <p>
-                            Far from thinking myself as a true architect, much
-                            less THE true architect it is rather a name for my
-                            journey - my path.
-                        </p>
-                        <p>
-                            The inspiration for the name comes from the fact
-                            that titles in the IT industry no longer represent
-                            seniority or knowledge that the person holds, but
-                            are rather vanity titles to be displayed to
-                            recruiters or customers.
-                        </p>
-                        <p>
-                            <ExternalLink href="http://cleancoder.com/products">
-                                Uncle Bob`&apos;`s
-                            </ExternalLink>{" "}
-                            definition of the goal of the software architect is{" "}
-                            <i>
-                                minimization of manpower in all phases of
-                                development, deployment, and maintenance.
-                            </i>
-                            <blockquote>
-                                &mdash; Uncle Bob Martin (@unclebobmartin){" "}
-                                <ExternalLink href="https://twitter.com/unclebobmartin/status/1310261381233430528?ref_src=twsrc%5Etfw">
-                                    September 27, 2020
-                                </ExternalLink>
-                            </blockquote>{" "}
-                            <script
-                                async
-                                src="https://platform.twitter.com/widgets.js"
-                            ></script>
-                        </p>
-                        <p>
-                            Similarly, he argues that the goal of software
-                            design is to{" "}
-                            <i>
-                                minimize the effort required in order to meet
-                                the needs of the customer.
-                            </i>{" "}
-                            In other words, if the software is easy to change,
-                            the design is good, and vice versa.
-                        </p>
-                        <p>
-                            The authors of{" "}
-                            <ExternalLink href="https://teamtopologies.com/">
-                                Team Topologies
-                            </ExternalLink>{" "}
-                            further argue that due to{" "}
-                            <ExternalLink href="https://www.thoughtworks.com/insights/articles/demystifying-conways-law">
-                                Conway`&apos;`s Law
-                            </ExternalLink>{" "}
-                            <i>
-                                organization design requires technical
-                                expertize.
-                            </i>{" "}
-                            To quote{" "}
-                            <ExternalLink href="https://www.allankellyassociates.co.uk/">
-                                Allan Kelly
+                >
+                    <img
+                        style={{
+                            maxWidth: "800px",
+                            width: "100%",
+                            height: "auto",
+                        }}
+                        src="ta-jumbo-v.png"
+                        alt="Potrait with laptop"
+                    />
+                </div>
+                <div>
+                    <p style={{ marginTop: "2em", marginBottom: "2em" }}>
+                        <ExternalLink href="http://cleancoder.com/products">
+                            Uncle Bob`&apos;`s
+                        </ExternalLink>{" "}
+                        definition of the goal of the software architect is{" "}
+                        <i>
+                            minimization of manpower in all phases of
+                            development, deployment, and maintenance.
+                        </i>
+                        <blockquote>
+                            &mdash; Uncle Bob Martin (@unclebobmartin){" "}
+                            <ExternalLink href="https://twitter.com/unclebobmartin/status/1310261381233430528?ref_src=twsrc%5Etfw">
+                                September 27, 2020
                             </ExternalLink>
-                            , as the authors did in the book,{" "}
-                            <i>
-                                someone who claims to be an Architect needs both
-                                technical and social skills,
-                            </i>{" "}
-                            and{" "}
-                            <i>
-                                they need to have a say in organizational
-                                structures and personnel issues, i.e. they need
-                                to be a manager too.
-                            </i>
-                        </p>
-                        <p>
-                            These and similar ideas from some of the amazing{" "}
-                            <Link href="/books">books</Link> I read led me to
-                            define the five tenets descibed in the path.
-                        </p>
-                        <Link className="btn btn-primary" href="/tenets">
-                            The Path
-                        </Link>
-                    </div>
+                        </blockquote>{" "}
+                        <script
+                            async
+                            src="https://platform.twitter.com/widgets.js"
+                        ></script>
+                    </p>
+                    <p style={{ marginBottom: "2em" }}>
+                        Similarly, he argues that the goal of software design is
+                        to{" "}
+                        <i>
+                            minimize the effort required in order to meet the
+                            needs of the customer.
+                        </i>{" "}
+                        In other words, if the software is easy to change, the
+                        design is good, and vice versa.
+                    </p>
+                    <p style={{ marginBottom: "2em" }}>
+                        The authors of{" "}
+                        <ExternalLink href="https://teamtopologies.com/">
+                            Team Topologies
+                        </ExternalLink>{" "}
+                        further argue that due to{" "}
+                        <ExternalLink href="https://www.thoughtworks.com/insights/articles/demystifying-conways-law">
+                            Conway`&apos;`s Law
+                        </ExternalLink>{" "}
+                        <i>organization design requires technical expertize.</i>{" "}
+                        To quote{" "}
+                        <ExternalLink href="https://www.allankellyassociates.co.uk/">
+                            Allan Kelly
+                        </ExternalLink>
+                        , as the authors did in the book,{" "}
+                        <i>
+                            someone who claims to be an Architect needs both
+                            technical and social skills,
+                        </i>{" "}
+                        and{" "}
+                        <i>
+                            they need to have a say in organizational structures
+                            and personnel issues, i.e. they need to be a manager
+                            too.
+                        </i>
+                    </p>
+                    <p style={{ marginBottom: "2em" }}>
+                        These and similar ideas from some of the amazing{" "}
+                        <Link href="/books">books</Link> I read led me to define
+                        the five tenets descibed in{" "}
+                        <Link href="/books">the path</Link>.
+                    </p>
                 </div>
             </main>
         </>

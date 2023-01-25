@@ -27,22 +27,34 @@ export default function Home() {
                     alignItems: "center",
                     flexDirection: "column",
                     marginBottom: "2em",
-                    marginLeft: "2em",
-                    marginRight: "2em",
+                    marginLeft: "15%",
+                    marginRight: "15%",
                     fontSize: 25,
+                    textAlign: "justify",
                 }}
             >
-                <div style={{ fontSize: 40, margin: "1rem" }}>Dan Slobodan</div>
+                <div
+                    style={{
+                        fontSize: 40,
+                        marginTop: "1rem",
+                        marginBottom: "1rem",
+                        width: "100%",
+                        textAlign: "center",
+                    }}
+                >
+                    Dan Slobodan
+                </div>
                 <div
                     style={{
                         display: "flex",
                         alignItems: "center",
+                        width: "100%",
                     }}
                 >
                     <div>
                         <img
                             style={{
-                                maxWidth: "450px",
+                                maxWidth: "550px",
                                 minWidth: "250px",
                                 width: "100%",
                                 height: "auto",
@@ -52,7 +64,11 @@ export default function Home() {
                         />
                     </div>
                     <div style={{ marginLeft: "2em" }}>
-                        <p style={{ marginBottom: "1em" }}>
+                        <p
+                            style={{
+                                marginBottom: "1em",
+                            }}
+                        >
                             Tech lead, developer, manager, teacher, writer, with
                             over a decade of experience in the IT industry,
                             including large code-bases, enterprise scale
@@ -62,7 +78,13 @@ export default function Home() {
                         <Link href="/about">More...</Link>
                     </div>
                 </div>
-                <div style={{ marginTop: "2em", marginBottom: "2em" }}>
+                <div
+                    style={{
+                        marginTop: "2em",
+                        marginBottom: "2em",
+                        width: "100%",
+                    }}
+                >
                     <p style={{ marginBottom: "2em" }}>
                         The titles in the IT industry no longer represent
                         seniority or knowledge that the person holds. They
@@ -88,7 +110,7 @@ export default function Home() {
                         alt="Potrait with laptop"
                     />
                 </div>
-                <div>
+                <div style={{ width: "100%" }}>
                     <p style={{ marginTop: "2em", marginBottom: "2em" }}>
                         <ExternalLink href="http://cleancoder.com/products">
                             Uncle Bob`&apos;`s

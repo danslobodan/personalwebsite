@@ -1,10 +1,9 @@
+import styles from "./index.module.css";
+
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Link from "next/link";
 
 import { ExternalLink } from "@/components/ExternalLink";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     return (
@@ -21,53 +20,16 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    textAlign: "justify",
-                }}
-            >
-                <div
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        width: "100%",
-                    }}
-                >
-                    <div style={{ marginLeft: "5%" }}>
-                        <img
-                            style={{
-                                maxWidth: "950px",
-                                minWidth: "250px",
-                                width: "100%",
-                                height: "auto",
-                                borderRadius: "10px",
-                            }}
-                            src="CV-Laptop.jpg"
-                            alt="Potrait with laptop"
-                        />
-                    </div>
-                    <div
-                        style={{
-                            paddingLeft: "5%",
-                            paddingRight: "5%",
-                        }}
-                    >
-                        <div
-                            style={{
-                                marginBottom: "30px",
-                                fontSize: 40,
-                                width: "100%",
-                            }}
-                        >
-                            Dan Slobodan
-                        </div>
-                        <p
-                            style={{
-                                marginBottom: "1em",
-                            }}
-                        >
+            <main className={styles.main}>
+                <div className={styles.introContainer}>
+                    <img
+                        className={styles.imagePotrait}
+                        src="CV-Laptop.jpg"
+                        alt="Potrait with laptop"
+                    />
+                    <div className={styles.introTextContainer}>
+                        <div className={styles.introName}>Dan Slobodan</div>
+                        <p className={styles.introText}>
                             Tech lead, developer, manager, teacher, writer, with
                             over a decade of experience in the IT industry,
                             including large code-bases, enterprise scale
@@ -77,56 +39,27 @@ export default function Home() {
                         <Link href="/about">Details...</Link>
                     </div>
                 </div>
-                <div
-                    style={{
-                        marginTop: "2em",
-                        marginBottom: "2em",
-                        width: "100%",
-                    }}
-                >
-                    <p
-                        style={{
-                            marginBottom: "2em",
-                            textAlign: "center",
-                            paddingLeft: "15%",
-                            paddingRight: "15%",
-                        }}
-                    >
+                <div className={styles.middleTextContainer}>
+                    <p className={styles.middleTextTop}>
                         The titles in the IT industry no longer represent
                         seniority or knowledge that the person holds. They
                         became vanity titles to be displayed to recruiters and
                         customers.
                     </p>
-                    <p style={{ textAlign: "center" }}>
+                    <p className={styles.middleTextBottom}>
                         I do not seek vanity titles. I seek mastery. The true
                         architect is not a title - it&apos;s a path.
                     </p>
                 </div>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-around",
-                    }}
-                >
+                <div className={styles.taImageContainer}>
                     <img
-                        style={{
-                            maxWidth: "800px",
-                            width: "100%",
-                            height: "auto",
-                        }}
+                        className={styles.taImage}
                         src="ta-jumbo-v.png"
                         alt="Potrait with laptop"
                     />
                 </div>
-                <div
-                    style={{
-                        width: "100%",
-                        paddingLeft: "15%",
-                        paddingRight: "15%",
-                    }}
-                >
-                    <p style={{ marginTop: "2em", marginBottom: "2em" }}>
+                <div className={styles.citationsContainer}>
+                    <p className={styles.citation}>
                         <ExternalLink href="http://cleancoder.com/products">
                             Uncle Bob&apos;s
                         </ExternalLink>{" "}
@@ -146,7 +79,7 @@ export default function Home() {
                             src="https://platform.twitter.com/widgets.js"
                         ></script>
                     </p>
-                    <p style={{ marginBottom: "2em" }}>
+                    <p className={styles.citation}>
                         Similarly, he argues that the goal of software design is
                         to{" "}
                         <i>
@@ -156,7 +89,7 @@ export default function Home() {
                         In other words, if the software is easy to change, the
                         design is good, and vice versa.
                     </p>
-                    <p style={{ marginBottom: "2em" }}>
+                    <p className={styles.citation}>
                         The authors of{" "}
                         <ExternalLink href="https://teamtopologies.com/">
                             Team Topologies
@@ -182,7 +115,7 @@ export default function Home() {
                             too.&quot;
                         </i>
                     </p>
-                    <p style={{ marginBottom: "2em" }}>
+                    <p className={styles.citation}>
                         These and similar ideas from some of the amazing{" "}
                         <Link href="/books">books</Link> I read led me to define
                         the five tenets descibed in{" "}

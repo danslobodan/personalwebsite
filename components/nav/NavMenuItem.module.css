@@ -1,6 +1,9 @@
 .navitem {
     color: #ffffff;
     margin: 1em;
+    text-transform: uppercase;
+    font-family: monospace;
+    letter-spacing: 2px;
 }
 
 .navitem:hover {

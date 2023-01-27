@@ -117,9 +117,9 @@ export default function Home() {
                     </p>
                     <p className={styles.citation}>
                         These and similar ideas from some of the amazing{" "}
-                        <Link href="/books">books</Link> I read led me to define
-                        the five tenets descibed in{" "}
-                        <Link href="/books">the path</Link>.
+                        <Link href="/library">books</Link> I read led me to
+                        define the five tenets descibed in{" "}
+                        <Link href="/tenets">the path</Link>.
                     </p>
                 </div>
             </main>

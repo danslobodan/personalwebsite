@@ -1,10 +1,10 @@
-import CvSection from "@/components/about/CvSection";
-import EducationHistory from "@/components/about/EducationHistory";
-import WorkExperience from "@/components/about/WorkExperience";
-import Skills from "@/components/about/Skills";
-import Heading from "@/components/about/Heading";
-import ContactInfo from "@/components/about/ContactInfo";
-import ProfilePicture from "@/components/about/ProfilePicture";
+import CvSection from "@/components/cv/CvSection";
+import EducationHistory from "@/components/cv/EducationHistory";
+import WorkExperience from "@/components/cv/WorkExperience";
+import Skills from "@/components/cv/Skills";
+import Heading from "@/components/cv/Heading";
+import ContactInfo from "@/components/cv/ContactInfo";
+import ProfilePicture from "@/components/cv/ProfilePicture";
 
 import { User } from "react-feather";
 

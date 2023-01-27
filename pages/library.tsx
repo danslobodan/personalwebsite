@@ -1,4 +1,4 @@
-import BookCard, { Book } from "@/components/books/BookReview";
+import BookCard, { Book } from "@/components/library/BookReview";
 
 const Books: React.FC = () => {
     return (

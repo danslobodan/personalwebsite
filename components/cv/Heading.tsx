@@ -1,10 +1,14 @@
 import React from "react";
 
-const Heading: React.FC = () => {
+interface Props {
+    title: string;
+    name: string;
+}
+
+const Heading: React.FC<Props> = ({ title, name }) => {
     return (
         <div
             style={{
-                marginLeft: "30px",
                 marginBottom: "30px",
                 padding: "50px",
                 borderRadius: "50px",
@@ -20,7 +24,7 @@ const Heading: React.FC = () => {
                     textTransform: "uppercase",
                 }}
             >
-                Technical Team Lead
+                {title}
             </h3>
             <h1
                 style={{
@@ -29,7 +33,7 @@ const Heading: React.FC = () => {
                     fontSize: "70px",
                 }}
             >
-                Slobodan Dan
+                {name}
             </h1>
         </div>
     );

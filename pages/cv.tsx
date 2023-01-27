@@ -21,8 +21,15 @@ const About: React.FC = () => {
                     }}
                 >
                     <ProfilePicture />
-                    <ContactInfo />
-                    <Skills />
+                    <div
+                        style={{
+                            paddingLeft: "30px",
+                            paddingRight: "30px",
+                        }}
+                    >
+                        <ContactInfo />
+                        <Skills />
+                    </div>
                 </div>
                 <div
                     style={{
@@ -32,13 +39,25 @@ const About: React.FC = () => {
                         alignItems: "flex-start",
                     }}
                 >
-                    <Heading />
-                    <CvSection title="Profile Info" icon={<User />}>
-                        Developer with 8 years of professional experience, and a
-                        history of excellence.
-                    </CvSection>
-                    <WorkExperience />
-                    <EducationHistory />
+                    <div
+                        style={{
+                            marginLeft: "10px",
+                            paddingLeft: "30px",
+                            paddingRight: "30px",
+                        }}
+                    >
+                        <Heading
+                            title="Full Stack Developer"
+                            name="Slobodan Dan"
+                        />
+                        <CvSection title="Profile Info" icon={<User />}>
+                            Software developer with over a decade of
+                            professional experience, and a history of
+                            excellence.
+                        </CvSection>
+                        <WorkExperience />
+                        <EducationHistory />
+                    </div>
                 </div>
             </div>
         </div>

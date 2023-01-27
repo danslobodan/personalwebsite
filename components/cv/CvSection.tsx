@@ -10,8 +10,6 @@ const CvSection: React.FC<Props> = ({ title, icon, children }) => {
             style={{
                 marginBottom: "30px",
                 width: "100%",
-                paddingLeft: "50px",
-                paddingRight: "50px",
             }}
         >
             <div style={{ display: "flex" }}>

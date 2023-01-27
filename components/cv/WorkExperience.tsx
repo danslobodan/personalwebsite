@@ -7,7 +7,7 @@ import { Briefcase } from "react-feather";
 const WorkExperience: React.FC = () => {
     return (
         <CvSection icon={<Briefcase />} title="Work Experience">
-            <div style={{ marginLeft: "50px" }}>
+            <div>
                 {jobs.map((job) => {
                     const { company, duration, position, duties, special } =
                         job;

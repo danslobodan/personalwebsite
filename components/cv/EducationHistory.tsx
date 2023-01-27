@@ -7,7 +7,7 @@ import { BookOpen } from "react-feather";
 const EducationHistory: React.FC = () => {
     return (
         <CvSection icon={<BookOpen />} title="Education History">
-            <div style={{ marginLeft: "50px" }}>
+            <div>
                 {education.map((edu) => {
                     const { institution, location, degree, duration } = edu;
                     return (

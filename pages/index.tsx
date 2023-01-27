@@ -36,7 +36,7 @@ export default function Home() {
                             applications, team-leading, SCRUM and Agile
                             practices and software architecture.
                         </p>
-                        <Link href="/about">Details...</Link>
+                        <Link href="/cv">Details...</Link>
                     </div>
                 </div>
                 <div className={styles.middleTextContainer}>

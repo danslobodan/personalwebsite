@@ -1,0 +1,69 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.introContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.imagePotrait {
+    max-width: 950px;
+    min-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.introTextContainer {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.introName {
+    margin-bottom: 30px;
+    font-size: 40px;
+    width: 100%;
+}
+
+.introText {
+    margin-bottom: 30px;
+}
+
+.middleTextContainer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.middleTextTop {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.middleTextBottom {
+    text-align: center;
+}
+
+.taImageContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.taImage {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
+.citationsContainer {
+    width: 100%;
+}
+
+.citation {
+    margin-bottom: 30px;
+}

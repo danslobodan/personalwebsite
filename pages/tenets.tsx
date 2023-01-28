@@ -11,8 +11,13 @@ const Tenets: React.FC = () => {
                 textAlign: "justify",
             }}
         >
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ paddingLeft: "20px", paddingRight: "50px" }}>
+            <div className="row">
+                <div
+                    style={{
+                        paddingLeft: "20px",
+                        paddingRight: "50px",
+                    }}
+                >
                     <h2 style={{ marginBottom: "20px" }}>
                         The Path Of The True Architect
                     </h2>
@@ -28,17 +33,14 @@ const Tenets: React.FC = () => {
                         To help me stay on the path, I have defined five tenets.
                     </p>
                 </div>
-                <div className="embed-responsive embed-responsive-16by9">
-                    <iframe
-                        className="embed-responsive-item"
-                        width="560"
-                        height="315"
-                        src={videoSrc}
-                        title="Five Hindrances"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-                </div>
+                <iframe
+                    width="560"
+                    height="315"
+                    src={videoSrc}
+                    title="Five Hindrances"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
             </div>
             <Tenet imageSrc="master_programmer.png" title="Master Programmer">
                 The true architect can singlehandedly create a prototype of the

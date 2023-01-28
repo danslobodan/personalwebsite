@@ -12,7 +12,11 @@ export default function Home() {
                 <title>The True Architect</title>
                 <meta
                     name="description"
-                    content="Slobodan Dan, highly experienced software developer in game and web development."
+                    content="Slobodan Dan, with over a decade of
+                    experience in the IT industry, including large
+                    code-bases, enterprise scale applications,
+                    team-leading, SCRUM and Agile practices and software
+                    architecture."
                 />
                 <meta
                     name="viewport"
@@ -28,13 +32,13 @@ export default function Home() {
                         alt="Potrait with laptop"
                     />
                     <div className={styles.introTextContainer}>
-                        <div className={styles.introName}>Dan Slobodan</div>
+                        <div className={styles.introName}>Slobodan Dan</div>
                         <p className={styles.introText}>
-                            Tech lead, developer, manager, teacher, writer, with
-                            over a decade of experience in the IT industry,
-                            including large code-bases, enterprise scale
-                            applications, team-leading, SCRUM and Agile
-                            practices and software architecture.
+                            Developer, manager, writer, with over a decade of
+                            experience in the IT industry, including large
+                            code-bases, enterprise scale applications,
+                            team-leading, SCRUM and Agile practices and software
+                            architecture.
                         </p>
                         <Link href="/cv">Details...</Link>
                     </div>

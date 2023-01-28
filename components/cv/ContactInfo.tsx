@@ -8,8 +8,8 @@ const ContactInfo: React.FC = () => {
             <ul style={{ listStyle: "none" }}>
                 <Contact
                     key="email"
-                    link="mailto:danastroman@gmail.com"
-                    text="danastroman@gmail.com"
+                    link="mailto:slobodan.s.dan@gmail.com"
+                    text="slobodan.s.dan@gmail.com"
                 >
                     <Mail />
                 </Contact>

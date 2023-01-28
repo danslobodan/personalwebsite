@@ -46,7 +46,7 @@ const techSkills: string[] = [
     "NodeJs",
     "Express",
     "Unity",
-    ".NET Framework",
+    ".NET",
     "MongoDb",
     "SQL Server",
     "Azure",

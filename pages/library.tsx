@@ -31,7 +31,7 @@ const books: Book[] = [
         description:
             "I found that learning good programing principles from \
         this book was even more useful than learning the design patterns it describes. \
-        Besides amazing content, it’s wonderfully fun to read as well.",
+        Besides amazing content, it's wonderfully fun to read as well.",
         coverImage: "head-first-design-patterns.jpg",
     },
     {
@@ -80,7 +80,7 @@ const books: Book[] = [
         title: "Team Topologies",
         authors: "Matthew Skelton, Manuel Pais",
         description:
-            "This book introduced me to Conway’s law and cognitive load. \
+            "This book introduced me to Conway's law and cognitive load. \
             It discussed how and when to provide an organizational structure \
             that matches the software architecture, and keeps the teams happy and productive. \
             A tough read, but well worth the invested time.",

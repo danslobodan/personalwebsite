@@ -11,8 +11,6 @@
 }
 
 .imagePotrait {
-    max-width: 950px;
-    min-width: 250px;
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -41,11 +39,6 @@
 
 .middleTextTop {
     margin-bottom: 30px;
-    text-align: center;
-}
-
-.middleTextBottom {
-    text-align: center;
 }
 
 .taImageContainer {

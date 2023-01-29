@@ -25,22 +25,26 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
-                <div className={styles.introContainer}>
-                    <img
-                        className={styles.imagePotrait}
-                        src="CV-Laptop.jpg"
-                        alt="Potrait with laptop"
-                    />
-                    <div className={styles.introTextContainer}>
-                        <div className={styles.introName}>Slobodan Dan</div>
-                        <p className={styles.introText}>
-                            Developer, manager, writer, with over a decade of
-                            experience in the IT industry, including large
-                            code-bases, enterprise scale applications,
-                            team-leading, SCRUM and Agile practices and software
-                            architecture.
-                        </p>
-                        <Link href="/cv">Details...</Link>
+                <div className="row">
+                    <div className="col-8">
+                        <div className={styles.introTextContainer}>
+                            <div className={styles.introName}>Slobodan Dan</div>
+                            <p className={styles.introText}>
+                                Developer, manager, writer, with over a decade
+                                of experience in the IT industry, including
+                                large code-bases, enterprise scale applications,
+                                team-leading, Lean, Agile and SCRUM management
+                                frameworks and software architecture.
+                            </p>
+                            <Link href="/cv">Details...</Link>
+                        </div>
+                    </div>
+                    <div className="col-4">
+                        <img
+                            className={styles.imagePotrait}
+                            src="CV-Laptop.jpg"
+                            alt="Potrait with laptop"
+                        />
                     </div>
                 </div>
                 <div className={styles.middleTextContainer}>
@@ -50,9 +54,10 @@ export default function Home() {
                         became vanity titles to be displayed to recruiters and
                         customers.
                     </p>
-                    <p className={styles.middleTextBottom}>
-                        I do not seek vanity titles. I seek mastery. The true
-                        architect is not a title - it&apos;s a path.
+                    <p>
+                        The true architect is not a title, but rather a path I
+                        created for myself to guide me on my way on becoming a
+                        good software architect.
                     </p>
                 </div>
                 <div className={styles.taImageContainer}>
@@ -123,7 +128,7 @@ export default function Home() {
                         These and similar ideas from some of the amazing{" "}
                         <Link href="/library">books</Link> I read led me to
                         define the five tenets descibed in{" "}
-                        <Link href="/tenets">the path</Link>.
+                        <Link href="/truearchitect">the path</Link>.
                     </p>
                 </div>
             </main>

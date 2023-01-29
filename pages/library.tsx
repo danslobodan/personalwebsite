@@ -18,11 +18,7 @@ const Books: React.FC = () => {
                 these books.
             </div>
             {books.map((book) => {
-                return (
-                    <div style={{ marginBottom: "40px" }} key={book.title}>
-                        <BookCard book={book} />
-                    </div>
-                );
+                return <BookCard key={book.title} book={book} />;
             })}
         </div>
     );

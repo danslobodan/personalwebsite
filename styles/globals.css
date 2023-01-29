@@ -61,14 +61,22 @@ svg {
 .row {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 [class*="col-"] {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
+
+  .row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}

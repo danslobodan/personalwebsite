@@ -19,10 +19,10 @@ export const Tenet: React.FC<Props> = ({ title, children, imageSrc }) => {
     };
 
     return (
-        <div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ paddingTop: "25px" }}>{renderImage()}</div>
-                <div>{renderTenet()}</div>
+        <div style={{ marginBottom: "50px" }}>
+            <div className="row">
+                <div className="col-6">{renderImage()}</div>
+                <div className="col-6">{renderTenet()}</div>
             </div>
         </div>
     );

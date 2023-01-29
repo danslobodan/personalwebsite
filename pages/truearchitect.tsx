@@ -11,36 +11,46 @@ const Tenets: React.FC = () => {
                 textAlign: "justify",
             }}
         >
-            <div className="row">
-                <div
-                    style={{
-                        paddingLeft: "20px",
-                        paddingRight: "50px",
-                    }}
-                >
-                    <h2 style={{ marginBottom: "20px" }}>
-                        The Path Of The True Architect
-                    </h2>
-                    <p>
-                        As Master Shi Heng Yi teaches us,{" "}
-                        <u>
-                            <i>
-                                all of our lives are too unique to copy the path
-                                of someone else.
-                            </i>
-                        </u>{" "}
-                        The True Architect is a path I have chosen for myself.
-                        To help me stay on the path, I have defined five tenets.
-                    </p>
+            <div style={{ marginBottom: "50px" }}>
+                <div className="row">
+                    <div className="col-6">
+                        <div
+                            style={{
+                                padding: "20px",
+                            }}
+                        >
+                            <h2 style={{ marginBottom: "20px" }}>
+                                The Path Of The True Architect
+                            </h2>
+                            <p style={{ textAlign: "justify" }}>
+                                As Master Shi Heng Yi teaches us,{" "}
+                                <u>
+                                    <i>
+                                        all of our lives are too unique to copy
+                                        the path of someone else.
+                                    </i>
+                                </u>{" "}
+                                The True Architect is a path I have chosen for
+                                myself. To help me stay on the path, I have
+                                defined five tenets.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <iframe
+                            style={{
+                                width: "100%",
+                                maxWidth: "560px",
+                                aspectRatio: "16/9",
+                            }}
+                            height="315"
+                            src={videoSrc}
+                            title="Five Hindrances"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
+                    </div>
                 </div>
-                <iframe
-                    width="560"
-                    height="315"
-                    src={videoSrc}
-                    title="Five Hindrances"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
             </div>
             <Tenet imageSrc="master_programmer.png" title="Master Programmer">
                 The true architect can singlehandedly create a prototype of the

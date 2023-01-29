@@ -52,10 +52,14 @@ const jobs: JobProps[] = [
         duration: "2021 February - 2021 August",
         position: "Tech Lead",
         duties: [
-            "Development of business management software platform",
+            "Development of an education software platform",
             "Team-leading",
             "Solution architecture",
+            "Coordination with sales, info-sec and operations",
+            "Candidate interviews",
         ],
+        special:
+            "Migrated codebase from JavaScript to Typescript, introduced code standards, unit testing, automated builds, documentation, production incident debriefing, thought the team Agile and Lean methodologies and more.",
     },
     {
         company: "Levi9 Global Sourcing",

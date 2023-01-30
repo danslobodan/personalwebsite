@@ -10,54 +10,48 @@ import { User } from "react-feather";
 
 const About: React.FC = () => {
     return (
-        <div>
-            <div style={{ display: "flex" }}>
+        <div style={{ display: "flex" }}>
+            <div
+                style={{
+                    flex: 4,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                }}
+            >
+                <ProfilePicture />
                 <div
                     style={{
-                        flex: 4,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
+                        paddingLeft: "30px",
+                        paddingRight: "30px",
                     }}
                 >
-                    <ProfilePicture />
-                    <div
-                        style={{
-                            paddingLeft: "30px",
-                            paddingRight: "30px",
-                        }}
-                    >
-                        <ContactInfo />
-                        <Skills />
-                    </div>
+                    <ContactInfo />
+                    <Skills />
                 </div>
+            </div>
+            <div
+                style={{
+                    flex: 8,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                }}
+            >
                 <div
                     style={{
-                        flex: 8,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
+                        marginLeft: "10px",
+                        paddingLeft: "30px",
+                        paddingRight: "30px",
                     }}
                 >
-                    <div
-                        style={{
-                            marginLeft: "10px",
-                            paddingLeft: "30px",
-                            paddingRight: "30px",
-                        }}
-                    >
-                        <Heading
-                            title="Full Stack Developer"
-                            name="Slobodan Dan"
-                        />
-                        <CvSection title="Profile Info" icon={<User />}>
-                            Software developer with over a decade of
-                            professional experience, and a history of
-                            excellence.
-                        </CvSection>
-                        <WorkExperience />
-                        <EducationHistory />
-                    </div>
+                    <Heading title="Full Stack Developer" name="Slobodan Dan" />
+                    <CvSection title="Profile Info" icon={<User />}>
+                        Software developer with over a decade of professional
+                        experience, and a history of excellence.
+                    </CvSection>
+                    <WorkExperience />
+                    <EducationHistory />
                 </div>
             </div>
         </div>

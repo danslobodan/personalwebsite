@@ -13,7 +13,7 @@ export const Tenet: React.FC<Props> = ({ title, children, imageSrc }) => {
         return (
             <div>
                 <h2 style={{ marginBottom: "10px" }}>{title}</h2>
-                <p className="lead">{children}</p>
+                <div className="lead">{children}</div>
             </div>
         );
     };

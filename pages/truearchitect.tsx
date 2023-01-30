@@ -22,7 +22,7 @@ const Tenets: React.FC = () => {
                             <h2 style={{ marginBottom: "20px" }}>
                                 The Path Of The True Architect
                             </h2>
-                            <p style={{ textAlign: "justify" }}>
+                            <div style={{ textAlign: "justify" }}>
                                 As Master Shi Heng Yi teaches us,{" "}
                                 <u>
                                     <i>
@@ -33,7 +33,7 @@ const Tenets: React.FC = () => {
                                 The True Architect is a path I have chosen for
                                 myself. To help me stay on the path, I have
                                 defined five tenets.
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div className="col-6">

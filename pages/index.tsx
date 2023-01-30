@@ -29,13 +29,13 @@ export default function Home() {
                     <div className="col-8">
                         <div className={styles.introTextContainer}>
                             <div className={styles.introName}>Slobodan Dan</div>
-                            <p className={styles.introText}>
+                            <div className={styles.introText}>
                                 Developer, manager, writer, with over a decade
                                 of experience in the IT industry, including
                                 large code-bases, enterprise scale applications,
                                 team-leading, Lean, Agile and SCRUM management
                                 frameworks and software architecture.
-                            </p>
+                            </div>
                             <Link href="/cv">Details...</Link>
                         </div>
                     </div>
@@ -48,17 +48,17 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={styles.middleTextContainer}>
-                    <p className={styles.middleTextTop}>
+                    <div className={styles.middleTextTop}>
                         The titles in the IT industry no longer represent
                         seniority or knowledge that the person holds. They
                         became vanity titles to be displayed to recruiters and
                         customers.
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         The true architect is not a title, but rather a path I
                         created for myself to guide me on my way on becoming a
                         good software architect.
-                    </p>
+                    </div>
                 </div>
                 <div className={styles.taImageContainer}>
                     <img
@@ -68,7 +68,7 @@ export default function Home() {
                     />
                 </div>
                 <div className={styles.citationsContainer}>
-                    <p className={styles.citation}>
+                    <div className={styles.citation}>
                         <ExternalLink href="http://cleancoder.com/products">
                             Uncle Bob&apos;s
                         </ExternalLink>{" "}
@@ -87,8 +87,8 @@ export default function Home() {
                             async
                             src="https://platform.twitter.com/widgets.js"
                         ></script>
-                    </p>
-                    <p className={styles.citation}>
+                    </div>
+                    <div className={styles.citation}>
                         Similarly, he argues that the goal of software design is
                         to{" "}
                         <i>
@@ -97,8 +97,8 @@ export default function Home() {
                         </i>{" "}
                         In other words, if the software is easy to change, the
                         design is good, and vice versa.
-                    </p>
-                    <p className={styles.citation}>
+                    </div>
+                    <div className={styles.citation}>
                         The authors of{" "}
                         <ExternalLink href="https://teamtopologies.com/">
                             Team Topologies
@@ -123,13 +123,13 @@ export default function Home() {
                             and personnel issues, i.e. they need to be a manager
                             too.&quot;
                         </i>
-                    </p>
-                    <p className={styles.citation}>
+                    </div>
+                    <div className={styles.citation}>
                         These and similar ideas from some of the amazing{" "}
                         <Link href="/library">books</Link> I read led me to
                         define the five tenets descibed in{" "}
                         <Link href="/truearchitect">the path</Link>.
-                    </p>
+                    </div>
                 </div>
             </main>
         </>

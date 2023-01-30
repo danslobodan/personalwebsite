@@ -13,11 +13,9 @@ export default function Home() {
                 <title>The True Architect</title>
                 <meta
                     name="description"
-                    content="Slobodan Dan, with over a decade of
-                    experience in the IT industry, including large
-                    code-bases, enterprise scale applications,
-                    team-leading, SCRUM and Agile practices and software
-                    architecture."
+                    content="The true architect is not a title. It is a path to
+                    follow on your way on becoming a good software
+                    architect."
                 />
                 <meta
                     name="viewport"
@@ -31,11 +29,12 @@ export default function Home() {
                         <div className={styles.introTextContainer}>
                             <div className={styles.introName}>Slobodan Dan</div>
                             <div className={styles.introText}>
-                                Developer, manager, writer, with over a decade
-                                of experience in the IT industry, including
-                                large code-bases, enterprise scale applications,
-                                team-leading, Lean, Agile and SCRUM management
-                                frameworks and software architecture.
+                                Full stack developer, manager, writer, with over
+                                a decade of experience in the IT industry,
+                                including large code-bases, enterprise scale
+                                applications, team-leading, Lean, Agile and
+                                SCRUM management frameworks and software
+                                architecture.
                             </div>
                             <Link href="/cv">Details...</Link>
                         </div>
@@ -52,15 +51,13 @@ export default function Home() {
                 </div>
                 <div className={styles.middleTextContainer}>
                     <div className={styles.middleTextTop}>
-                        The titles in the IT industry no longer represent
-                        seniority or knowledge that the person holds. They
-                        became vanity titles to be displayed to recruiters and
-                        customers.
+                        When the titles in the IT industry no longer represent
+                        seniority or knowledge, they become inflated - vanity
+                        titles to be displayed to recruiters and customers.
                     </div>
                     <div>
-                        The true architect is not a title, but rather a path I
-                        created for myself to guide me on my way on becoming a
-                        good software architect.
+                        The true architect is not a title. It is a path I follow
+                        on my way to becoming a good software architect.
                     </div>
                 </div>
                 <div className={styles.taImageContainer}>
@@ -132,8 +129,11 @@ export default function Home() {
                     <div className={styles.citation}>
                         These and similar ideas from some of the amazing{" "}
                         <Link href="/library">books</Link> I read led me to
-                        define the five tenets descibed in{" "}
-                        <Link href="/truearchitect">the path</Link>.
+                        define the{" "}
+                        <Link href="/five-tenets">
+                            five tenets of the true architect
+                        </Link>
+                        .
                     </div>
                 </div>
             </main>

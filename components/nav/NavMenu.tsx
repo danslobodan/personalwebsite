@@ -19,7 +19,7 @@ const NavMenu: React.FC<Props> = () => {
             </div>
             <nav className={styles.navbar}>
                 <NavMenuItem label="Home" href="/" />
-                <NavMenuItem label="True Architect" href="/truearchitect" />
+                <NavMenuItem label="Five Tenets" href="/five-tenets" />
                 <NavMenuItem label="Library" href="/library" />
                 <NavMenuItem label="CV" href="/cv" />
             </nav>

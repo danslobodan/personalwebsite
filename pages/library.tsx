@@ -1,26 +1,42 @@
 import BookCard, { Book } from "@/components/library/BookReview";
 
+import Head from "next/head";
+
 const Books: React.FC = () => {
     return (
-        <div>
-            <div
-                style={{
-                    marginBottom: "40px",
-                    paddingLeft: "20px",
-                    paddingRight: "20px",
-                    textAlign: "justify",
-                }}
-            >
-                Below you will find a list of all the books I have read and
-                would highly recommend you read as well, if you are a developer,
-                technical team lead or a software architect. I feel that
-                managers could also benefit substantially by reading many of
-                these books.
-            </div>
-            {books.map((book) => {
-                return <BookCard key={book.title} book={book} />;
-            })}
-        </div>
+        <>
+            <Head>
+                <title>Library - The True Architect</title>
+                <meta
+                    name="description"
+                    content="This is a list of books I would recommend for developers, managers and software architects alike."
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <main>
+                <div
+                    style={{
+                        marginBottom: "40px",
+                        paddingLeft: "20px",
+                        paddingRight: "20px",
+                        textAlign: "justify",
+                    }}
+                >
+                    Below you will find a list of all the books I have read and
+                    would highly recommend you read as well, if you are a
+                    developer, technical team lead or a software architect. I
+                    feel that managers could also benefit substantially by
+                    reading many of these books.
+                </div>
+                {books.map((book) => {
+                    return <BookCard key={book.title} book={book} />;
+                })}
+            </main>
+        </>
     );
 };
 

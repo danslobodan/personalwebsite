@@ -8,7 +8,7 @@ const Tenets: React.FC = () => {
     return (
         <>
             <Head>
-                <title>Five Tenets - The True Architect</title>
+                <title>Five Tenets of The True Architect</title>
                 <meta
                     name="description"
                     content="Five tenets of The True Architect: master programmer, inventive designer, supportive manager, patient teacher, adept phychologist."

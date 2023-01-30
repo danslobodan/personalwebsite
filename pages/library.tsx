@@ -6,7 +6,7 @@ const Books: React.FC = () => {
     return (
         <>
             <Head>
-                <title>Library - The True Architect</title>
+                <title>Library</title>
                 <meta
                     name="description"
                     content="This is a list of books I would recommend for developers, managers and software architects alike."

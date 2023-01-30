@@ -52,8 +52,8 @@ export default function Home() {
                 <div className={styles.middleTextContainer}>
                     <div className={styles.middleTextTop}>
                         When the titles in the IT industry no longer represent
-                        seniority or knowledge, they become inflated - vanity
-                        titles to be displayed to recruiters and customers.
+                        seniority or knowledge, they become vanity titles to be
+                        displayed to recruiters and customers.
                     </div>
                     <div>
                         The true architect is not a title. It is a path I follow

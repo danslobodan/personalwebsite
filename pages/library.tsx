@@ -102,8 +102,8 @@ const books: Book[] = [
             "It's easy, as a developer, to forget that your job is \
         to make money for the company you're working for, by providing services \
         that their customers delight in. Sometimes this is done by withholding from writing \
-        any code or even deleting some. This book discusses what an MVP can be \
-        (spoiler: sometimes it contains no code at all), as well as the only metrics that actually \
+        any code or even deleting some. This book discusses what an MVP can be, \
+        as well as the only metrics that actually \
         measure how good your software is - metrics of the bottom line. It's so good I read it twice already.",
         coverImage: "lean-startup.jpg",
     },

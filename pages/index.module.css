@@ -11,8 +11,6 @@
 }
 
 .imagePotrait {
-    width: 100%;
-    height: auto;
     border-radius: 10px;
 }
 
@@ -49,8 +47,6 @@
 
 .taImage {
     max-width: 800px;
-    width: 100%;
-    height: auto;
 }
 
 .citationsContainer {

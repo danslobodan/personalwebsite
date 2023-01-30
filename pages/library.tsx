@@ -111,7 +111,7 @@ const books: Book[] = [
         title: "Domain-Driven Design: Tackling Complexity in the Heart of Software",
         authors: "Eric Evans",
         description:
-            "I’m really inspired by the idea that the language of the domain experts should drive the \
+            "I'm really inspired by the idea that the language of the domain experts should drive the \
         development process. This is the core concept of Domain Driven Design.",
         coverImage: "domain-driven-design.jpg",
     },

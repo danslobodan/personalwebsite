@@ -1,3 +1,5 @@
+import { ResponsiveImage } from "../ResponsiveImage";
+
 interface Props {
     title: string;
     imageSrc: string;
@@ -6,7 +8,14 @@ interface Props {
 
 export const Tenet: React.FC<Props> = ({ title, children, imageSrc }) => {
     const renderImage = () => {
-        return <img src={imageSrc} alt={title} />;
+        return (
+            <ResponsiveImage
+                src={imageSrc}
+                alt={title}
+                width={376}
+                height={261}
+            />
+        );
     };
 
     const renderTenet = () => {

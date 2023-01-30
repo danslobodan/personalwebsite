@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import Head from "next/head";
 import Link from "next/link";
 
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { ExternalLink } from "@/components/ExternalLink";
 
 export default function Home() {
@@ -40,10 +41,12 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="col-4">
-                        <img
+                        <ResponsiveImage
                             className={styles.imagePotrait}
                             src="CV-Laptop.jpg"
                             alt="Potrait with laptop"
+                            width={667}
+                            height={1000}
                         />
                     </div>
                 </div>
@@ -61,10 +64,12 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={styles.taImageContainer}>
-                    <img
+                    <ResponsiveImage
                         className={styles.taImage}
                         src="ta-jumbo-v.png"
                         alt="Potrait with laptop"
+                        width={820}
+                        height={438}
                     />
                 </div>
                 <div className={styles.citationsContainer}>

@@ -5,7 +5,7 @@ interface Props {
     children?: React.ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+export const Layout: React.FC<Props> = ({ children }) => {
     return (
         <>
             <NavMenu />
@@ -13,5 +13,3 @@ const Layout: React.FC<Props> = ({ children }) => {
         </>
     );
 };
-
-export default Layout;

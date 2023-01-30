@@ -22,7 +22,7 @@ interface SkillSectionProps {
 
 const SkillSection: React.FC<SkillSectionProps> = ({ skills }) => {
     return (
-        <ul style={{ paddingLeft: "25px" }}>
+        <ul style={{ paddingLeft: "25px", listStyleType: "circle" }}>
             {skills.map((skill) => {
                 return (
                     <li key={skill} style={{ marginBottom: "5px" }}>

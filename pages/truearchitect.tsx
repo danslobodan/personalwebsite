@@ -36,7 +36,7 @@ const Tenets: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6" style={{ alignItems: "center" }}>
                         <iframe
                             style={{
                                 width: "100%",

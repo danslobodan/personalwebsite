@@ -9,12 +9,22 @@ interface Props {
 export const Tenet: React.FC<Props> = ({ title, children, imageSrc }) => {
     const renderImage = () => {
         return (
-            <ResponsiveImage
-                src={imageSrc}
-                alt={title}
-                width={376}
-                height={261}
-            />
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}
+            >
+                <ResponsiveImage
+                    style={{ maxWidth: "376px" }}
+                    src={imageSrc}
+                    alt={title}
+                    width={376}
+                    height={261}
+                />
+            </div>
         );
     };
 

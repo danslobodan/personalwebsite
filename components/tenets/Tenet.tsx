@@ -1,3 +1,5 @@
+import { ResponsiveImage } from "../ResponsiveImage";
+
 interface Props {
     title: string;
     imageSrc: string;
@@ -6,23 +8,40 @@ interface Props {
 
 export const Tenet: React.FC<Props> = ({ title, children, imageSrc }) => {
     const renderImage = () => {
-        return <img src={imageSrc} alt={title} />;
+        return (
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}
+            >
+                <ResponsiveImage
+                    style={{ maxWidth: "376px" }}
+                    src={imageSrc}
+                    alt={title}
+                    width={376}
+                    height={261}
+                />
+            </div>
+        );
     };
 
     const renderTenet = () => {
         return (
             <div>
                 <h2 style={{ marginBottom: "10px" }}>{title}</h2>
-                <p className="lead">{children}</p>
+                <div className="lead">{children}</div>
             </div>
         );
     };
 
     return (
-        <div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ paddingTop: "25px" }}>{renderImage()}</div>
-                <div>{renderTenet()}</div>
+        <div style={{ marginBottom: "50px" }}>
+            <div className="row">
+                <div className="col-6">{renderImage()}</div>
+                <div className="col-6">{renderTenet()}</div>
             </div>
         </div>
     );

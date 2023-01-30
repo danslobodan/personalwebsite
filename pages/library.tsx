@@ -1,30 +1,42 @@
 import BookCard, { Book } from "@/components/library/BookReview";
 
+import Head from "next/head";
+
 const Books: React.FC = () => {
     return (
-        <div>
-            <div
-                style={{
-                    marginBottom: "40px",
-                    paddingLeft: "20px",
-                    paddingRight: "20px",
-                    textAlign: "justify",
-                }}
-            >
-                Below you will find a list of all the books I have read and
-                would highly recommend you read as well, if you are a developer,
-                technical team lead or a software architect. I feel that
-                managers could also benefit substantially by reading many of
-                these books.
-            </div>
-            {books.map((book) => {
-                return (
-                    <div style={{ marginBottom: "40px" }} key={book.title}>
-                        <BookCard book={book} />
-                    </div>
-                );
-            })}
-        </div>
+        <>
+            <Head>
+                <title>Library</title>
+                <meta
+                    name="description"
+                    content="This is a list of books I would recommend for developers, managers and software architects alike."
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <main>
+                <div
+                    style={{
+                        marginBottom: "40px",
+                        paddingLeft: "20px",
+                        paddingRight: "20px",
+                        textAlign: "justify",
+                    }}
+                >
+                    Below you will find a list of all the books I have read and
+                    would highly recommend you read as well, if you are a
+                    developer, technical team lead or a software architect. I
+                    feel that managers could also benefit substantially by
+                    reading many of these books.
+                </div>
+                {books.map((book) => {
+                    return <BookCard key={book.title} book={book} />;
+                })}
+            </main>
+        </>
     );
 };
 
@@ -35,7 +47,7 @@ const books: Book[] = [
         description:
             "I found that learning good programing principles from \
         this book was even more useful than learning the design patterns it describes. \
-        Besides amazing content, it’s wonderfully fun to read as well.",
+        Besides amazing content, it's wonderfully fun to read as well.",
         coverImage: "head-first-design-patterns.jpg",
     },
     {
@@ -84,7 +96,7 @@ const books: Book[] = [
         title: "Team Topologies",
         authors: "Matthew Skelton, Manuel Pais",
         description:
-            "This book introduced me to Conway’s law and cognitive load. \
+            "This book introduced me to Conway's law and cognitive load. \
             It discussed how and when to provide an organizational structure \
             that matches the software architecture, and keeps the teams happy and productive. \
             A tough read, but well worth the invested time.",
@@ -106,8 +118,8 @@ const books: Book[] = [
             "It's easy, as a developer, to forget that your job is \
         to make money for the company you're working for, by providing services \
         that their customers delight in. Sometimes this is done by withholding from writing \
-        any code or even deleting some. This book discusses what an MVP can be \
-        (spoiler: sometimes it contains no code at all), as well as the only metrics that actually \
+        any code or even deleting some. This book discusses what an MVP can be, \
+        as well as the only metrics that actually \
         measure how good your software is - metrics of the bottom line. It's so good I read it twice already.",
         coverImage: "lean-startup.jpg",
     },
@@ -115,7 +127,7 @@ const books: Book[] = [
         title: "Domain-Driven Design: Tackling Complexity in the Heart of Software",
         authors: "Eric Evans",
         description:
-            "I’m really inspired by the idea that the language of the domain experts should drive the \
+            "I'm really inspired by the idea that the language of the domain experts should drive the \
         development process. This is the core concept of Domain Driven Design.",
         coverImage: "domain-driven-design.jpg",
     },

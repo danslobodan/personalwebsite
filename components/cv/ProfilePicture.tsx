@@ -1,13 +1,17 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+
 const ProfilePicture: React.FC = () => {
     return (
-        <img
+        <ResponsiveImage
             style={{
+                padding: "20px",
                 borderRadius: "50px",
-                width: "350px",
                 marginBottom: "20px",
             }}
             src="CV-Profile.jpg"
             alt="CV"
+            width={450}
+            height={650}
         />
     );
 };

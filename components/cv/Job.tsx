@@ -28,7 +28,7 @@ const Job: React.FC<JobProps> = ({
             <h5 style={{ marginBottom: "10px" }}>
                 {company}, <span className="text-muted">{duration}</span>
             </h5>
-            <ul style={{ marginLeft: "50px" }}>
+            <ul style={{ marginLeft: "50px", listStyleType: "circle" }}>
                 {duties.map((duty) => {
                     return <li key={duty}>{duty}</li>;
                 })}

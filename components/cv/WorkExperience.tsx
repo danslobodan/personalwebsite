@@ -59,7 +59,7 @@ const jobs: JobProps[] = [
             "Candidate interviews",
         ],
         special:
-            "Migrated codebase from JavaScript to Typescript, introduced code standards, unit testing, automated builds, documentation, production incident debriefing, thought the team Agile and Lean methodologies and more.",
+            "Migrated codebase from JavaScript to Typescript, introduced code standards, unit testing, automated builds, documentation, production incident debriefing, taught the team Agile and Lean methodologies and more.",
     },
     {
         company: "Levi9 Global Sourcing",

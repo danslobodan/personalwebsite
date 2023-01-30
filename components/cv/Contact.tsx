@@ -6,7 +6,13 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ link, text, children }) => {
     return (
-        <li>
+        <li
+            style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "7px",
+            }}
+        >
             {children}
             <a target="_blank" rel="noopener noreferrer" href={link}>
                 {text}

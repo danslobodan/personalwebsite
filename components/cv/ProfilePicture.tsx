@@ -3,7 +3,7 @@ const ProfilePicture: React.FC = () => {
         <img
             style={{
                 borderRadius: "50px",
-                width: "350px",
+                width: "100%",
                 marginBottom: "20px",
             }}
             src="CV-Profile.jpg"

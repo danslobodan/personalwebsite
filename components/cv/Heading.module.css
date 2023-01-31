@@ -1,0 +1,32 @@
+.container {
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #311432;
+    color: white;
+    width: 100%;
+}
+
+.title {
+    padding-left: 10px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.name {
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 60px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .container {
+        padding: 50px;
+    }
+
+    .title {
+        letter-spacing: 4px;
+    }
+}

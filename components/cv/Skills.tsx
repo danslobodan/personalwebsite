@@ -38,21 +38,20 @@ const techSkills: string[] = [
     "C#",
     "Javascript",
     "Typescript",
+    "CSS",
     "React",
     "React Native",
-    "HTML",
-    "CSS",
-    "Python",
     "NodeJs",
     "Express",
-    "Unity",
     ".NET",
     "MongoDb",
     "SQL Server",
+    "Docker",
+    "Kubernetes",
     "Azure",
     "AWS",
     "Git",
-    "TFVC",
+    "Unity",
 ];
 
 const otherSkills: string[] = [
@@ -61,6 +60,8 @@ const otherSkills: string[] = [
     "Team psychology",
     "Software architecture",
     "Strong soft skills",
+    "Lean, Agile, SCRUM",
+    "DevOps mindset",
 ];
 
 export default Skills;

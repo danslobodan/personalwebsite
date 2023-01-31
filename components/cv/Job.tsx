@@ -1,3 +1,5 @@
+import styles from "./Job.module.css";
+
 export interface JobProps {
     company: string;
     duration: string;
@@ -14,29 +16,20 @@ const Job: React.FC<JobProps> = ({
     special,
 }) => {
     return (
-        <div style={{ paddingTop: "10px", marginBottom: "10px" }}>
-            <h4
-                style={{
-                    fontWeight: "lighter",
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                    marginBottom: "5px",
-                }}
-            >
-                {position}
-            </h4>
-            <h5 style={{ marginBottom: "10px" }}>
-                {company}, <span className="text-muted">{duration}</span>
+        <div className={styles.container}>
+            <h4 className={styles.position}>{position}</h4>
+            <h5 className={styles.company}>
+                {company}, <span className={styles.duration}>{duration}</span>
             </h5>
-            <ul style={{ marginLeft: "50px", listStyleType: "circle" }}>
+            <ul className={styles.duties}>
                 {duties.map((duty) => {
                     return <li key={duty}>{duty}</li>;
                 })}
                 {special && (
                     <li key={special}>
-                        <u style={{ letterSpacing: "1px" }}>
-                            Special contribution
-                        </u>
+                        <i>
+                            <u>Special contribution</u>
+                        </i>
                         : {special}
                     </li>
                 )}

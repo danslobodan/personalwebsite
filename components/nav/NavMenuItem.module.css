@@ -1,16 +1,19 @@
 .navitem {
     color: #ffffff;
-    margin: 1em;
     text-transform: uppercase;
     font-family: monospace;
     letter-spacing: 2px;
+    padding: 10px;
 }
 
 .navitem:hover {
     color: #adadad;
 }
 
-.active {
-    color: #adadad;
-    text-decoration: underline;
+@media only screen and (min-width: 768px) {
+
+    .navitem {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }

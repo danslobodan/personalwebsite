@@ -45,8 +45,7 @@ const Tenets: React.FC = () => {
                                     </i>
                                 </u>{" "}
                                 The True Architect is a path I have chosen for
-                                myself. To help me stay on the path, I have
-                                defined five tenets.
+                                myself. It is defined by five tenets.
                             </div>
                         </div>
                     </div>

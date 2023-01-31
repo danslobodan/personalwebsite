@@ -60,6 +60,8 @@ const otherSkills: string[] = [
     "Team psychology",
     "Software architecture",
     "Strong soft skills",
+    "Lean, Agile, SCRUM",
+    "DevOps mindset",
 ];
 
 export default Skills;

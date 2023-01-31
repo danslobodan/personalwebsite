@@ -1,0 +1,40 @@
+.container {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.company {
+    margin-bottom: 10px;
+}
+
+.duration {
+    font-weight: lighter;
+    opacity: 0.5;
+}
+
+.position {
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.duration {
+    margin-bottom: 10px;
+}
+
+.duties {
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .duties {
+        padding-left: 40px;
+    }
+
+    .position {
+        letter-spacing: 2px;
+    }
+}

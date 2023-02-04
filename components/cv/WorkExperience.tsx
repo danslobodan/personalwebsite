@@ -39,7 +39,7 @@ const jobs: JobProps[] = [
     },
     {
         company: "Grimworks Games",
-        duration: "2022 October - 2022 November",
+        duration: "2021 September - 2022 December",
         position: "Co-founder and Developer",
         duties: [
             "Development of a Unity game",

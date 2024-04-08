@@ -1,0 +1,47 @@
+.main {
+    @apply flex flex-col items-center text-justify;
+}
+
+.introContainer {
+    @apply flex justify-center items-center w-full;
+}
+
+.imagePotrait {
+    @apply rounded-3xl;
+}
+
+.introTextContainer {
+    @apply px-16;
+}
+
+.introName {
+    @apply text-4xl mb-8 w-full;
+}
+
+.introText {
+    @apply mb-8;
+}
+
+.middleTextContainer {
+    @apply my-8 w-full;
+}
+
+.middleTextTop {
+    @apply mb-8;
+}
+
+.taImageContainer {
+    @apply flex justify-around mb-8;
+}
+
+.taImage {
+    @apply max-w-xl;
+}
+
+.citationsContainer {
+    @apply w-full;
+}
+
+.citation {
+    @apply mb-8;
+}

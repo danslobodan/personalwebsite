@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] });
 import { Viewport } from 'next';
 
 import NavMenu from '@/components/nav/NavMenu';
-import { AnalyticsProvider } from '@/components/AnalyticsProvider';
+import { PostHogProvider } from './providers';
 
 export const viewport: Viewport = {
     initialScale: 1,
@@ -18,15 +18,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang='en'>
-            <AnalyticsProvider>
+        <html lang="en">
+            <PostHogProvider>
                 <body className={inter.className}>
-                    <div className='flex flex-col gap-y-4 mt-30 mx-2 xl:mx-60'>
+                    <div className="flex flex-col gap-y-4 mt-30 mx-2 xl:mx-60">
                         <NavMenu />
                         {children}
                     </div>
                 </body>
-            </AnalyticsProvider>
+            </PostHogProvider>
         </html>
     );
 }

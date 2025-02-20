@@ -13,7 +13,8 @@
     "posthog-js": "^1.219.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-feather": "^2.0.10"
+    "react-feather": "^2.0.10",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "typescript": "^5",

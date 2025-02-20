@@ -1,27 +1,16 @@
-import React from "react";
-import CvSection from "./CvSection";
-import Job, { JobProps } from "./Job";
+import React from 'react';
+import CvSection from './CvSection';
+import Job, { JobProps } from './Job';
 
-import { Briefcase } from "react-feather";
+import { Briefcase } from 'react-feather';
 
 const WorkExperience: React.FC = () => {
     return (
         <CvSection icon={<Briefcase />} title="Work Experience">
             <div>
-                {jobs.map((job) => {
-                    const { company, duration, position, duties, special } =
-                        job;
-                    return (
-                        <Job
-                            key={company}
-                            company={company}
-                            duration={duration}
-                            position={position}
-                            duties={duties}
-                            special={special}
-                        />
-                    );
-                })}
+                {jobs.map((job, i) => (
+                    <Job key={job.company} job={job} />
+                ))}
             </div>
         </CvSection>
     );
@@ -29,61 +18,90 @@ const WorkExperience: React.FC = () => {
 
 const jobs: JobProps[] = [
     {
-        company: "Freelance",
-        duration: "2023 - Present",
-        position: "Developer",
+        company: 'Music instrument practice app',
+        duration: '2023 - 2025',
+        position: 'Developer',
+        technologies: [
+            'C#',
+            'Unity',
+            'Typescript',
+            'React',
+            'Next.js',
+            'Node.js',
+            'Express',
+            'MongoDB',
+            'Docker',
+            'Git',
+            'Github Actions',
+            'AWS (Elastic Beanstalk, SES, ALB, EC2, S3, ECR, WAF, Route 53, Cloud Watch)',
+        ],
         duties: [
-            "Development of a React-Native mobile application",
-            "Solution architecture",
+            'Development of a Unity multi-platform application, website and server',
         ],
     },
     {
-        company: "Grimworks Games",
-        duration: "2021 September - 2022 December",
-        position: "Co-founder and Developer",
-        duties: [
-            "Development of a Unity game",
-            "Articy Draft 3 intergration",
-            "Solution architecture",
-        ],
+        company: 'Unity game',
+        duration: '2021 - 2022',
+        position: 'Co-founder and Developer',
+        technologies: ['C#', 'Unity'],
+        duties: ['Development of a Unity game', 'Articy Draft 3 intergration'],
     },
     {
-        company: "efiport GmbH",
-        duration: "2021 February - 2021 August",
-        position: "Tech Lead",
+        company: 'efiport GmbH',
+        duration: '2021 February - 2021 August',
+        position: 'Tech Lead',
+        technologies: [
+            'Typescript',
+            'React',
+            'Next.js',
+            'Node.js',
+            'Express',
+            'MongoDB',
+            'Git',
+            'Github Actions',
+            'AWS (EC2, S3)',
+        ],
         duties: [
-            "Development of an education software platform",
-            "Team-leading",
-            "Solution architecture",
-            "Coordination with sales, info-sec and operations",
-            "Candidate interviews",
+            'Development of an education software platform',
+            'Team-leading',
+            'Coordination with sales, info-sec and operations',
+            'Candidate interviews',
         ],
         special:
-            "Migrated codebase from JavaScript to Typescript, introduced code standards, unit testing, automated builds, documentation, production incident debriefing, taught the team Agile and Lean methodologies and more.",
+            'Migrated codebase from JavaScript to Typescript, introduced code standards, unit testing, automated builds, documentation, production incident debriefing, taught the team Agile and Lean methodologies and more.',
     },
     {
-        company: "Levi9 Global Sourcing",
-        duration: "2017 - 2020",
-        position: "Tech Lead / Department Manager",
+        company: 'Levi9 Global Sourcing',
+        duration: '2017 - 2020',
+        position: 'Tech Lead / Department Manager',
+        technologies: [
+            'C#',
+            'ASP.NET',
+            'WCF',
+            'SQL Server',
+            'Azure Pipelines',
+            'TFS',
+        ],
         duties: [
-            "Development of an enterprise banking solution by Five Degrees",
-            "Team-leading",
-            "Department management",
+            'Development of an enterprise banking solution by Five Degrees',
+            'Team-leading',
+            'Department management',
         ],
         special:
-            "stabilizing the development life-cycle of two of Five Degrees' biggest customers, by applying SCRUM and Agile methodologies, introducing code standards, unit testing, integration testing, build and deployment automation, team coherence and trust",
+            "stabilizing the development life-cycle of two of Five Degrees' biggest customers Van Lanschot Kempen and Knab, by applying SCRUM and Agile methodologies, introducing code standards, unit testing, integration testing, build and deployment automation, team coherence and trust",
     },
     {
-        company: "Eipix Entertainment",
-        duration: "2012 - 2017",
-        position: "Game Developer",
+        company: 'Eipix Entertainment',
+        duration: '2012 - 2017',
+        position: 'Game Developer',
+        technologies: ['C++', 'C#', 'in-house script', 'SVN'],
         duties: [
-            "Development of a game engine",
-            "Development of game-play logic",
-            "Development of automation tools",
+            'Development of a game engine',
+            'Development of game-play logic',
+            'Development of automation tools',
         ],
         special:
-            "development of a project template, upon which more than 50 games were built",
+            'development of a project template, upon which more than 50 games were built',
     },
 ];
 

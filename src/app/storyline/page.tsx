@@ -96,7 +96,7 @@ const projects: ProjectData[] = [
         position: 'Developer',
         name: 'The Inquisition',
         description: 'Unity game',
-        tech: ['CSharp', 'Unity'],
+        tech: ['CSharp', 'Unity', 'Git'],
         story: `I was given a chance to reconnect and work with friends and former colleagues from Eipix Entertainment
         and work together on a game that we would imagine together. As these were friends and colleagues who I've had
         success with before and valued them greatly as people and professionals, I jumped on the opportunity.`,
@@ -113,6 +113,7 @@ const projects: ProjectData[] = [
             'Nodejs',
             'Express',
             'MongoDB',
+            'Git',
             'AWS',
         ],
         story: `I was hired by efiport GmbH to lead and develop an application that would help with

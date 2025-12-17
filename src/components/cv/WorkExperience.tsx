@@ -18,6 +18,30 @@ const WorkExperience: React.FC = () => {
 
 const jobs: JobProps[] = [
     {
+        company: 'HTEC Group',
+        duration: '2025 - present',
+        position: 'Senior Developer',
+        technologies: [
+            'C#',
+            'Python',
+            '.NET',
+            'MartenDb',
+            'Temporal',
+            'Docker',
+            'Git',
+            'Github Actions',
+            'Terraform',
+            'Kafka',
+            'Azure (Container Apps, Application Insights, Service Bus)',
+            'Event Sourcing',
+            'Domain Driven Design',
+        ],
+        duties: [
+            'Development of an automated email ingestion system for Insurance business',
+            'Maintenance and support of ML and GenAI solutions for product detection and entity extraction',
+        ],
+    },
+    {
         company: 'Music instrument practice app',
         duration: '2023 - 2025',
         position: 'Developer',
